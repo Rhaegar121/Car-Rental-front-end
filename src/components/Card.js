@@ -1,26 +1,44 @@
-// import Button from 'react-bootstrap/Button';
-// import Card from 'react-bootstrap/Card';
-// import carImage from '../assets/carImage.jpg';
-// import '../styles/main.css';
+import React from 'react';
+import '../styles/main.css';
+import { AiOutlineStar } from 'react-icons/ai';
+import { useSelector } from 'react-redux';
+import carImage from '../assets/carImage.jpg';
 
-// function CarCard() {
-//   return (
-//     <Card className="main-container">
-//       <Card.Img
-//         variant="top"
-//         src={carImage}
-//         className="car-image"
-//       />
-//       <Card.Body>
-//         <Card.Title>Card Title</Card.Title>
-//         <Card.Text>
-//           Some quick example text to build on the card title and make up the
-//           bulk of
-//         </Card.Text>
-//         <Button variant="primary">Go somewhere</Button>
-//       </Card.Body>
-//     </Card>
-//   );
-// }
+function CarCard() {
+  const cars = useSelector((state) => state.car.cars);
+  return (
+    <>
+      {cars.map((car) => (
+        <div
+          className="main-container"
+          key={car.id}
+        >
+          <img
+            src={carImage}
+            alt="mercedez benz"
+            className="car-image"
+          />
 
-// export default CarCard;
+          <div className="car-detils">
+            <div className="right">
+              <p className="car-name">{car.name}</p>
+              <div className="star-icons">
+                <AiOutlineStar />
+                <AiOutlineStar />
+                <AiOutlineStar />
+                <AiOutlineStar />
+                <AiOutlineStar />
+              </div>
+            </div>
+            <div className="left">
+              <p className="price">{car.price}</p>
+              <p className="per-month">per month</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </>
+  );
+}
+
+export default CarCard;

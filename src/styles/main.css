@@ -1,7 +1,6 @@
 .main-container {
   border: 1px solid black;
   width: 80%;
-  /* height: 80vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
