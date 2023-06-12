@@ -1,0 +1,35 @@
+.main-container {
+  border: 1px solid black;
+  width: 80%;
+  /* height: 80vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  border-radius: 10px;
+}
+
+.car-image {
+  width: 100%;
+  height: auto;
+}
+
+.right,
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.car-detils {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 2rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+p {
+  margin: 0;
+}
