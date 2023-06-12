@@ -1,12 +1,21 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from './routes/home';
+import Favorites from './routes/favorites';
+import Navbar from './components/navbar';
+import Cars from './routes/cars';
+import './App.css';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route />
-    </Routes>
+    <>
+      <Navbar />
+      <div className="page_container">
+        <Routes>
+          <Route path="/" element={<Cars />} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </div>
+    </>
+
   );
 }
 
