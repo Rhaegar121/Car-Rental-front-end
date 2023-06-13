@@ -59,30 +59,35 @@ const userSlice = createSlice({
   },
   extraReducers(builder) {
     builder
-      .addCase(registerUser.fulfilled, (state, action) => {
-        state.status = 'success';
-        state.name = action.payload.fullname;
-        state.id = action.payload.id;
-      })
-      .addCase(registerUser.rejected, (state, action) => {
-        state.status = 'error';
-        state.error = action.error.message;
-      })
-      .addCase(loginUser.fulfilled, (state, action) => {
-        state.status = 'success';
-        state.name = action.payload.fullname;
-        state.id = action.payload.id;
-      })
-      .addCase(loginUser.rejected, (state, action) => {
-        state.status = 'error';
-        state.error = action.error.message;
-      })
+      .addCase(registerUser.fulfilled, (state, action) => ({
+        ...state,
+        status: 'success',
+        name: action.payload.fullname,
+        id: action.payload.id,
+      }))
+      .addCase(registerUser.rejected, (state, action) => ({
+        ...state,
+        status: 'error',
+        error: action.error.message,
+      }))
+      .addCase(loginUser.fulfilled, (state, action) => ({
+        ...state,
+        status: 'success',
+        name: action.payload.fullname,
+        id: action.payload.id,
+      }))
+      .addCase(loginUser.rejected, (state, action) => ({
+        ...state,
+        status: 'error',
+        error: action.error.message,
+      }))
       .addMatcher(
         (action) => action.type.endsWith('/rejected'),
-        (state, action) => {
-          state.status = 'error';
-          state.error = action.error.message || 'Request failed';
-        },
+        (state, action) => ({
+          ...state,
+          status: 'error',
+          error: action.error.message || 'Request failed',
+        }),
       );
   },
 });

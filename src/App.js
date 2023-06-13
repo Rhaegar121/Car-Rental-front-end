@@ -4,7 +4,7 @@ import Body from './components/Body';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Main from './components/Main';
-import Favorites from './routes/favorites';
+import Favorites from './components/Favourite';
 
 function App() {
   return (

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../redux/userSlice';
+import '../styles/signin.css';
 
 const SignInComponent = () => {
   const [name, setName] = useState('');
