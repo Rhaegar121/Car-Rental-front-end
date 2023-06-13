@@ -1,59 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import '../styles/signin.css';
+import { loginUser } from '../redux/userSlice';
 
 const SignInComponent = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const userData = useSelector((state) => state.user);
 
   const handleSignIn = async () => {
-    try {
-      const response = await axios.post(
-        'http://localhost:3001/users/login',
-        {
-          user: {
-            email,
-            password,
-          },
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        },
-      );
-      const token = response.headers.authorization;
-      sessionStorage.setItem('token', token);
-      sessionStorage.setItem('userId', response.data.status.data.id);
-      setMessage('Sign in successful' || '');
-      navigate('/main');
-    } catch (error) {
-      setMessage('Sign in failed' || '');
-    }
+    dispatch(loginUser({ name }));
   };
+
+  useEffect(() => {
+    if (userData.status === 'success') {
+      navigate('/main');
+    }
+  }, [userData, navigate]);
 
   return (
     <div>
       <h2>Sign In</h2>
       <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
       />
       <button type="button" onClick={handleSignIn}>
         Sign In
       </button>
-      <p>{message}</p>
     </div>
   );
 };

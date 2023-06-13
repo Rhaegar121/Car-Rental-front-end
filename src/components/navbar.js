@@ -40,7 +40,7 @@ export default function Navbar() {
         </Link>
         <div className="menu_links_wrapper">
           <li>
-            <Link className="menu_link" to="/" onClick={handleMenuLinkClick}>
+            <Link className="menu_link" to="/main" onClick={handleMenuLinkClick}>
               Cars
             </Link>
           </li>

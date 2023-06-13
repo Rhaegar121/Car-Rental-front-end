@@ -1,17 +1,18 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseURL = 'http://localhost:3001';
+const baseURL = 'http://127.0.0.1:3000';
 
 // Async thunk for user login
 export const loginUser = createAsyncThunk(
   'user/login',
-  async ({ email, password }) => {
+  async ({ name }) => {
     try {
       const response = await axios.post(`${baseURL}/users/login`, {
-        user: {
-          email,
-          password,
+        user: { fullname: name },
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
         },
       });
       return response.data;
@@ -24,17 +25,10 @@ export const loginUser = createAsyncThunk(
 // Async thunk for user registration
 export const registerUser = createAsyncThunk(
   'user/register',
-  async ({
-    name, email, password, passwordConfirmation,
-  }) => {
+  async ({ name }) => {
     try {
-      const response = await axios.post(`${baseURL}/users`, {
-        user: {
-          name,
-          email,
-          password,
-          password_confirmation: passwordConfirmation,
-        },
+      const response = await axios.post(`${baseURL}/users/signup`, {
+        user: { fullname: name },
       });
       return response.data;
     } catch (error) {
@@ -67,7 +61,7 @@ const userSlice = createSlice({
     builder
       .addCase(registerUser.fulfilled, (state, action) => {
         state.status = 'success';
-        state.name = action.payload.name;
+        state.name = action.payload.fullname;
         state.id = action.payload.id;
       })
       .addCase(registerUser.rejected, (state, action) => {
@@ -76,13 +70,20 @@ const userSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.status = 'success';
-        state.name = action.payload.name;
+        state.name = action.payload.fullname;
         state.id = action.payload.id;
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.status = 'error';
         state.error = action.error.message;
-      });
+      })
+      .addMatcher(
+        (action) => action.type.endsWith('/rejected'),
+        (state, action) => {
+          state.status = 'error';
+          state.error = action.error.message || 'Request failed';
+        },
+      );
   },
 });
 

@@ -1,14 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const url = '127.0.0.1:3000/users/{user_id}/cars';
+const baseURL = 'http://127.0.0.1:3000/users';
 
 const initialState = {
   cars: [],
   isLoading: true,
 };
 
-export const fetchCars = createAsyncThunk('cars/fetchCars', async () => {
-  const response = await fetch(url);
+export const fetchCars = createAsyncThunk('cars/fetchCars', async ({ userId }) => {
+  const response = await fetch(`${baseURL}/${userId}/cars`);
   const data = await response.json();
   return data;
 });
