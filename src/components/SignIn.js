@@ -9,11 +9,10 @@ const SignInComponent = () => {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
-  // Function to sign in
   const handleSignIn = async () => {
     try {
       const response = await axios.post(
-        '',
+        'http://localhost:3001/users/login',
         {
           user: {
             email,
@@ -26,7 +25,6 @@ const SignInComponent = () => {
           },
         },
       );
-      // Extract authorization token from response and store it locally
       const token = response.headers.authorization;
       sessionStorage.setItem('token', token);
       sessionStorage.setItem('userId', response.data.status.data.id);
@@ -37,57 +35,25 @@ const SignInComponent = () => {
     }
   };
 
-  // Function to sign out
-  const handleSignOut = async () => {
-    const thetoken = sessionStorage.getItem('token');
-    try {
-      const response = await axios.delete('', {
-        headers: {
-          Authorization: thetoken,
-        },
-      });
-      sessionStorage.clear();
-      setMessage(response.data.message || '');
-    } catch (error) {
-      setMessage('Sign out failed' || '');
-    }
-  };
   return (
-    <div className="sign-in-form">
-      <h1 className="sign-in-title"> Welcome, please sign in to continue</h1>
+    <div>
+      <h2>Sign In</h2>
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button type="button" onClick={handleSignIn}>
+        Sign In
+      </button>
       <p>{message}</p>
-      <div className="sign-in-inputs">
-        <input
-          className="email-input"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          className="password-input"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-      <div className="btn">
-        <button
-          className="sign-in-button"
-          type="button"
-          onClick={handleSignIn}
-        >
-          Sign In
-        </button>
-        <button
-          className="sign-out-button"
-          type="button"
-          onClick={handleSignOut}
-        >
-          Sign Out
-        </button>
-      </div>
     </div>
   );
 };
