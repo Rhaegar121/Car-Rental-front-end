@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './styles/navbar.css';
+import '../styles/navbar.css';
 
 export default function Navbar() {
   const [isMenuActive, setIsMenuActive] = useState(false);
@@ -40,7 +40,7 @@ export default function Navbar() {
         </Link>
         <div className="menu_links_wrapper">
           <li>
-            <Link className="menu_link" to="/" onClick={handleMenuLinkClick}>
+            <Link className="menu_link" to="/main" onClick={handleMenuLinkClick}>
               Cars
             </Link>
           </li>

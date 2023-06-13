@@ -1,3 +1,10 @@
+import Navbar from '../components/navbar';
+
 export default function Favorites() {
-  return <h1>Favorites</h1>;
+  return (
+    <div>
+      <Navbar />
+      <h1>Favorites</h1>
+    </div>
+  );
 }
