@@ -5,6 +5,7 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Main from './components/Main';
 import Favorites from './components/Favourite';
+import Detail from './components/Detail';
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
           <Route
             path="/main"
             element={<Main />}
+          />
+          <Route
+            path="/cars/:id"
+            element={<Detail />}
           />
           <Route
             path="/favorites"

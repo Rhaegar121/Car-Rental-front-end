@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../redux/userSlice';
 import '../styles/signin.css';
 
-const SignInComponent = () => {
+function SignInComponent() {
   const [name, setName] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -34,6 +34,6 @@ const SignInComponent = () => {
       </button>
     </div>
   );
-};
+}
 
 export default SignInComponent;

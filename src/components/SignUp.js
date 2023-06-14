@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../redux/userSlice';
 import '../styles/signup.css';
 
-const SignUpComponent = () => {
+function SignUpComponent() {
   const [name, setName] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -34,6 +34,6 @@ const SignUpComponent = () => {
       </button>
     </div>
   );
-};
+}
 
 export default SignUpComponent;
