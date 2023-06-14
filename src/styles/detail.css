@@ -1,0 +1,76 @@
+.header {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.title {
+    text-align: center;
+    margin: 0;
+    padding: 13px 0;
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.back-btn {
+    position: absolute;
+    left: 25px;
+    top: 13.5px;
+    font-size: 1.4rem;
+}
+
+.back-btn:hover {
+    cursor: pointer;
+}
+
+.img-container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-text {
+    width: 90%;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-weight: 500;
+}
+
+.star {
+    color: #eea929;
+}
+
+.price p {
+    font-size: 0.8rem;
+}
+
+.price p:first-child {
+    font-size: 1.2rem;
+}
+
+.about-container {
+    width: 90%;
+    margin: 30px auto;
+}
+
+.about {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #6b6b6b;
+}
