@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/main.css';
 import { AiOutlineStar } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux';
@@ -17,33 +18,35 @@ function CarCard() {
   return (
     <>
       {cars.map((car) => (
-        <div
-          className="main-container"
-          key={car.id}
-        >
-          <img
-            src={carImage}
-            alt="mercedez benz"
-            className="car-image"
-          />
+        <Link to={`/cars/${car.id}`} key={car.id}>
+          <div
+            className="main-container"
+            key={car.id}
+          >
+            <img
+              src={carImage}
+              alt="mercedez benz"
+              className="car-image"
+            />
 
-          <div className="car-detils">
-            <div className="right">
-              <p className="car-name">{car.name}</p>
-              <div className="star-icons">
-                <AiOutlineStar />
-                <AiOutlineStar />
-                <AiOutlineStar />
-                <AiOutlineStar />
-                <AiOutlineStar />
+            <div className="car-detils">
+              <div className="right">
+                <p className="car-name">{car.name}</p>
+                <div className="star-icons">
+                  <AiOutlineStar />
+                  <AiOutlineStar />
+                  <AiOutlineStar />
+                  <AiOutlineStar />
+                  <AiOutlineStar />
+                </div>
+              </div>
+              <div className="left">
+                <p className="price">{car.price}</p>
+                <p className="per-month">per month</p>
               </div>
             </div>
-            <div className="left">
-              <p className="price">{car.price}</p>
-              <p className="per-month">per month</p>
-            </div>
           </div>
-        </div>
+        </Link>
       ))}
     </>
   );
