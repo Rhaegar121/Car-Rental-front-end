@@ -1,3 +1,7 @@
+#detail {
+    position: relative;
+}
+
 .header {
     width: 100%;
     height: auto;
@@ -82,4 +86,79 @@
     font-size: 1rem;
     color: #fff;
     background-color: #ee7e29;
+}
+
+@media screen and (min-width: 992px) {
+    .header {
+        background-color: #edf3ffd3;
+    }
+    
+    .img-container {
+        width: 85%;
+        height: 400px;
+        margin: 20px auto 0 auto;
+    }
+
+    .description {
+        padding-bottom: 70px;
+    }
+
+    .add-favourites-btn {
+        position: absolute;
+        width: fit-content;
+        padding: 15px 20px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.2);
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+
+    .add-favourites-btn:hover {
+        box-shadow: none;
+        cursor: pointer;
+        transform: translateX(-50%) translateY(-2px);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .title {
+        font-size: 1.3rem;
+        padding: 18px 0;
+    }
+
+    .back-btn {
+        left: 45px;
+        top: 18.5px;
+        font-size: 1.8rem;
+    }
+
+    .img-container {
+        width: 70%;
+        height: 500px;
+    }
+
+    .rating {
+        font-size: 1.2rem;
+    }
+
+    .price p {
+        font-size: 1rem;
+    }
+    
+    .price p:first-child {
+        font-size: 1.5rem;
+    }
+
+    .about-container {
+        width: 55%;
+    }
+
+    .about {
+        font-size: 1.15rem;
+    }
+    
+    .description {
+        font-size: 1rem;
+    }
 }
