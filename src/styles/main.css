@@ -1,34 +1,78 @@
 .main-container {
-    border: 1px solid black;
-    width: 80%;
-    display: flex;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 2rem 8rem;
+}
+
+.heading {
+  text-align: center;
+  color: rgb(4, 138, 200);
+}
+
+.car-container {
+  height: 400px;
+  box-shadow: 0 0 10px 0 rgba(135, 133, 133, 0.747);
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 1rem;
+}
+
+.image {
+  width: 100%;
+  height: 75%;
+}
+
+.car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.car-detils {
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  align-items: center;
+  column-gap: 3rem;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  height: 80px;
+  width: 80px;
+  background-color: rgb(4, 138, 200);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.prev-btn {
+  left: 0;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.next-btn {
+  right: 0;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+}
+
+.star {
+  font-size: 20px;
+  color: rgb(244, 148, 3);
+}
+
+@media (max-width: 900px) {
+  .btn {
+    top: 100%;
+  }
+
+  .main-container {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem auto;
-    border-radius: 10px;
+    padding: 2rem 1rem;
   }
-  
-  .car-image {
-    width: 100%;
-    height: auto;
-  }
-  
-  .right,
-  .left {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .car-detils {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 2rem;
-    padding: 1rem;
-    width: 100%;
-  }
-  
-  p {
-    margin: 0;
-  }
+}
