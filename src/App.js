@@ -6,6 +6,7 @@ import SignUp from './components/SignUp';
 import Main from './components/Main';
 import Favorites from './components/Favourite';
 import AddCar from './components/addCar'; // Import the AddCar component
+import Detail from './components/Detail';
 
 function App() {
   return (
