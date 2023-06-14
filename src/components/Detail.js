@@ -6,7 +6,7 @@ import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
 import { IoIosArrowBack } from 'react-icons/io';
 import '../styles/detail.css';
 
-const Detail = () => {
+function Detail() {
   const { id } = useParams();
   const cars = useSelector((state) => state.car.cars);
   const car = cars.find((car) => car.id === parseInt(id, 10));
@@ -56,6 +56,6 @@ const Detail = () => {
       <button type="button" className="add-favourites-btn">Add to favorites</button>
     </section>
   );
-};
+}
 
 export default Detail;
