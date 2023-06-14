@@ -36,7 +36,7 @@
 }
 
 .img-text {
-    width: 90%;
+    width: 85%;
     position: absolute;
     bottom: 30px;
     left: 50%;
@@ -61,7 +61,7 @@
 }
 
 .about-container {
-    width: 90%;
+    width: 85%;
     margin: 30px auto;
 }
 
@@ -73,4 +73,13 @@
 .description {
     font-size: 0.9rem;
     color: #6b6b6b;
+}
+
+.add-favourites-btn {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ee7e29;
 }
