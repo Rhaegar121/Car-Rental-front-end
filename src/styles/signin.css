@@ -1,73 +1,74 @@
 .sign-in-form {
-    padding-top: 9rem;
-    /* background-image: url(../assets/carrental.jpg); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-  }
-  
+  padding-top: 9rem;
+
+  /* background-image: url(../assets/carrental.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.sign-in-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.email-input,
+.password-input {
+  width: 300px;
+  height: 35px;
+  margin: 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  padding-left: 5px;
+  border: 5px solid #ee5029;
+}
+
+.sign-in-button {
+  margin: 20px;
+  border: none;
+  background-color: white;
+  height: 45px;
+  width: 120px;
+  border-radius: 25px;
+  color: #ee5029;
+}
+
+.sign-in-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.sign-out-button {
+  border: none;
+  background: none;
+  color: white;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
   .sign-in-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+    font-size: 20px;
   }
-  
-  .email-input,
-  .password-input {
-    width: 300px;
-    height: 35px;
-    margin: 10px;
-    border-radius: 15px;
-    font-size: 14px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    padding-left: 5px;
-    border: 5px solid #ee5029;
+
+  .sign-in-form {
+    padding-top: 5rem;
+    background-image: none;
+    background-color: #ee5029;
   }
-  
-  .sign-in-button {
-    margin: 20px;
-    border: none;
-    background-color: white;
-    height: 45px;
-    width: 120px;
-    border-radius: 25px;
-    color: #ee5029;
-  }
-  
-  .sign-in-inputs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .sign-out-button {
-    border: none;
-    background: none;
-    color: white;
-    text-decoration: underline;
-  }
-  
-  @media only screen and (max-width: 600px) {
-    .sign-in-title {
-      font-size: 20px;
-    }
-  
-    .sign-in-form {
-      padding-top: 5rem;
-      background-image: none;
-      background-color: #ee5029;
-    }
-  }
+}
