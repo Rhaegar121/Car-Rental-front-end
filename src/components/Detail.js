@@ -1,6 +1,6 @@
 import React from 'react';
-// import { useNavigate, useParams } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
 import { IoIosArrowBack } from 'react-icons/io';
@@ -10,7 +10,7 @@ const Detail = () => {
   const { id } = useParams();
   const cars = useSelector((state) => state.car.cars);
   const car = cars.find((car) => car.id === parseInt(id, 10));
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   if (!car) {
     return <h1>Car not found.</h1>;
@@ -27,7 +27,7 @@ const Detail = () => {
   return (
     <section id="detail">
       <header className="header">
-        <IoIosArrowBack className="back-btn" />
+        <IoIosArrowBack className="back-btn" onClick={() => navigate('/main')} />
         <h2 className="title">{car.name}</h2>
       </header>
       <div className="img-container">
