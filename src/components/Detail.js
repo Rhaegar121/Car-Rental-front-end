@@ -25,7 +25,7 @@ const Detail = () => {
     .map((_, index) => <AiOutlineStar key={index} />);
 
   return (
-    <section id="detail">
+    <section id="detail"> 
       <header className="header">
         <IoIosArrowBack className="back-btn" onClick={() => navigate('/main')} />
         <h2 className="title">{car.name}</h2>
