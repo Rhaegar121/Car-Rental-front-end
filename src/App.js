@@ -6,6 +6,7 @@ import SignUp from './components/SignUp';
 import Main from './components/Main';
 import Favorites from './components/Favourite';
 import AddCar from './components/addCar';
+import Detail from './components/Detail';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/main" element={<Main />} />
+          <Route path="/cars/:id" element={<Detail />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/add_car" element={<AddCar />} />
         </Routes>
