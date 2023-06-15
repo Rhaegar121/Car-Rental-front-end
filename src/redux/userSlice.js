@@ -6,14 +6,10 @@ const baseURL = 'http://127.0.0.1:3000';
 // Async thunk for user login
 export const loginUser = createAsyncThunk(
   'user/login',
-  async ({ name }) => {
+  async ({ email, passsword }) => {
     try {
       const response = await axios.post(`${baseURL}/users/login`, {
-        user: { fullname: name },
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        user: { email: email.toLowerCase(), password: passsword },
       });
       return response.data;
     } catch (error) {
@@ -25,10 +21,18 @@ export const loginUser = createAsyncThunk(
 // Async thunk for user registration
 export const registerUser = createAsyncThunk(
   'user/register',
-  async ({ name }) => {
+  async ({
+    name, email, password, passwordConfirmation,
+  }) => {
     try {
       const response = await axios.post(`${baseURL}/users/signup`, {
-        user: { fullname: name },
+        user:
+        {
+          fullname: name,
+          email,
+          password,
+          password_confirmation: passwordConfirmation,
+        },
       });
       return response.data;
     } catch (error) {
@@ -39,30 +43,24 @@ export const registerUser = createAsyncThunk(
 
 const initialState = {
   status: 'idle',
-  name: '',
   id: null,
+  name: '',
+  email: '',
+  passsword: '',
   error: '',
 };
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {
-    logOutUser(state) {
-      return {
-        ...state,
-        status: 'idle',
-        name: '',
-        id: null,
-      };
-    },
-  },
+  reducers: {},
   extraReducers(builder) {
     builder
       .addCase(registerUser.fulfilled, (state, action) => ({
         ...state,
         status: 'success',
         name: action.payload.fullname,
+        email: action.payload.email,
         id: action.payload.id,
       }))
       .addCase(registerUser.rejected, (state, action) => ({
@@ -74,6 +72,7 @@ const userSlice = createSlice({
         ...state,
         status: 'success',
         name: action.payload.fullname,
+        email: action.payload.email,
         id: action.payload.id,
       }))
       .addCase(loginUser.rejected, (state, action) => ({

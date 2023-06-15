@@ -16,6 +16,10 @@ nav {
   gap: 5px;
   position: fixed;
   z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  padding: 1rem;
 }
 
 .line {

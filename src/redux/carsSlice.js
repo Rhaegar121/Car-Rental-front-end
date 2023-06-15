@@ -7,11 +7,14 @@ const initialState = {
   isLoading: true,
 };
 
-export const fetchCars = createAsyncThunk('cars/fetchCars', async ({ userId }) => {
-  const response = await fetch(`${baseURL}/${userId}/cars`);
-  const data = await response.json();
-  return data;
-});
+export const fetchCars = createAsyncThunk(
+  'cars/fetchCars',
+  async ({ userId }) => {
+    const response = await fetch(`${baseURL}/${userId}/cars`);
+    const data = await response.json();
+    return data;
+  },
+);
 
 export const addCar = createAsyncThunk('cars/addCar', async ({ userId, car }) => {
   const response = await fetch(`${baseURL}/${userId}/cars`, {

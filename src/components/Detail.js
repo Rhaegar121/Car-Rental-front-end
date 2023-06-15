@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-// import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
 import { IoIosArrowBack } from 'react-icons/io';
