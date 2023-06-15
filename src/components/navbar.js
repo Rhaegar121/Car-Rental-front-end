@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+// import { useDispatch } from 'react-redux';
 import '../styles/navbar.css';
 
 export default function Navbar() {
   const [isMenuActive, setIsMenuActive] = useState(false);
+  // const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleHamburgerClick = () => {
     setIsMenuActive(!isMenuActive);
@@ -17,6 +20,10 @@ export default function Navbar() {
     if (event.key === 'Enter' || event.key === ' ') {
       handleHamburgerClick();
     }
+  };
+
+  const handleAddCarClick = () => {
+    navigate('/add_car');
   };
 
   return (
@@ -48,6 +55,11 @@ export default function Navbar() {
             <Link className="menu_link" to="/favorites" onClick={handleMenuLinkClick}>
               Favorites
             </Link>
+          </li>
+          <li>
+            <button className="menu_link" type="button" onClick={handleAddCarClick}>
+              Add New Car
+            </button>
           </li>
         </div>
         <li className="button_wrapper">
