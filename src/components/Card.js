@@ -9,6 +9,7 @@ import StarRating from './StarRating';
 
 function CarCard() {
   const userId = useSelector((state) => state.user.id);
+  console.log(userId);
   const cars = useSelector((state) => state.car.cars);
   const dispatch = useDispatch();
   const [number, setNumber] = useState(1);

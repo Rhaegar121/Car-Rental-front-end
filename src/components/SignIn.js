@@ -5,13 +5,14 @@ import { loginUser } from '../redux/userSlice';
 import '../styles/signin.css';
 
 function SignInComponent() {
-  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [passsword, setPassword] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.user);
 
   const handleSignIn = async () => {
-    dispatch(loginUser({ name }));
+    dispatch(loginUser({ email, passsword }));
   };
 
   useEffect(() => {
@@ -24,10 +25,16 @@ function SignInComponent() {
     <div>
       <h2>Sign In</h2>
       <input
-        type="text"
-        placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        type="email"
+        placeholder="Enter your email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Enter your password"
+        value={passsword}
+        onChange={(e) => setPassword(e.target.value)}
       />
       <button type="button" onClick={handleSignIn}>
         Sign In
