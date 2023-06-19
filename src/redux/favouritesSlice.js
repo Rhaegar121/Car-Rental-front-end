@@ -61,7 +61,7 @@ const favouritesSlice = createSlice({
       }))
       .addCase(addfavourite.fulfilled, (state, action) => ({
         ...state,
-        status: 'success',
+        status: 'added successfully',
         isLoading: false,
         favourites: action.payload.favourites,
         cars: action.payload.cars,

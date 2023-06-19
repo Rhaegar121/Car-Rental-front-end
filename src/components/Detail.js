@@ -42,7 +42,7 @@ function Detail() {
         <IoIosArrowBack className="back-btn" onClick={() => navigate(-1)} />
         <h2 className="title">{car.name}</h2>
       </header>
-      {favourite.status === 'success' ? <p className="success">Added to favourites successfully!</p> : null}
+      {favourite.status === 'added successfully' ? <p className="success">Added to favourites successfully!</p> : null}
       <div className="img-container">
         <img src={car.image} alt={car.name} className="img" />
         <div className="img-text">
