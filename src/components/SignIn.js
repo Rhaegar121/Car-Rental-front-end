@@ -18,6 +18,7 @@ function SignInComponent() {
   useEffect(() => {
     if (userData.status === 'success') {
       navigate('/main');
+      localStorage.setItem('user', JSON.stringify(userData));
     }
   }, [userData, navigate]);
 
@@ -36,7 +37,10 @@ function SignInComponent() {
         value={passsword}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button type="button" onClick={handleSignIn}>
+      <button
+        type="button"
+        onClick={handleSignIn}
+      >
         Sign In
       </button>
     </div>
