@@ -3,7 +3,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 const baseURL = 'http://127.0.0.1:3000/users';
 
 const initialState = {
-  status: 'idle',
   favourites: [],
   cars: [],
   isLoading: true,
@@ -45,14 +44,12 @@ const favouritesSlice = createSlice({
       }))
       .addCase(fetchfavourites.fulfilled, (state, action) => ({
         ...state,
-        status: 'success',
         isLoading: false,
         favourites: action.payload.favourites,
         cars: action.payload.cars,
       }))
       .addCase(fetchfavourites.rejected, (state) => ({
         ...state,
-        status: 'error',
         isLoading: false,
       }))
       .addCase(addfavourite.pending, (state) => ({
@@ -61,14 +58,12 @@ const favouritesSlice = createSlice({
       }))
       .addCase(addfavourite.fulfilled, (state, action) => ({
         ...state,
-        status: 'success',
         isLoading: false,
         favourites: action.payload.favourites,
         cars: action.payload.cars,
       }))
       .addCase(addfavourite.rejected, (state) => ({
         ...state,
-        status: 'error',
         isLoading: false,
       }));
   },

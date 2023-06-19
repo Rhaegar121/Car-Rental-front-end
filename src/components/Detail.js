@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
 import { IoIosArrowBack } from 'react-icons/io';
 import { addfavourite } from '../redux/favouritesSlice';
+import { fetchCars } from '../redux/carsSlice';
 import '../styles/detail.css';
 
 function Detail() {
@@ -14,8 +15,12 @@ function Detail() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(fetchCars({ userId: userData.id }));
+  }, [dispatch, userData.id]);
+
   if (!car) {
-    return <h1>Car not found.</h1>;
+    return <h1>Loading...</h1>;
   }
 
   const starIcons = Array(car.ratings)
