@@ -26,8 +26,9 @@ function Detail() {
     .fill(null)
     .map((_, index) => <AiOutlineStar key={index} />);
 
-  const handleAddFavouriteClick = () => {
-    dispatch(addfavourite(userData.id, car.id));
+  const handleAddFavouriteClick = async () => {
+    dispatch(addfavourite({ userId: userData.id, carId: car.id }));
+    navigate('/favourites');
   };
 
   return (

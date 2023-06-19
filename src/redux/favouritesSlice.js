@@ -20,13 +20,13 @@ export const fetchfavourites = createAsyncThunk(
 
 export const addfavourite = createAsyncThunk(
   'cars/addfavourite',
-  async (userId, carId) => {
+  async ({ userId, carId }) => {
     const response = await fetch(`${baseURL}/${userId}/favourites`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ car_id: carId }),
+      body: JSON.stringify({ favourite: { car_id: carId, user_id: userId } }),
     });
     const data = await response.json();
     return data;
@@ -45,14 +45,14 @@ const favouritesSlice = createSlice({
       }))
       .addCase(fetchfavourites.fulfilled, (state, action) => ({
         ...state,
-        statue: 'success',
+        status: 'success',
         isLoading: false,
         favourites: action.payload.favourites,
         cars: action.payload.cars,
       }))
       .addCase(fetchfavourites.rejected, (state) => ({
         ...state,
-        statue: 'error',
+        status: 'error',
         isLoading: false,
       }))
       .addCase(addfavourite.pending, (state) => ({
@@ -61,14 +61,14 @@ const favouritesSlice = createSlice({
       }))
       .addCase(addfavourite.fulfilled, (state, action) => ({
         ...state,
-        statue: 'success',
+        status: 'success',
         isLoading: false,
         favourites: action.payload.favourites,
         cars: action.payload.cars,
       }))
       .addCase(addfavourite.rejected, (state) => ({
         ...state,
-        statue: 'error',
+        status: 'error',
         isLoading: false,
       }));
   },
