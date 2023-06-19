@@ -37,7 +37,10 @@ function SignInComponent() {
         value={passsword}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button type="button" onClick={handleSignIn}>
+      <button
+        type="button"
+        onClick={handleSignIn}
+      >
         Sign In
       </button>
     </div>

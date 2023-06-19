@@ -10,7 +10,7 @@ const initialState = {
 
 export const fetchfavourites = createAsyncThunk(
   'cars/fetchfavourites',
-  async ({ userId }) => {
+  async (userId) => {
     const response = await fetch(`${baseURL}/${userId}/favourites`);
     const data = await response.json();
     return data;
