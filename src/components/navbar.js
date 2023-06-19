@@ -52,7 +52,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link className="menu_link" to="/favorites" onClick={handleMenuLinkClick}>
+            <Link className="menu_link" to="/favourites" onClick={handleMenuLinkClick}>
               Favorites
             </Link>
           </li>

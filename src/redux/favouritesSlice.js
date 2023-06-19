@@ -4,15 +4,15 @@ const baseURL = 'http://127.0.0.1:3000/users';
 
 const initialState = {
   favourites: [],
+  cars: [],
   isLoading: true,
 };
 
 export const fetchfavourites = createAsyncThunk(
   'cars/fetchfavourites',
-  async ({ userid }) => {
-    const response = await fetch(`${baseURL}/${userid}/favourites`);
+  async ({ userId }) => {
+    const response = await fetch(`${baseURL}/${userId}/favourites`);
     const data = await response.json();
-    console.log(data);
     return data;
   },
 );
@@ -30,7 +30,8 @@ const favouritesSlice = createSlice({
       .addCase(fetchfavourites.fulfilled, (state, action) => ({
         ...state,
         isLoading: false,
-        favourites: action.payload,
+        favourites: action.payload.favourites,
+        cars: action.payload.cars,
       }))
       .addCase(fetchfavourites.rejected, (state) => ({
         ...state,
