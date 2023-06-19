@@ -55,7 +55,10 @@ function CarCard() {
           <BsArrowLeft />
         </button>
         {car.map((car) => (
-          <Link to={`/cars/${car.id}`} key={car.id}>
+          <Link
+            to={`/cars/${car.id}`}
+            key={car.id}
+          >
             <div
               className="car-container"
               key={car.id}
