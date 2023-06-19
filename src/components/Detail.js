@@ -39,7 +39,7 @@ function Detail() {
   return (
     <section id="detail">
       <header className="header">
-        <IoIosArrowBack className="back-btn" onClick={() => navigate('/main')} />
+        <IoIosArrowBack className="back-btn" onClick={() => navigate(-1)} />
         <h2 className="title">{car.name}</h2>
       </header>
       <div className="img-container">
