@@ -1,15 +1,18 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
 import { IoIosArrowBack } from 'react-icons/io';
+import { addfavourite } from '../redux/favouritesSlice';
 import '../styles/detail.css';
 
 function Detail() {
   const { id } = useParams();
+  const userData = JSON.parse(localStorage.getItem('user'));
   const cars = useSelector((state) => state.car.cars);
   const car = cars.find((car) => car.id === parseInt(id, 10));
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   if (!car) {
     return <h1>Car not found.</h1>;
@@ -22,6 +25,10 @@ function Detail() {
   const emptyStarIcons = Array(5 - car.ratings)
     .fill(null)
     .map((_, index) => <AiOutlineStar key={index} />);
+
+  const handleAddFavouriteClick = () => {
+    dispatch(addfavourite(userData.id, car.id));
+  };
 
   return (
     <section id="detail">
@@ -52,7 +59,7 @@ function Detail() {
         <h3 className="about">About this car</h3>
         <p className="description">{car.description}</p>
       </div>
-      <button type="button" className="add-favourites-btn">Add to favorites</button>
+      <button type="button" className="add-favourites-btn" onClick={handleAddFavouriteClick}>Add to favorites</button>
     </section>
   );
 }
