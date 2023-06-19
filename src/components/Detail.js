@@ -12,6 +12,7 @@ function Detail() {
   const userData = JSON.parse(localStorage.getItem('user'));
   const cars = useSelector((state) => state.car.cars);
   const car = cars.find((car) => car.id === parseInt(id, 10));
+  const favourite = useSelector((state) => state.favourite);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -33,7 +34,6 @@ function Detail() {
 
   const handleAddFavouriteClick = async () => {
     dispatch(addfavourite({ userId: userData.id, carId: car.id }));
-    navigate('/favourites');
   };
 
   return (
@@ -42,6 +42,7 @@ function Detail() {
         <IoIosArrowBack className="back-btn" onClick={() => navigate(-1)} />
         <h2 className="title">{car.name}</h2>
       </header>
+      {favourite.status === 'success' ? <p className="success">Added to favourites successfully!</p> : null}
       <div className="img-container">
         <img src={car.image} alt={car.name} className="img" />
         <div className="img-text">

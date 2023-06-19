@@ -27,6 +27,11 @@
   cursor: pointer;
 }
 
+.success {
+  text-align: center;
+  color: #00e908;
+}
+
 .img-container {
   width: 100%;
   height: 300px;
