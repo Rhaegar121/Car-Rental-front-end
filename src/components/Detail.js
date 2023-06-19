@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
+import { AiOutlineStar, AiFillStar, AiOutlineUser } from 'react-icons/ai';
 import { IoIosArrowBack } from 'react-icons/io';
 import { addfavourite } from '../redux/favouritesSlice';
 import { fetchCars } from '../redux/carsSlice';
@@ -26,11 +26,11 @@ function Detail() {
 
   const starIcons = Array(car.ratings)
     .fill(null)
-    .map((_, index) => <AiFillStar key={index} className="star" />);
+    .map((_, index) => <AiFillStar key={index} className="star fill" />);
 
   const emptyStarIcons = Array(5 - car.ratings)
     .fill(null)
-    .map((_, index) => <AiOutlineStar key={index} />);
+    .map((_, index) => <AiOutlineStar key={index} className="star" />);
 
   const handleAddFavouriteClick = async () => {
     dispatch(addfavourite({ userId: userData.id, carId: car.id }));
@@ -47,15 +47,19 @@ function Detail() {
         <img src={car.image} alt={car.name} className="img" />
         <div className="img-text">
           <div className="rating">
-            <p>{car.name}</p>
-            <div className="star-icons">
-              {starIcons}
-              {emptyStarIcons}
+            <AiOutlineUser className="user-icon" />
+            <div>
+              <p>{userData.name}</p>
+              <div>
+                {starIcons}
+                {emptyStarIcons}
+              </div>
             </div>
           </div>
           <div className="price">
             <p>
               $
+              &nbsp;
               {car.price}
             </p>
             <p>per month</p>
