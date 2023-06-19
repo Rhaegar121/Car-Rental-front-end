@@ -16,6 +16,10 @@ function Favourite() {
     dispatch(fetchfavourites(userData.id));
   }, [dispatch, userData.id]);
 
+  if (!cars) {
+    return <h1>You have no favourite car yet!</h1>;
+  }
+
   return (
     <>
       <Navbar />
