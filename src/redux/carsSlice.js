@@ -4,6 +4,7 @@ const baseURL = 'http://127.0.0.1:3000/users';
 
 const initialState = {
   cars: [],
+  status: 'idle',
   isLoading: true,
 };
 
@@ -39,8 +40,10 @@ const carsSlice = createSlice({
       .addCase(fetchCars.rejected, (state) => ({ ...state, isLoading: false }))
       .addCase(addCar.pending, (state) => ({ ...state, isLoading: true }))
       .addCase(addCar.fulfilled, (state, action) => (
-        { ...state, isLoading: false, cars: [...state.cars, action.payload] }))
-      .addCase(addCar.rejected, (state) => ({ ...state, isLoading: false }));
+        {
+          ...state, status: 'success', isLoading: false, cars: [...state.cars, action.payload],
+        }))
+      .addCase(addCar.rejected, (state) => ({ ...state, status: 'error', isLoading: false }));
   },
 });
 

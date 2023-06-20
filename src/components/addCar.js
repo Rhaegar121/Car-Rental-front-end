@@ -5,22 +5,26 @@ import { addCar } from '../redux/carsSlice';
 import '../styles/addCar.css';
 import Navbar from './navbar';
 
-
-const userDataFromStorage = JSON.parse(localStorage.getItem('user'));
-console.log(userDataFromStorage);
-
 export default function AddCar() {
+  const userDataFromStorage = JSON.parse(localStorage.getItem('user'));
+  // const status = useSelector((state) => state.car.status);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   if (status === 'success') {
+
+  //   }
+  // }, [status, navigate]);
+
   const [carDetails, setCarDetails] = useState({
     name: '', // Changed from 'name'
     price: '',
     ratings: 0,
-    image: null,
+    image: '',
     description: '',
-    user_id: userDataFromStorage.id,
+    // user_id: userDataFromStorage.id,
   });
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -30,13 +34,13 @@ export default function AddCar() {
     }));
   };
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    setCarDetails((prevDetails) => ({
-      ...prevDetails,
-      image: file, // Changed from carPhoto
-    }));
-  };
+  // const handleFileChange = (event) => {
+  //   const file = event.target.files[0];
+  //   setCarDetails((prevDetails) => ({
+  //     ...prevDetails,
+  //     image: file, // Changed from carPhoto
+  //   }));
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -47,7 +51,7 @@ export default function AddCar() {
       ratings,
       image,
       description,
-      user_id,
+      // user_id,
     } = carDetails;
 
     const newCar = {
@@ -60,17 +64,18 @@ export default function AddCar() {
     };
 
     dispatch(addCar({ userId: userDataFromStorage.id, car: newCar }));
+    navigate('/main');
 
     setCarDetails({
       name: '', // Changed from name
       price: '',
       ratings: 0,
-      image: null,
+      image: '',
       description: '',
-      user_id: userDataFromStorage.id,
+      // user_id: userDataFromStorage.id,
     });
 
-    navigate('/main');
+    // navigate('/main');
   };
 
   const handleBack = () => {
@@ -97,7 +102,7 @@ export default function AddCar() {
           Price (USD):
           <input
             id="rentAmount"
-            type="text"
+            type="number"
             name="price"
             value={carDetails.price}
             onChange={handleChange}
@@ -119,6 +124,17 @@ export default function AddCar() {
           </label>
           <br />
           <label htmlFor="carPhoto">
+            Car image url link:
+            <textarea
+              id="carPhoto"
+              // type="text"
+              // accept="image/*"
+              name="image"
+              value={carDetails.image}
+              onChange={handleChange}
+            />
+          </label>
+          {/* <label htmlFor="carPhoto">
             Car Photo:
             <input
               id="carPhoto"
@@ -127,7 +143,7 @@ export default function AddCar() {
               name="image"
               onChange={handleFileChange}
             />
-          </label>
+          </label> */}
         </div>
 
         <br />
