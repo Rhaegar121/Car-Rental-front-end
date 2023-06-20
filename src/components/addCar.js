@@ -5,13 +5,18 @@ import { addCar } from '../redux/carsSlice';
 import '../styles/addCar.css';
 import Navbar from './navbar';
 
+
+const userDataFromStorage = JSON.parse(localStorage.getItem('user'));
+console.log(userDataFromStorage);
+
 export default function AddCar() {
   const [carDetails, setCarDetails] = useState({
-    brand: '', // Changed from 'name'
+    name: '', // Changed from 'name'
     price: '',
     ratings: 0,
     image: null,
     description: '',
+    user_id: userDataFromStorage.id,
   });
 
   const dispatch = useDispatch();
@@ -37,31 +42,32 @@ export default function AddCar() {
     event.preventDefault();
 
     const {
-      brand, // Changed from name
+      name, // Changed from name
       price,
       ratings,
       image,
       description,
+      user_id,
     } = carDetails;
 
     const newCar = {
-      brand, // Changed from name
+      name, // Changed from name
       price,
       ratings,
       image,
       description,
+      user_id: userDataFromStorage.id,
     };
 
-    const userId = '123';
-
-    dispatch(addCar({ userId, car: newCar }));
+    dispatch(addCar({ userId: userDataFromStorage.id, car: newCar }));
 
     setCarDetails({
-      brand: '', // Changed from name
+      name: '', // Changed from name
       price: '',
       ratings: 0,
       image: null,
       description: '',
+      user_id: userDataFromStorage.id,
     });
 
     navigate('/main');
@@ -76,14 +82,13 @@ export default function AddCar() {
       <Navbar />
       <h2>Add a New Car</h2>
       <form className="add_car_form_wrapper" onSubmit={handleSubmit}>
-        <label htmlFor="brand">
-          Brand:
-          {/* Changed from 'Name' */}
+        <label htmlFor="name">
+          Name:
           <input
             id="brand"
             type="text"
-            name="brand"
-            value={carDetails.brand}
+            name="name"
+            value={carDetails.name}
             onChange={handleChange}
           />
         </label>

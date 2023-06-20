@@ -18,6 +18,7 @@ function SignInComponent() {
   useEffect(() => {
     if (userData.status === 'success') {
       navigate('/main');
+      localStorage.setItem('user', JSON.stringify(userData));
     }
   }, [userData, navigate]);
 
