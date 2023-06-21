@@ -4,23 +4,26 @@
 
 .header {
   width: 100%;
-  height: auto;
+  height: 60px;
   position: relative;
+  color: #fff;
+  background-color: #d66356;
 }
 
 .title {
   text-align: center;
   margin: 0;
-  padding: 13px 0;
+  padding: 19.2px 0;
   font-size: 1.15rem;
   font-weight: 500;
 }
 
 .back-btn {
   position: absolute;
-  left: 25px;
-  top: 13.5px;
-  font-size: 1.4rem;
+  left: 10px;
+  top: 16px;
+  font-size: 1.8rem;
+  color: #272a31;
 }
 
 .back-btn:hover {
@@ -138,14 +141,15 @@
 }
 
 @media screen and (min-width: 992px) {
-  .header {
-    background-color: #edf3ffd3;
+  .back-btn {
+    top: 14px;
+    font-size: 2rem;
   }
 
   .img-container {
     width: 85%;
     height: 400px;
-    margin: 20px auto 0 auto;
+    margin: 0 auto;
   }
 
   .description {
@@ -177,9 +181,9 @@
   }
 
   .back-btn {
-    left: 45px;
-    top: 18.5px;
-    font-size: 1.8rem;
+    left: 15px;
+    top: 13px;
+    font-size: 2.2rem;
   }
 
   .img-container {
