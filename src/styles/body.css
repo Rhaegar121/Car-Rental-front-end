@@ -31,12 +31,11 @@ body {
 }
 
 .header-book-btn {
-  background-color: rgb(#ee5029);
+  background-color: #ee5029;
   border-radius: 25px;
   padding: 15px;
   cursor: pointer;
   margin: 20px;
-  background-color: white;
   height: 45px;
   width: 120px;
   color: #ee5029;
@@ -44,12 +43,11 @@ body {
 }
 
 .header-book-btn-signup {
-  background-color: rgb(140, 192, 38);
+  background-color: #ee5029;
   border-radius: 25px;
   padding: 15px;
   cursor: pointer;
   margin: 20px;
-  background-color: white;
   height: 45px;
   width: 120px;
   color: #ee5029;
