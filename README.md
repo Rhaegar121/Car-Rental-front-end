@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# 📗 Table of Contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [❓ FAQ](#faq)
+- [📝 License](#license)
 
-## Available Scripts
+# 📖 [Car Rental App] <a name="about-project"></a>
 
-In the project directory, you can run:
+> The **Car Rental App** is an app for renting cars. 
 
-### `npm start`
+## 🛠 Built With <a name="built-with"></a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Tech Stack <a name="tech-stack"></a>
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+  </ul>
+</details>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Key Features <a name="key-features"></a>
 
-### `npm test`
+- SignUp & SignIn
+- View All Cars
+- View Details Of the car
+- Add a car to the page
+- Add a car to Favourites
+- Delete a car
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **[Generate greeting messages]**
 
-### `npm run build`
+### 🚀 Live Demo <a name="live-demo"></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> Comming soon...
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 💻 Getting Started <a name="getting-started"></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To get a local copy up and running follow these simple example steps.
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+In order to run this project you need:
+- Vistual Studio Code
+- Browser (Firefox / Google Chrome)
+- Node.js (v6.11.2+)
+- linters
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Clone this repository to your desired folder:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```sh
+  cd my-folder
+  git clone https://github.com/Rhaegar121/Capstone-Front-End.git
+```
 
-## Learn More
+## Install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```sh
+ npm install --save -dev
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Start server
 
-### Code Splitting
+``` npm start ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## To test the app run following command
 
-### Analyzing the Bundle Size
+``` npm test ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 👥 Authors <a name="authors"></a>
 
-### Making a Progressive Web App
+👤 **Rachel Issac**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- GitHub: [Rachelwebdev](https://github.com/Rachelwebdev)
+- Twitter: [@rachelisaac13](https://twitter.com/Rachelisaac13)
+- LinkedIn: [Rachel Isaac](https://www.linkedin.com/in/rachelisaac13/)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+👤 **Kaung Myat Kyaw**
 
-### Deployment
+- GitHub: [@githubhandle](https://github.com/Rhaegar121)
+- Twitter [@20Rhaegar](https://twitter.com/20Rhaegar)
+- LinkedIn: [Kaung Myat Kyaw](https://www.linkedin.com/in/kaung-myat-kyaw-391720227/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+👤 **Jerome Jay Osman**
 
-### `npm run build` fails to minify
+- GitHub: [@Jay G.O.](https://github.com/187jjay187)
+- LinkedIn: [Jerome Osman](https://www.linkedin.com/in/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+👤 **Innocent N.**
+
+GitHub: [@chaseknis](https://github.com/Chaseknis/)
+Twitter: [@ChaseToTheWorld](https://twitter.com/chasetotheworld)
+LinkedIn: [Innocent N.](https://www.linkedin.com/in/innocent-n-200826252/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Rhaegar121/Capstone-Front-End/issues).
+
+## ⭐️ Show your support <a name="support"></a>
+
+Give a ⭐️ if you like this project!
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
