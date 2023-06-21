@@ -23,26 +23,31 @@ function SignInComponent() {
   }, [userData, navigate]);
 
   return (
-    <div>
-      <h2>Sign In</h2>
-      <input
-        type="email"
-        placeholder="Enter your email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Enter your password"
-        value={passsword}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button
-        type="button"
-        onClick={handleSignIn}
-      >
-        Sign In
-      </button>
+    <div className="sign-in-form">
+      <h1 className="sign-in-title">Welcome, please sign in to continue</h1>
+      <div className="sign-in-inputs">
+        <input
+          className="email-input"
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          className="password-input"
+          type="password"
+          placeholder="Enter your password"
+          value={passsword}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button
+          className="sign-in-button"
+          type="button"
+          onClick={handleSignIn}
+        >
+          Sign In
+        </button>
+      </div>
     </div>
   );
 }
