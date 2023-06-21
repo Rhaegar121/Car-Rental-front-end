@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/body.css';
 
 function Body() {
   return (
-    <header className="header">
+    <header className="body-header">
       <span className="header-title">Book or Rent Out Your Favourite Car</span>
       <div className="header-book-btn-space">
         <span className="header-book-btn">
