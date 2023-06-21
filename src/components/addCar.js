@@ -7,23 +7,15 @@ import Navbar from './navbar';
 
 export default function AddCar() {
   const userDataFromStorage = JSON.parse(localStorage.getItem('user'));
-  // const status = useSelector((state) => state.car.status);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (status === 'success') {
-
-  //   }
-  // }, [status, navigate]);
-
   const [carDetails, setCarDetails] = useState({
-    name: '', // Changed from 'name'
+    name: '',
     price: '',
     ratings: 0,
     image: '',
     description: '',
-    // user_id: userDataFromStorage.id,
   });
 
   const handleChange = (event) => {
@@ -34,28 +26,19 @@ export default function AddCar() {
     }));
   };
 
-  // const handleFileChange = (event) => {
-  //   const file = event.target.files[0];
-  //   setCarDetails((prevDetails) => ({
-  //     ...prevDetails,
-  //     image: file, // Changed from carPhoto
-  //   }));
-  // };
-
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const {
-      name, // Changed from name
+      name,
       price,
       ratings,
       image,
       description,
-      // user_id,
     } = carDetails;
 
     const newCar = {
-      name, // Changed from name
+      name,
       price,
       ratings,
       image,
@@ -67,15 +50,12 @@ export default function AddCar() {
     navigate('/main');
 
     setCarDetails({
-      name: '', // Changed from name
+      name: '',
       price: '',
       ratings: 0,
       image: '',
       description: '',
-      // user_id: userDataFromStorage.id,
     });
-
-    // navigate('/main');
   };
 
   const handleBack = () => {
@@ -83,87 +63,81 @@ export default function AddCar() {
   };
 
   return (
-    <div className="car_form_container">
+    <div className="add_car_container">
       <Navbar />
-      <h2>Add a New Car</h2>
-      <form className="add_car_form_wrapper" onSubmit={handleSubmit}>
-        <label htmlFor="name">
-          Name:
-          <input
-            id="brand"
-            type="text"
-            name="name"
-            value={carDetails.name}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label htmlFor="rentAmount">
-          Price (USD):
-          <input
-            id="rentAmount"
-            type="number"
-            name="price"
-            value={carDetails.price}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <div className="ratings_and_photo_wrapper">
-          <label htmlFor="rating">
-            Ratings:
-            <input
-              id="rating"
-              type="number"
-              name="ratings"
-              min={0}
-              max={5}
-              value={carDetails.ratings}
-              onChange={handleChange}
-            />
-          </label>
-          <br />
-          <label htmlFor="carPhoto">
-            Car image url link:
-            <textarea
-              id="carPhoto"
-              // type="text"
-              // accept="image/*"
-              name="image"
-              value={carDetails.image}
-              onChange={handleChange}
-            />
-          </label>
-          {/* <label htmlFor="carPhoto">
-            Car Photo:
-            <input
-              id="carPhoto"
-              type="file"
-              accept="image/*"
-              name="image"
-              onChange={handleFileChange}
-            />
-          </label> */}
-        </div>
+      <div className="add_car_wrapper">
+        <div className="car_form_container">
+          <h2>Add a New Car</h2>
+          <form className="add_car_form_wrapper" onSubmit={handleSubmit}>
+            <label htmlFor="name">
+              Name:
+              <input
+                id="brand"
+                type="text"
+                name="name"
+                value={carDetails.name}
+                onChange={handleChange}
+              />
+            </label>
+            <br />
+            <label htmlFor="rentAmount">
+              Price (USD):
+              <input
+                id="rentAmount"
+                type="number"
+                name="price"
+                value={carDetails.price}
+                onChange={handleChange}
+              />
+            </label>
+            <br />
+            <div className="ratings_and_photo_wrapper">
+              <label htmlFor="rating">
+                Ratings:
+                <input
+                  id="rating"
+                  className="rating"
+                  type="number"
+                  name="ratings"
+                  min={0}
+                  max={5}
+                  value={carDetails.ratings}
+                  onChange={handleChange}
+                />
+              </label>
+              <br />
+              <label htmlFor="carPhoto">
+                Car image url link:
+                <input
+                  id="carPhoto"
+                  className="carPhoto"
+                  name="image"
+                  value={carDetails.image}
+                  onChange={handleChange}
+                />
+              </label>
+            </div>
 
-        <br />
-        <label htmlFor="carDetails">
-          Car Description:
-          <textarea
-            id="carDetails"
-            name="description"
-            value={carDetails.description}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <button type="submit" className="add_car_button">
-          Add Car
-        </button>
+            <br />
+            <label htmlFor="carDetails">
+              Car Description:
+              <textarea
+                id="carDetails"
+                name="description"
+                value={carDetails.description}
+                onChange={handleChange}
+              />
+            </label>
+            <br />
+            <button type="submit" className="add_car_button">
+              Add Car
+            </button>
+          </form>
+        </div>
         <button type="button" onClick={handleBack} className="back_button">
           Back
         </button>
-      </form>
+      </div>
     </div>
   );
 }

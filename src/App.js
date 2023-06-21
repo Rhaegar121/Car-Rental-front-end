@@ -7,6 +7,7 @@ import Main from './components/Main';
 import Favorites from './components/Favourite';
 import AddCar from './components/addCar';
 import Detail from './components/Detail';
+import './App.css';
 
 function App() {
   return (
