@@ -41,6 +41,18 @@ export const registerUser = createAsyncThunk(
   },
 );
 
+export const logOutUser = createAsyncThunk(
+  'user/logout',
+  async () => {
+    try {
+      const response = await axios.delete(`${baseURL}/users/logout`);
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response.data.message || 'Logout failed');
+    }
+  },
+);
+
 const initialState = {
   status: 'idle',
   id: null,
@@ -80,6 +92,18 @@ const userSlice = createSlice({
         status: 'error',
         error: action.error.message,
       }))
+      .addCase(logOutUser.fulfilled, (state, action) => ({
+        ...state,
+        status: action.payload.message,
+        name: '',
+        email: '',
+        id: null,
+      }))
+      .addCase(logOutUser.rejected, (state, action) => ({
+        ...state,
+        status: 'error',
+        error: action.error.message,
+      }))
       .addMatcher(
         (action) => action.type.endsWith('/rejected'),
         (state, action) => ({
@@ -91,5 +115,4 @@ const userSlice = createSlice({
   },
 });
 
-export const { logOutUser } = userSlice.actions;
 export default userSlice.reducer;

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { logOutUser } from '../redux/userSlice';
 import '../styles/navbar.css';
 
 export default function Navbar() {
   const [isMenuActive, setIsMenuActive] = useState(false);
-  // const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleHamburgerClick = () => {
     setIsMenuActive(!isMenuActive);
@@ -27,6 +28,7 @@ export default function Navbar() {
   };
 
   const handleLogoutClick = () => {
+    dispatch(logOutUser());
     localStorage.clear();
     setIsMenuActive(false);
   };

@@ -1,8 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/body.css';
 
 function Body() {
+  const userData = JSON.parse(localStorage.getItem('user'));
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (userData) {
+      navigate('/main');
+    }
+  }, [userData, navigate]);
+
   return (
     <header className="body-header">
       <span className="header-title">Book or Rent Out Your Favourite Car</span>
