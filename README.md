@@ -43,9 +43,9 @@
 
 - **[Generate greeting messages]**
 
-### 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live Demo <a name="live-demo"></a>
 
-> Comming soon...
+- Front-end deployed website: [Live Demo](car-rental-capstone.netlify.app)
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
