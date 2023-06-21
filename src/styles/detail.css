@@ -72,12 +72,12 @@
 .rating {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   gap: 5px;
 }
 
 .user-icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding: 8px;
   color: #ee7e29;
   background-color: #fff;

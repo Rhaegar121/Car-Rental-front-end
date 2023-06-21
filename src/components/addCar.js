@@ -96,7 +96,7 @@ export default function AddCar() {
                 Ratings:
                 <input
                   id="rating"
-                  className="rating"
+                  className="ratings"
                   type="number"
                   name="ratings"
                   min={0}

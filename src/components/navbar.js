@@ -44,7 +44,7 @@ export default function Navbar() {
       <ul className={`nav_menu ${isMenuActive ? 'active' : ''}`}>
         <Link
           className="logo"
-          to="/"
+          to="/main"
           onClick={handleMenuLinkClick}
         >
           Car Rental
