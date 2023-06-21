@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import Navbar from './navbar';
 import { fetchfavourites } from '../redux/favouritesSlice';
-import carImage from '../assets/carImage.jpg';
 import StarRating from './StarRating';
 import '../styles/main.css';
 
@@ -69,7 +68,7 @@ function Favourite() {
             >
               <div className="image">
                 <img
-                  src={carImage}
+                  src={car.image}
                   alt="mercedez benz"
                   className="car-image"
                 />

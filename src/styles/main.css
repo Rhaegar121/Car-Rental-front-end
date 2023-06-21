@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 .main-container {
   display: flex;
   justify-content: space-between;

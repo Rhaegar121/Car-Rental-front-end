@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteCar, fetchCars } from '../redux/carsSlice';
-import carImage from '../assets/carImage.jpg';
 import StarRating from './StarRating';
 import '../styles/main.css';
 
@@ -63,7 +62,7 @@ function DeleteCar() {
         {cars.slice(firstNumber, lastNumber).map((car) => (
           <div className="car-container" key={car.id}>
             <div className="image">
-              <img src={carImage} alt="mercedez benz" className="car-image" />
+              <img src={car.image} alt="mercedez benz" className="car-image" />
             </div>
             <div className="car-details">
               <div className="right">

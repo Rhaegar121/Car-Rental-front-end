@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../styles/main.css';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
-import carImage from '../assets/carImage.jpg';
 import { fetchCars } from '../redux/carsSlice';
 import StarRating from './StarRating';
 
@@ -65,7 +64,7 @@ function CarCard() {
             >
               <div className="image">
                 <img
-                  src={carImage}
+                  src={car.image}
                   alt="mercedez benz"
                   className="car-image"
                 />
