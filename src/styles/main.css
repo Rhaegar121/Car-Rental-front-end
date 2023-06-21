@@ -4,8 +4,8 @@ a {
 }
 
 .main-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   position: relative;
   padding: 2rem 8rem;
 }
@@ -73,7 +73,7 @@ a {
 }
 
 .delete-car-button {
-  margin: 0px auto;
+  margin: 0 auto;
   display: block;
   font-size: 0.9rem;
   padding: 10px 14px;
@@ -88,6 +88,7 @@ a {
 .delete-car-button:hover,
 .delete-car-button:focus {
   box-shadow: none;
+  cursor: pointer;
   transform: translateY(-60%) translateY(-2px);
 }
 
@@ -104,7 +105,7 @@ a {
   }
 
   .main-container {
-    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
     padding: 2rem 1rem;
   }
 }
