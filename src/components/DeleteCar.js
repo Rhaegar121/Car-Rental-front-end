@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import { deleteCar, fetchCars } from '../redux/carsSlice';
 import StarRating from './StarRating';
 import '../styles/main.css';
@@ -57,7 +58,7 @@ function DeleteCar() {
           onClick={prev}
           disabled={prevDisabled}
         >
-          Prev
+          <BsArrowLeft />
         </button>
         {cars.slice(firstNumber, lastNumber).map((car) => (
           <div className="car-container" key={car.id}>
@@ -89,7 +90,7 @@ function DeleteCar() {
           onClick={next}
           disabled={nextDisabled}
         >
-          Next
+          <BsArrowRight />
         </button>
         <Link to="/main" className="back-to-main-link">
           Back to Main
