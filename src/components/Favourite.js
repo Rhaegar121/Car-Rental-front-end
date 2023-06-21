@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Navbar from './navbar';
 import { fetchfavourites } from '../redux/favouritesSlice';
-import carImage from '../assets/carImage.jpg';
 import StarRating from './StarRating';
 import '../styles/main.css';
 
@@ -15,6 +14,15 @@ function Favourite() {
   useEffect(() => {
     dispatch(fetchfavourites(userData.id));
   }, [dispatch, userData.id]);
+
+  if (cars === undefined || cars.length === 0) {
+    return (
+      <>
+        <Navbar />
+        <h1>You have no favourite car yet!</h1>
+      </>
+    );
+  }
 
   return (
     <>
@@ -30,7 +38,7 @@ function Favourite() {
           >
             <div className="image">
               <img
-                src={carImage}
+                src={car.image}
                 alt="mercedez benz"
                 className="car-image"
               />
