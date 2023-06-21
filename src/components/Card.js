@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../styles/main.css';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
-import carImage from '../assets/carImage.jpg';
 import { fetchCars } from '../redux/carsSlice';
 import StarRating from './StarRating';
 
@@ -16,7 +15,6 @@ function CarCard() {
   const lastNumber = number * showPerPage;
   const firstNumber = lastNumber - showPerPage;
   const car = cars.slice(firstNumber, lastNumber);
-
   const [prevDisabled, setPrevDisabled] = useState(false);
   const [nextDisabled, setNextDisabled] = useState(false);
 
@@ -55,14 +53,17 @@ function CarCard() {
           <BsArrowLeft />
         </button>
         {car.map((car) => (
-          <Link to={`/cars/${car.id}`} key={car.id}>
+          <Link
+            to={`/cars/${car.id}`}
+            key={car.id}
+          >
             <div
               className="car-container"
               key={car.id}
             >
               <div className="image">
                 <img
-                  src={carImage}
+                  src={car.image}
                   alt="mercedez benz"
                   className="car-image"
                 />

@@ -4,7 +4,7 @@ import Body from './components/Body';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Main from './components/Main';
-import Favorites from './components/Favourite';
+import Favourites from './components/Favourite';
 import AddCar from './components/addCar';
 import Detail from './components/Detail';
 import './App.css';
@@ -19,7 +19,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/main" element={<Main />} />
           <Route path="/cars/:id" element={<Detail />} />
-          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/favourites" element={<Favourites />} />
           <Route path="/add_car" element={<AddCar />} />
         </Routes>
       </div>

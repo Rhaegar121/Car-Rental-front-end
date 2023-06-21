@@ -20,6 +20,7 @@
       "import/no-unresolved": "off",
       "react/no-array-index-key": "off",
       "no-shadow": "off",
+      "linebreak-style": "off",
       "max-len": ["error", {
         "code": 120,
         "ignoreComments": true,
