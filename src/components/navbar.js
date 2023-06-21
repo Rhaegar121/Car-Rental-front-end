@@ -77,6 +77,13 @@ export default function Navbar() {
               Add New Car
             </button>
           </li>
+          <Link
+            className="menu_link"
+            to="/delete_car"
+            onClick={handleMenuLinkClick}
+          >
+            Delete Car
+          </Link>
         </div>
         <li className="button_wrapper">
           <Link
