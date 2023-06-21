@@ -7,6 +7,7 @@ import Main from './components/Main';
 import Favourites from './components/Favourite';
 import AddCar from './components/addCar';
 import Detail from './components/Detail';
+import DeleteCar from './components/DeleteCar';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/cars/:id" element={<Detail />} />
           <Route path="/favourites" element={<Favourites />} />
           <Route path="/add_car" element={<AddCar />} />
+          <Route path="/delete_car" element={<DeleteCar />} />
         </Routes>
       </div>
     </Router>
