@@ -7,7 +7,7 @@
 
 .heading {
   text-align: center;
-  color: rgb(4, 138, 200);
+  color: rgb(214, 99, 86);
 }
 
 .car-container {
@@ -43,7 +43,7 @@
   top: 50%;
   height: 80px;
   width: 80px;
-  background-color: rgb(4, 138, 200);
+  background-color: rgb(214, 99, 86);
   border: none;
   font-size: 2rem;
   cursor: pointer;
