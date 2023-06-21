@@ -26,6 +26,11 @@ export default function Navbar() {
     navigate('/add_car');
   };
 
+  const handleLogoutClick = () => {
+    localStorage.clear();
+    setIsMenuActive(false);
+  };
+
   return (
     <nav>
       <div
@@ -73,7 +78,7 @@ export default function Navbar() {
             </li>
           </div>
           <li className="button_wrapper">
-            <Link className="sign_out_button" to="/" onClick={handleMenuLinkClick}>
+            <Link className="sign_out_button" to="/" onClick={handleLogoutClick}>
               Sign Out
             </Link>
           </li>
