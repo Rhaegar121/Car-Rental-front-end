@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import { deleteCar, fetchCars } from '../redux/carsSlice';
 import StarRating from './StarRating';
+import Navbar from './navbar';
 import '../styles/main.css';
 
 function DeleteCar() {
@@ -50,6 +50,7 @@ function DeleteCar() {
 
   return (
     <>
+      <Navbar />
       <h1 className="heading">Delete a Car</h1>
       <div className="main-container">
         <button
@@ -92,9 +93,6 @@ function DeleteCar() {
         >
           <BsArrowRight />
         </button>
-        <Link to="/main" className="back-to-main-link">
-          Back to Main
-        </Link>
       </div>
     </>
   );

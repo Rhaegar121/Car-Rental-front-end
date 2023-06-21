@@ -74,7 +74,7 @@ function Favourite() {
                 />
               </div>
 
-              <div className="car-detils">
+              <div className="car-details">
                 <div className="right">
                   <p className="car-name">{car.name}</p>
                   <StarRating value={car.ratings} />

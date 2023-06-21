@@ -35,7 +35,7 @@ a {
   object-fit: cover;
 }
 
-.car-detils {
+.car-details {
   height: 20%;
   display: flex;
   justify-content: space-between;
@@ -70,6 +70,32 @@ a {
 .star {
   font-size: 20px;
   color: rgb(244, 148, 3);
+}
+
+.delete-car-button {
+  margin: 0px auto;
+  display: block;
+  font-size: 0.9rem;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 17px;
+  color: #fff;
+  background-color: #ea1313;
+  box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(-60%);
+}
+
+.delete-car-button:hover,
+.delete-car-button:focus {
+  box-shadow: none;
+  transform: translateY(-60%) translateY(-2px);
+}
+
+.back-to-main-link {
+  position: absolute;
+  left: 25px;
+  top: 13.5px;
+  font-size: 1.4rem;
 }
 
 @media (max-width: 900px) {
