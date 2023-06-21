@@ -49,44 +49,30 @@ export default function Navbar() {
         >
           Car Rental
         </Link>
-        <div className="menu_links_wrapper">
-          <li>
-            <Link
-              className="menu_link"
-              to="/main"
-              onClick={handleMenuLinkClick}
-            >
-              Cars
+        <div className="menu_links_container">
+          <div className="menu_links_wrapper">
+            <li>
+              <Link className="menu_link" to="/main" onClick={handleMenuLinkClick}>
+                Cars
+              </Link>
+            </li>
+            <li>
+              <Link className="menu_link" to="/favorites" onClick={handleMenuLinkClick}>
+                Favorites
+              </Link>
+            </li>
+            <li>
+              <button className="menu_link add_new_car_link" type="button" onClick={handleAddCarClick}>
+                Add New Car
+              </button>
+            </li>
+          </div>
+          <li className="button_wrapper">
+            <Link className="sign_out_button" to="/" onClick={handleMenuLinkClick}>
+              Sign Out
             </Link>
-          </li>
-          <li>
-            <Link
-              className="menu_link"
-              to="/favourites"
-              onClick={handleMenuLinkClick}
-            >
-              Favorites
-            </Link>
-          </li>
-          <li>
-            <button
-              className="menu_link"
-              type="button"
-              onClick={handleAddCarClick}
-            >
-              Add New Car
-            </button>
           </li>
         </div>
-        <li className="button_wrapper">
-          <Link
-            className="sign_out_button"
-            to="/"
-            onClick={handleMenuLinkClick}
-          >
-            Sign Out
-          </Link>
-        </li>
       </ul>
     </nav>
   );

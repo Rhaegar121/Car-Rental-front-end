@@ -1,7 +1,6 @@
 .sign-up-form {
   padding-top: 4rem;
-
-  /* background-image: url(../assets/carrental.jpg); */
+  background-image: url(../assets/second-background.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: fixed;
@@ -15,6 +14,7 @@
 .sign-up-inputs {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .name-input,
@@ -35,13 +35,13 @@
 }
 
 .sign-up-button {
-  border: none;
   margin-bottom: 10px;
   background-color: white;
   height: 45px;
   width: 100px;
   border-radius: 25px;
   color: #ee5029;
+  border: 5px solid #ee5029;
 }
 
 .sign-in-btn {
@@ -67,8 +67,15 @@
   }
 
   .sign-up-form {
-    padding-top: 5rem;
-    background-image: none;
-    background-color: #ee5029;
+    padding-top: 4rem;
+    background-image: url(../assets/second-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

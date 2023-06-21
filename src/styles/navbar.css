@@ -1,5 +1,5 @@
 nav {
-  padding: 24px 24px;
+  top: 0;
 }
 
 .menu_link {
@@ -18,7 +18,7 @@ nav {
   z-index: 100;
   top: 0;
   left: 0;
-  background-color: #fff;
+  background-color: rgb(214, 99, 86);
   padding: 1rem;
 }
 
@@ -68,9 +68,9 @@ ul li {
   left: 0;
 }
 
-.menu_links_container .button_wrapper {
+/* .menu_links_container .button_wrapper {
   display: none;
-}
+} */
 
 .logo {
   color: #fff;
@@ -78,6 +78,12 @@ ul li {
   font-size: 24px;
   font-weight: 700;
   padding-bottom: 1rem;
+}
+
+.menu_links_container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .menu_links_wrapper {
@@ -93,6 +99,14 @@ ul li {
   color: #272a31;
   padding: 10px 16px;
   border-radius: 5px;
+}
+
+.add_new_car_link {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  padding: 0;
+  color: #fff;
 }
 
 @media screen and (min-width: 768px) {
