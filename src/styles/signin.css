@@ -1,6 +1,6 @@
 .sign-in-form {
   padding-top: 9rem;
-  background-image: url(../assets/carrental.jpg);
+  background-image: url(../assets/second-background.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: fixed;
@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .email-input,
@@ -30,12 +30,12 @@
 
 .sign-in-button {
   margin: 20px;
-  border: none;
   background-color: white;
   height: 45px;
   width: 120px;
   border-radius: 25px;
   color: #ee5029;
+  border: 5px solid #ee5029;
 }
 
 .sign-in-inputs {
@@ -43,14 +43,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
 }
 
 .sign-out-button {
