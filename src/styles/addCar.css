@@ -70,7 +70,7 @@
 
 .car_form_container h2 {
   text-align: center;
-  color: rgb(4, 138, 200);
+  color: rgb(214, 99, 86);
   padding-bottom: 2rem;
 }
 
@@ -78,7 +78,7 @@
   padding: 10px 12px;
   align-self: flex-end;
   color: #fff;
-  background-color: rgb(4, 138, 200);
+  background-color: rgb(214, 99, 86);
   border: none;
   border-radius: 5px;
 }
