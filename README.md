@@ -5,6 +5,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [KanbanBoard](#kanban-board)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -46,6 +47,21 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - Front-end deployed website: [Live Demo](car-rental-capstone.netlify.app)
+
+<!-- Kanban Board -->
+
+## Kanban Board <a name="kanban-board"></a>
+
+- [Kanban-Board-Front-End](https://github.com/users/Rhaegar121/projects/5)
+- [Kanban-Board-Back-End](https://github.com/users/Rhaegar121/projects/6)
+
+
+### Front End Kanban Board Initital State ![FRONTEND KANBAN](https://github.com/Rhaegar121/Capstone-Front-End/assets/90766123/12fc878d-0f31-4e3c-a296-f136fe51e1e5)
+### Back End Kanban Board Initital State (![BACKEND KANBAN](https://github.com/Rhaegar121/Capstone-Front-End/assets/90766123/f91d088f-9f0e-42d3-83b8-71605b3eb8b0)
+
+- At the end of this project, we are still 4 members: @Rhaegar121 @Chaseknis @Rachelwebdev @187jjay187
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
