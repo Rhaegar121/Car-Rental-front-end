@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import Navbar from './navbar';
@@ -57,35 +56,29 @@ function Favourite() {
           <BsArrowLeft />
         </button>
         {car.map((car) => (
-          <Link
-            to={`/cars/${car.id}`}
+          <div
+            className="car-container"
             key={car.id}
-            className="links"
           >
-            <div
-              className="car-container"
-              key={car.id}
-            >
-              <div className="image">
-                <img
-                  src={car.image}
-                  alt="mercedez benz"
-                  className="car-image"
-                />
-              </div>
+            <div className="image">
+              <img
+                src={car.image}
+                alt="mercedez benz"
+                className="car-image"
+              />
+            </div>
 
-              <div className="car-details">
-                <div className="right">
-                  <p className="car-name">{car.name}</p>
-                  <StarRating value={car.ratings} />
-                </div>
-                <div className="left">
-                  <p className="price">{car.price}</p>
-                  <p className="per-month">per month</p>
-                </div>
+            <div className="car-details">
+              <div className="right">
+                <p className="car-name">{car.name}</p>
+                <StarRating value={car.ratings} />
+              </div>
+              <div className="left">
+                <p className="price">{car.price}</p>
+                <p className="per-month">per month</p>
               </div>
             </div>
-          </Link>
+          </div>
         ))}
         <button
           className="btn next-btn"
