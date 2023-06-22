@@ -7,7 +7,7 @@ import { fetchfavourites } from '../redux/favouritesSlice';
 import StarRating from './StarRating';
 import '../styles/main.css';
 
-const Favourite = () => {
+function Favourite() {
   const userData = JSON.parse(localStorage.getItem('user'));
   const dispatch = useDispatch();
   const cars = useSelector((state) => state.favourite.cars);
@@ -16,7 +16,7 @@ const Favourite = () => {
   const showPerPage = 3;
   const lastNumber = number * showPerPage;
   const firstNumber = lastNumber - showPerPage;
-  const car = cars.slice(firstNumber, lastNumber);
+  const car = Array.isArray(cars) ? cars.slice(firstNumber, lastNumber) : [];
 
   const [prevDisabled, setPrevDisabled] = useState(false);
   const [nextDisabled, setNextDisabled] = useState(false);
@@ -25,21 +25,21 @@ const Favourite = () => {
     dispatch(fetchfavourites(userData.id));
   }, [dispatch, userData.id]);
 
+  useEffect(() => {
+    // Update the prev and next buttons' disabled state based on car length
+    setPrevDisabled(number <= 1);
+    setNextDisabled(number >= car.length);
+  }, [number, car.length]);
+
   const prev = () => {
     if (number > 1) {
       setNumber(number - 1);
-      setNextDisabled(false);
-    } else {
-      setPrevDisabled(true);
     }
   };
 
   const next = () => {
-    if (number <= car.length) {
+    if (number < Math.ceil(cars.length / showPerPage)) {
       setNumber(number + 1);
-      setPrevDisabled(false);
-    } else {
-      setNextDisabled(true);
     }
   };
 
@@ -56,7 +56,7 @@ const Favourite = () => {
         >
           <BsArrowLeft />
         </button>
-        {cars.map((car) => (
+        {car.map((car) => (
           <Link
             to={`/cars/${car.id}`}
             key={car.id}
@@ -98,6 +98,6 @@ const Favourite = () => {
       </div>
     </>
   );
-};
+}
 
 export default Favourite;
