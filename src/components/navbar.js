@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { logOutUser } from '../redux/userSlice';
 import '../styles/navbar.css';
 
-export default function Navbar() {
+const Navbar = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -88,4 +88,6 @@ export default function Navbar() {
       </ul>
     </nav>
   );
-}
+};
+
+export default Navbar;

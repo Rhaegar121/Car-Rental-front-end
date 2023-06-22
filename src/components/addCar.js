@@ -5,7 +5,7 @@ import { addCar } from '../redux/carsSlice';
 import '../styles/addCar.css';
 import Navbar from './navbar';
 
-export default function AddCar() {
+const AddCar = () => {
   const userDataFromStorage = JSON.parse(localStorage.getItem('user'));
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -140,4 +140,6 @@ export default function AddCar() {
       </div>
     </div>
   );
-}
+};
+
+export default AddCar;

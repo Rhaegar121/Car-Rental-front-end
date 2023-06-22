@@ -78,10 +78,6 @@ Clone this repository to your desired folder:
 
 ``` npm start ```
 
-## To test the app run following command
-
-``` npm test ```
-
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Rachel Issac**

@@ -10,23 +10,21 @@ import Detail from './components/Detail';
 import DeleteCar from './components/DeleteCar';
 import './App.css';
 
-function App() {
-  return (
-    <Router>
-      <div className="page_container">
-        <Routes>
-          <Route path="/" element={<Body />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/main" element={<Main />} />
-          <Route path="/cars/:id" element={<Detail />} />
-          <Route path="/favourites" element={<Favourites />} />
-          <Route path="/add_car" element={<AddCar />} />
-          <Route path="/delete_car" element={<DeleteCar />} />
-        </Routes>
-      </div>
-    </Router>
-  );
-}
+const App = () => (
+  <Router>
+    <div className="page_container">
+      <Routes>
+        <Route path="/" element={<Body />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/main" element={<Main />} />
+        <Route path="/cars/:id" element={<Detail />} />
+        <Route path="/favourites" element={<Favourites />} />
+        <Route path="/add_car" element={<AddCar />} />
+        <Route path="/delete_car" element={<DeleteCar />} />
+      </Routes>
+    </div>
+  </Router>
+);
 
 export default App;

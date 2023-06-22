@@ -7,7 +7,7 @@ import { addfavourite } from '../redux/favouritesSlice';
 import { fetchCars } from '../redux/carsSlice';
 import '../styles/detail.css';
 
-function Detail() {
+const Detail = () => {
   const { id } = useParams();
   const userData = JSON.parse(localStorage.getItem('user'));
   const cars = useSelector((state) => state.car.cars);
@@ -73,6 +73,6 @@ function Detail() {
       <button type="button" className="add-favourites-btn" onClick={handleAddFavouriteClick}>Add to favorites</button>
     </section>
   );
-}
+};
 
 export default Detail;

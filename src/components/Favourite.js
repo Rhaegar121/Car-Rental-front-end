@@ -7,7 +7,7 @@ import { fetchfavourites } from '../redux/favouritesSlice';
 import StarRating from './StarRating';
 import '../styles/main.css';
 
-function Favourite() {
+const Favourite = () => {
   const userData = JSON.parse(localStorage.getItem('user'));
   const dispatch = useDispatch();
   const cars = useSelector((state) => state.favourite.cars);
@@ -98,6 +98,6 @@ function Favourite() {
       </div>
     </>
   );
-}
+};
 
 export default Favourite;

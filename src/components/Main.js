@@ -2,13 +2,11 @@ import React from 'react';
 import CarCard from './Card';
 import Navbar from './navbar';
 
-function Main() {
-  return (
-    <>
-      <Navbar />
-      <CarCard />
-    </>
-  );
-}
+const Main = () => (
+  <>
+    <Navbar />
+    <CarCard />
+  </>
+);
 
 export default Main;

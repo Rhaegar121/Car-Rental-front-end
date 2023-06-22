@@ -6,7 +6,7 @@ import StarRating from './StarRating';
 import Navbar from './navbar';
 import '../styles/main.css';
 
-function DeleteCar() {
+const DeleteCar = () => {
   const [userData, setUserData] = useState(null);
   const userId = useSelector((state) => state.user.id);
   const cars = useSelector((state) => state.car.cars);
@@ -96,6 +96,6 @@ function DeleteCar() {
       </div>
     </>
   );
-}
+};
 
 export default DeleteCar;

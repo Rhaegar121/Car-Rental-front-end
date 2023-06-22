@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchCars } from '../redux/carsSlice';
 import StarRating from './StarRating';
 
-function CarCard() {
+const CarCard = () => {
   const userId = useSelector((state) => state.user.id);
   const cars = useSelector((state) => state.car.cars);
   const dispatch = useDispatch();
@@ -94,6 +94,6 @@ function CarCard() {
       </div>
     </>
   );
-}
+};
 
 export default CarCard;

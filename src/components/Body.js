@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/body.css';
 
-function Body() {
+const Body = () => {
   const userData = JSON.parse(localStorage.getItem('user'));
   const navigate = useNavigate();
 
@@ -26,6 +26,6 @@ function Body() {
       </div>
     </header>
   );
-}
+};
 
 export default Body;

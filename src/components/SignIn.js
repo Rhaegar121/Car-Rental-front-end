@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../redux/userSlice';
 import '../styles/signin.css';
 
-function SignInComponent() {
+const SignInComponent = () => {
   const [email, setEmail] = useState('');
   const [passsword, setPassword] = useState('');
   const navigate = useNavigate();
@@ -50,6 +50,6 @@ function SignInComponent() {
       </div>
     </div>
   );
-}
+};
 
 export default SignInComponent;

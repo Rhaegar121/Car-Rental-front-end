@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-function StarRating({ value }) {
+const StarRating = ({ value }) => {
   const filledStars = '★'.repeat(value);
   const emptyStars = '☆'.repeat(5 - value);
 
@@ -10,7 +10,7 @@ function StarRating({ value }) {
       {emptyStars}
     </div>
   );
-}
+};
 
 StarRating.propTypes = {
   value: PropTypes.number.isRequired,
