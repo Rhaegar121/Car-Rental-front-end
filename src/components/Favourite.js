@@ -89,7 +89,7 @@ function Favourite() {
               onClick={() => handleDeleteFavourite(car.id)}
               type="button"
             >
-              Delete
+              Remove from favourites
             </button>
           </div>
         ))}
