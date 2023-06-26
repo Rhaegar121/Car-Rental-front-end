@@ -44,6 +44,10 @@
   border: 5px solid #ee5029;
 }
 
+.sign-up-button:hover {
+  cursor: pointer;
+}
+
 .sign-in-btn {
   text-decoration: none;
   padding: 10px;
@@ -51,6 +55,10 @@
   border-radius: 25px;
   border: 3px solid #ee5029;
   color: white;
+}
+
+.sign-in-btn:hover {
+  cursor: pointer;
 }
 
 .session-buttons {
