@@ -33,6 +33,13 @@
 .success {
   text-align: center;
   color: #00e908;
+  padding: 5px 0;
+}
+
+.error {
+  text-align: center;
+  color: #ff0000;
+  padding: 5px 0;
 }
 
 .img-container {

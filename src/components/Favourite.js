@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
-import BeatLoader from 'react-spinners/BeatLoader';
 import Navbar from './navbar';
 import { fetchfavourites, deletefavourite } from '../redux/favouritesSlice';
 import StarRating from './StarRating';
@@ -12,8 +11,6 @@ function Favourite() {
   const dispatch = useDispatch();
   const cars = useSelector((state) => state.favourite.cars);
   const favourites = useSelector((state) => state.favourite.favourites);
-  const isLoading = useSelector((state) => state.favourite.isLoading);
-  const [loading, setLoading] = useState(false);
 
   const [number, setNumber] = useState(1);
   const showPerPage = 3;
@@ -25,9 +22,6 @@ function Favourite() {
   const [nextDisabled, setNextDisabled] = useState(false);
 
   useEffect(() => {
-    if (isLoading === true) {
-      setLoading(true);
-    }
     dispatch(fetchfavourites(userData.id));
   }, [dispatch, userData.id]);
 
@@ -95,7 +89,7 @@ function Favourite() {
               onClick={() => handleDeleteFavourite(car.id)}
               type="button"
             >
-              {isLoading === true ? <BeatLoader loading={loading} color="#fff" size={9} /> : 'Remove'}
+              Remove
             </button>
           </div>
         ))}
