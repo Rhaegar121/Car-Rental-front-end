@@ -70,7 +70,7 @@ const Detail = () => {
         <h3 className="about">About this car</h3>
         <p className="description">{car.description}</p>
       </div>
-      <button type="button" className="add-favourites-btn" onClick={handleAddFavouriteClick}>Add to favorites</button>
+      <button type="button" className="add-favourites-btn" onClick={handleAddFavouriteClick}>Add to favourites</button>
     </section>
   );
 };
