@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import BeatLoader from 'react-spinners/BeatLoader';
 import { registerUser } from '../redux/userSlice';
 import '../styles/signup.css';
 
@@ -9,6 +10,7 @@ function SignUpComponent() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.user);
@@ -20,7 +22,9 @@ function SignUpComponent() {
   };
 
   useEffect(() => {
-    if (userData.status === 'success') {
+    if (userData.status === 'loading') {
+      setLoading(true);
+    } else if (userData.status === 'success') {
       navigate('/main');
       localStorage.setItem('user', JSON.stringify(userData));
     }
@@ -60,7 +64,7 @@ function SignUpComponent() {
         />
         <div className="session-buttons">
           <button className="sign-up-button" type="button" onClick={handleSignUp}>
-            {userData.status === 'loading...' ? 'loading' : 'Sign Up'}
+            {userData.status === 'loading' ? <BeatLoader loading={loading} color="#ee5029" size={9} /> : 'Sign Up'}
           </button>
           <Link to="/signin" className="sign-in-btn">Sign In</Link>
         </div>
