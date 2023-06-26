@@ -68,6 +68,10 @@ const userSlice = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder
+      .addCase(registerUser.pending, (state) => ({
+        ...state,
+        status: 'loading',
+      }))
       .addCase(registerUser.fulfilled, (state, action) => ({
         ...state,
         status: 'success',
@@ -79,6 +83,10 @@ const userSlice = createSlice({
         ...state,
         status: 'error',
         error: action.error.message,
+      }))
+      .addCase(loginUser.pending, (state) => ({
+        ...state,
+        status: 'loading',
       }))
       .addCase(loginUser.fulfilled, (state, action) => ({
         ...state,

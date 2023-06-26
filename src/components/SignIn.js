@@ -45,7 +45,7 @@ const SignInComponent = () => {
           type="button"
           onClick={handleSignIn}
         >
-          Sign In
+          {userData.status === 'loading...' ? 'loading' : 'Sign In'}
         </button>
       </div>
     </div>

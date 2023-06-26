@@ -60,7 +60,7 @@ function SignUpComponent() {
         />
         <div className="session-buttons">
           <button className="sign-up-button" type="button" onClick={handleSignUp}>
-            Sign Up
+            {userData.status === 'loading...' ? 'loading' : 'Sign Up'}
           </button>
           <Link to="/signin" className="sign-in-btn">Sign In</Link>
         </div>
