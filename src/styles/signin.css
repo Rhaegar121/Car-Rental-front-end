@@ -38,6 +38,10 @@
   border: 5px solid #ee5029;
 }
 
+.sign-in-button:hover {
+  cursor: pointer;
+}
+
 .sign-in-inputs {
   display: flex;
   flex-direction: column;
