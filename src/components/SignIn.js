@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import BeatLoader from 'react-spinners/BeatLoader';
 import { loginUser } from '../redux/userSlice';
 import '../styles/signin.css';
 
 const SignInComponent = () => {
   const [email, setEmail] = useState('');
   const [passsword, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.user);
@@ -16,7 +18,9 @@ const SignInComponent = () => {
   };
 
   useEffect(() => {
-    if (userData.status === 'success') {
+    if (userData.status === 'loading') {
+      setLoading(true);
+    } else if (userData.status === 'success') {
       navigate('/main');
       localStorage.setItem('user', JSON.stringify(userData));
     }
@@ -45,7 +49,7 @@ const SignInComponent = () => {
           type="button"
           onClick={handleSignIn}
         >
-          {userData.status === 'loading...' ? 'loading' : 'Sign In'}
+          {userData.status === 'loading' ? <BeatLoader loading={loading} color="#ee5029" size={9} /> : 'Sign In'}
         </button>
       </div>
     </div>
