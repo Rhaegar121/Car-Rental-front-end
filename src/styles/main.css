@@ -16,6 +16,12 @@ a {
   color: rgb(214, 99, 86);
 }
 
+.sub-heading {
+  text-align: center;
+  padding-top: 10rem;
+  color: rgb(214, 99, 86);
+}
+
 .car-container {
   height: 400px;
   box-shadow: 0 0 10px 0 rgba(135, 133, 133, 0.747);

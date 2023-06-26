@@ -10,6 +10,8 @@ const DeleteCar = () => {
   const [userData, setUserData] = useState(null);
   const userId = useSelector((state) => state.user.id);
   const cars = useSelector((state) => state.car.cars);
+  const userCars = cars.filter((car) => car.user_id === userId);
+  console.log(userCars);
   const dispatch = useDispatch();
 
   const [number, setNumber] = useState(1);
@@ -52,6 +54,7 @@ const DeleteCar = () => {
     <>
       <Navbar />
       <h1 className="heading">Delete a Car</h1>
+      {userCars.length === 0 ? <h2 className="sub-heading">You can only delete cars you added.</h2> : ''}
       <div className="main-container">
         <button
           className="btn prev-btn"
@@ -61,7 +64,7 @@ const DeleteCar = () => {
         >
           <BsArrowLeft />
         </button>
-        {cars.slice(firstNumber, lastNumber).map((car) => (
+        {userCars.slice(firstNumber, lastNumber).map((car) => (
           <div className="car-container" key={car.id}>
             <div className="image">
               <img src={car.image} alt="mercedez benz" className="car-image" />
