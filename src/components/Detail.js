@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { AiOutlineStar, AiFillStar, AiOutlineUser } from 'react-icons/ai';
 import { IoIosArrowBack } from 'react-icons/io';
-import { addfavourite } from '../redux/favouritesSlice';
+import { addfavourite, fetchfavourites } from '../redux/favouritesSlice';
 import { fetchCars } from '../redux/carsSlice';
 import '../styles/detail.css';
 
@@ -13,11 +13,14 @@ const Detail = () => {
   const cars = useSelector((state) => state.car.cars);
   const car = cars.find((car) => car.id === parseInt(id, 10));
   const favourite = useSelector((state) => state.favourite);
+  const favouriteCarId = favourite.favourites.find((favouriteCar) => favouriteCar.car_id === parseInt(id, 10));
+  const [already, setAlready] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchCars({ userId: userData.id }));
+    dispatch(fetchfavourites(userData.id));
   }, [dispatch, userData.id]);
 
   if (!car) {
@@ -33,6 +36,10 @@ const Detail = () => {
     .map((_, index) => <AiOutlineStar key={index} className="star" />);
 
   const handleAddFavouriteClick = async () => {
+    if (favouriteCarId) {
+      setAlready(true);
+      return;
+    }
     dispatch(addfavourite({ userId: userData.id, carId: car.id }));
   };
 
@@ -43,6 +50,7 @@ const Detail = () => {
         <h2 className="title">{car.name}</h2>
       </header>
       {favourite.status === 'added successfully' ? <p className="success">Added to favourites successfully!</p> : null}
+      {already ? <p className="error">This car is already in your favourites!</p> : null}
       <div className="img-container">
         <img src={car.image} alt={car.name} className="img" />
         <div className="img-text">
