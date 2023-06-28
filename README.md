@@ -21,6 +21,14 @@
 
 # 📖 [Car Rental App] <a name="about-project"></a>
 
+<div align="center">
+  <img src="src/assets/carrental.png" alt="project sample" width="650"  height="auto" />
+  <br/>
+
+  <h3><b>Car Rental App</b></h3>
+
+</div>
+
 > The **Car Rental App** is a full-stack app we built using React as Front-end and Ruby on Rails as the Back-end API endpoint with custom authentication. The users can see a list of cars to rent and add to their favorites. The users can also add a car to the list and delete a car from the list.
 
 ## 🛠 Built With <a name="built-with"></a>
