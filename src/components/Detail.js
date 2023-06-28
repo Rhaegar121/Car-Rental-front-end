@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { AiOutlineStar, AiFillStar, AiOutlineUser } from 'react-icons/ai';
+import {
+  AiOutlineStar, AiFillStar, AiOutlineUser, AiOutlineHeart,
+} from 'react-icons/ai';
 import { IoIosArrowBack } from 'react-icons/io';
 import { addfavourite, fetchfavourites } from '../redux/favouritesSlice';
 import { fetchCars } from '../redux/carsSlice';
@@ -77,7 +79,10 @@ const Detail = () => {
         <h3 className="about">About this car</h3>
         <p className="description">{car.description}</p>
       </div>
-      <button type="button" className="add-favourites-btn" onClick={handleAddFavouriteClick}>Add to favourites</button>
+      <button type="button" className="add-favourites-btn" onClick={handleAddFavouriteClick}>
+        <AiOutlineHeart className="heart-icon" />
+        Add to favourites
+      </button>
     </section>
   );
 };
