@@ -37,16 +37,15 @@ body {
 
 .header-title {
   color: #fff;
-  font-size: 3rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
 }
 
 .header-book-btn {
-  padding: 12px 14px;
+  padding: 16px 18px;
   border-radius: 10px;
   box-shadow: 4px 4px 5px 2px rgba(255, 255, 255, 0.296);
-  border: 5px solid var(--primary-color);
   background-color: var(--primary-color);
 }
 
@@ -56,13 +55,22 @@ body {
   transform: translateY(-2px);
 }
 
-@media only screen and (max-width: 600px) {
-  .header-title {
-    font-size: 20px;
+@media only screen and (min-width: 768px) {
+  .header-logo {
+    width: 400px;
   }
 
-  .body {
-    background-image: none;
-    background-color: var(--primary-color);
+  .header-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .header-logo {
+    width: 500px;
+  }
+
+  .header-title {
+    font-size: 2rem;
   }
 }
