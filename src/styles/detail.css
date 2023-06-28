@@ -7,7 +7,7 @@
   height: 60px;
   position: relative;
   color: #fff;
-  background-color: #d66356;
+  background-color: var(--primary-color);
 }
 
 .title {
@@ -32,13 +32,13 @@
 
 .success {
   text-align: center;
-  color: #00e908;
+  color: var(--green-color);
   padding: 5px 0;
 }
 
 .error {
   text-align: center;
-  color: #ff0000;
+  color: var(--red-color);
   padding: 5px 0;
 }
 
@@ -89,9 +89,9 @@
 .user-icon {
   font-size: 2.5rem;
   padding: 8px;
-  color: #ee7e29;
+  color: var(--star-color);
   background-color: #fff;
-  border: 2px solid #ee7e29;
+  border: 2px solid var(--star-color);
   border-radius: 50%;
 }
 
@@ -104,7 +104,7 @@
 }
 
 .fill {
-  color: #eea929;
+  color: var(--star-color);
 }
 
 .price {
@@ -144,7 +144,7 @@
   border: none;
   font-size: 1rem;
   color: #fff;
-  background-color: #ee7e29;
+  background-color: var(--primary-color);
 }
 
 @media screen and (min-width: 992px) {
