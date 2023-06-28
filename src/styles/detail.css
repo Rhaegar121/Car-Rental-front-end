@@ -7,7 +7,7 @@
   height: 60px;
   position: relative;
   color: #fff;
-  background-color: #d66356;
+  background-color: var(--primary-color);
 }
 
 .title {
@@ -23,7 +23,7 @@
   left: 10px;
   top: 16px;
   font-size: 1.8rem;
-  color: #272a31;
+  color: var(--secondary-color);
 }
 
 .back-btn:hover {
@@ -32,7 +32,14 @@
 
 .success {
   text-align: center;
-  color: #00e908;
+  color: var(--green-color);
+  padding: 5px 0;
+}
+
+.error {
+  text-align: center;
+  color: var(--red-color);
+  padding: 5px 0;
 }
 
 .img-container {
@@ -82,9 +89,9 @@
 .user-icon {
   font-size: 2.5rem;
   padding: 8px;
-  color: #ee7e29;
+  color: var(--star-color);
   background-color: #fff;
-  border: 2px solid #ee7e29;
+  border: 2px solid var(--star-color);
   border-radius: 50%;
 }
 
@@ -97,7 +104,7 @@
 }
 
 .fill {
-  color: #eea929;
+  color: var(--star-color);
 }
 
 .price {
@@ -137,7 +144,13 @@
   border: none;
   font-size: 1rem;
   color: #fff;
-  background-color: #ee7e29;
+  background-color: var(--primary-color);
+}
+
+.heart-icon {
+  font-size: 1.15rem;
+  margin-right: 10px;
+  transform: translateY(3px);
 }
 
 @media screen and (min-width: 992px) {
@@ -160,7 +173,7 @@
     position: absolute;
     width: fit-content;
     padding: 15px 20px;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.2);
     left: 50%;
     bottom: 0;
@@ -213,5 +226,9 @@
 
   .description {
     font-size: 1rem;
+  }
+
+  .heart-icon {
+    margin-right: 5px;
   }
 }

@@ -6,7 +6,7 @@ const initialState = {
   status: 'idle',
   favourites: [],
   cars: [],
-  isLoading: true,
+  isLoading: false,
 };
 
 export const fetchfavourites = createAsyncThunk(

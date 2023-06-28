@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { AiFillCar, AiTwotoneHeart, AiOutlineDelete } from 'react-icons/ai';
+import { IoAddCircleOutline } from 'react-icons/io5';
+import { BiLogOut } from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
 import { logOutUser } from '../redux/userSlice';
+import logo from '../assets/logo.png';
 import '../styles/navbar.css';
 
 const Navbar = () => {
@@ -48,44 +52,45 @@ const Navbar = () => {
         <span className="line" />
       </div>
 
-      <ul className={`nav_menu ${isMenuActive ? 'active' : ''}`}>
+      <div className={`nav_menu ${isMenuActive ? 'active' : ''}`}>
         <Link
           className="logo"
           to="/"
           onClick={handleMenuLinkClick}
         >
-          Car Rental
+          <img src={logo} alt="logo" className="logo-img" />
         </Link>
-        <div className="menu_links_container">
-          <div className="menu_links_wrapper">
-            <li>
-              <Link className="menu_link" to="/main" onClick={handleMenuLinkClick}>
-                Cars
-              </Link>
-            </li>
-            <li>
-              <Link className="menu_link" to="/favourites" onClick={handleMenuLinkClick}>
-                Favourites
-              </Link>
-            </li>
-            <li>
-              <Link className="menu_link" to="/delete_car" onClick={handleMenuLinkClick}>
-                Delete Car
-              </Link>
-            </li>
-            <li>
-              <button className="menu_link add_new_car_link" type="button" onClick={handleAddCarClick}>
-                Add New Car
-              </button>
-            </li>
-          </div>
-          <li className="button_wrapper">
-            <Link className="sign_out_button" to="/" onClick={handleLogoutClick}>
-              Sign Out
+        <ul className="menu_links_wrapper">
+          <li>
+            <Link className="menu_link" to="/main" onClick={handleMenuLinkClick}>
+              <AiFillCar className="nav-icon" />
+              Available Cars
             </Link>
           </li>
-        </div>
-      </ul>
+          <li>
+            <Link className="menu_link" to="/favourites" onClick={handleMenuLinkClick}>
+              <AiTwotoneHeart className="nav-icon" />
+              My Favourites
+            </Link>
+          </li>
+          <li>
+            <Link className="menu_link" to="/delete_car" onClick={handleMenuLinkClick}>
+              <AiOutlineDelete className="nav-icon" />
+              Delete a Car
+            </Link>
+          </li>
+          <li>
+            <Link className="menu_link" to="/add_car" onClick={handleAddCarClick}>
+              <IoAddCircleOutline className="nav-icon" />
+              Add a new Car
+            </Link>
+          </li>
+        </ul>
+        <Link className="sign_out_button" to="/" onClick={handleLogoutClick}>
+          <BiLogOut className="signout-icon" />
+          Sign Out
+        </Link>
+      </div>
     </nav>
   );
 };
