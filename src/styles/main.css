@@ -2,7 +2,7 @@
   --primary-color: #d3d837;
   --secondary-color: #272a31;
   --star-color: #eea929;
-  --red-color: #ea1313;
+  --red-color: #ee2929;
   --green-color: #00e908;
 }
 
@@ -109,7 +109,7 @@ a {
 }
 
 .delete-icon {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-right: 2.5px;
   transform: translateY(3px);
 }

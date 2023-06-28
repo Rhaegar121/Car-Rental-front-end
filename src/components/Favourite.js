@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
+import { MdRemoveCircleOutline } from 'react-icons/md';
 import Navbar from './navbar';
 import { fetchfavourites, deletefavourite } from '../redux/favouritesSlice';
 import StarRating from './StarRating';
@@ -89,6 +90,7 @@ function Favourite() {
               onClick={() => handleDeleteFavourite(car.id)}
               type="button"
             >
+              <MdRemoveCircleOutline className="delete-icon" />
               Remove
             </button>
           </div>
