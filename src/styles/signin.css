@@ -9,33 +9,33 @@
 }
 
 .sign-in-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(255, 255, 255);
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
 .email-input,
 .password-input {
   width: 300px;
-  height: 35px;
+  height: 45px;
   margin: 10px;
-  border-radius: 15px;
+  border-radius: 20px;
   font-size: 14px;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  padding-left: 5px;
-  border: 5px solid var(--primary-color);
+  padding-left: 12px;
+  outline: none;
+  border: 4px solid var(--primary-color);
 }
 
 .sign-in-button {
-  margin: 20px;
-  background-color: white;
+  margin: 10px 0 20px 0;
   height: 45px;
   width: 120px;
   border-radius: 25px;
-  color: var(--primary-color);
-  border: 5px solid var(--primary-color);
+  color: #6b6b6b;
+  border: 4px solid var(--primary-color);
+  background-color: white;
 }
 
 .sign-in-button:hover {
@@ -49,14 +49,20 @@
   justify-content: center;
 }
 
-.sign-out-button {
-  border: none;
-  background: none;
-  color: white;
-  text-decoration: underline;
+.sign-up-btn {
+  text-decoration: none;
+  text-align: center;
+  width: 120px;
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding: 11.5px 0;
+  background-color: var(--primary-color);
+  border-radius: 25px;
+  border: 4px solid #fff;
+  color: #6b6b6b;
 }
 
-.sign-out-button:hover {
+.sign-up-btn:hover {
   cursor: pointer;
 }
 

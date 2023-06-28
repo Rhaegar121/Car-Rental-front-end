@@ -64,7 +64,7 @@ function SignUpComponent() {
         />
         <div className="session-buttons">
           <button className="sign-up-button" type="button" onClick={handleSignUp}>
-            {userData.status === 'loading' ? <BeatLoader loading={loading} color="#ee5029" size={9} /> : 'Sign Up'}
+            {userData.status === 'loading' ? <BeatLoader loading={loading} color="#6b6b6b" size={9} /> : 'Sign Up'}
           </button>
           <Link to="/signin" className="sign-in-btn">Sign In</Link>
         </div>

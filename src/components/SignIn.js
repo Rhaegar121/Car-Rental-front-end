@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import BeatLoader from 'react-spinners/BeatLoader';
 import { loginUser } from '../redux/userSlice';
 import '../styles/signin.css';
@@ -49,8 +49,9 @@ const SignInComponent = () => {
           type="button"
           onClick={handleSignIn}
         >
-          {userData.status === 'loading' ? <BeatLoader loading={loading} color="#ee5029" size={9} /> : 'Sign In'}
+          {userData.status === 'loading' ? <BeatLoader loading={loading} color="#6b6b6b" size={9} /> : 'Sign In'}
         </button>
+        <Link to="/signup" className="sign-up-btn">Sign Up</Link>
       </div>
     </div>
   );
