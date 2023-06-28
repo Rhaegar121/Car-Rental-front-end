@@ -18,14 +18,14 @@ nav {
   z-index: 100;
   top: 0;
   left: 0;
-  background-color: rgb(214, 99, 86);
+  background-color: var(--primary-color);
   padding: 1rem;
 }
 
 .line {
   width: 30px;
   height: 6px;
-  background-color: #272a31;
+  background-color: var(--secondary-color);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -51,7 +51,7 @@ ul li {
 .nav_menu {
   width: 50%;
   height: 100vh;
-  background-color: #d66356;
+  background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -67,10 +67,6 @@ ul li {
 .nav_menu.active {
   left: 0;
 }
-
-/* .menu_links_container .button_wrapper {
-  display: none;
-} */
 
 .logo {
   color: #fff;
@@ -91,6 +87,7 @@ ul li {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  color: var(--secondary-color);
 }
 
 .sign_out_button {

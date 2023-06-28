@@ -23,7 +23,7 @@
   left: 10px;
   top: 16px;
   font-size: 1.8rem;
-  color: #272a31;
+  color: var(--secondary-color);
 }
 
 .back-btn:hover {
