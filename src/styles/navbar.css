@@ -57,8 +57,7 @@ ul li {
   position: fixed;
   text-align: start;
   top: 0;
-  padding-top: 100px;
-  padding-left: 24px;
+  padding: 70px 10px;
   left: -100%;
   z-index: 10;
   transition: 0.3s;
@@ -69,11 +68,14 @@ ul li {
 }
 
 .logo {
-  color: #fff;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: 700;
-  padding-bottom: 1rem;
+  width: 140px;
+  display: flex;
+  align-self: center;
+  margin-bottom: 30px;
+}
+
+.logo-img {
+  width: 100%;
 }
 
 .menu_links_container {

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logOutUser } from '../redux/userSlice';
+import logo from '../assets/logo.png';
 import '../styles/navbar.css';
 
 const Navbar = () => {
@@ -54,7 +55,7 @@ const Navbar = () => {
           to="/"
           onClick={handleMenuLinkClick}
         >
-          Car Rental
+          <img src={logo} alt="logo" className="logo-img" />
         </Link>
         <div className="menu_links_container">
           <div className="menu_links_wrapper">
