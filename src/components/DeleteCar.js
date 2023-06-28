@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
+import { AiOutlineDelete } from 'react-icons/ai';
 import { deleteCar, fetchCars } from '../redux/carsSlice';
-// import { deletefavourite, fetchfavourites } from '../redux/favouritesSlice';
 import StarRating from './StarRating';
 import Navbar from './navbar';
 import '../styles/main.css';
@@ -10,9 +10,7 @@ import '../styles/main.css';
 const DeleteCar = () => {
   const userData = JSON.parse(localStorage.getItem('user'));
   const cars = useSelector((state) => state.car.cars);
-  // const favourites = useSelector((state) => state.favourite.favourites);
   const userCars = cars.filter((car) => car.user_id === userData.id);
-  console.log(userCars);
   const dispatch = useDispatch();
 
   const [number, setNumber] = useState(1);
@@ -24,13 +22,10 @@ const DeleteCar = () => {
   const [nextDisabled, setNextDisabled] = useState(false);
 
   useEffect(() => {
-    // dispatch(fetchfavourites(userData.id));
     dispatch(fetchCars({ userId: userData.id }));
   }, [dispatch, userData.id]);
 
   const handleDeleteCar = (carId) => {
-    // const favouriteId = favourites.find((favourite) => favourite.car_id === carId).id;
-    // dispatch(deletefavourite({ userId: userData.id, favouriteId, carId }));
     dispatch(deleteCar({ userId: userData.id, carId }));
   };
 
@@ -94,6 +89,7 @@ const DeleteCar = () => {
               onClick={() => handleDeleteCar(car.id)}
               type="button"
             >
+              <AiOutlineDelete className="delete-icon" />
               Delete
             </button>
           </div>

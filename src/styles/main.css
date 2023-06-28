@@ -108,6 +108,12 @@ a {
   transform: translateY(-60%) translateY(-2px);
 }
 
+.delete-icon {
+  font-size: 1.1rem;
+  margin-right: 2.5px;
+  transform: translateY(3px);
+}
+
 .back-to-main-link {
   position: absolute;
   left: 25px;
