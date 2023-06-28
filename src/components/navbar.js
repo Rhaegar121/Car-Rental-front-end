@@ -86,12 +86,10 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <div className="button_wrapper">
-          <Link className="sign_out_button" to="/" onClick={handleLogoutClick}>
-            <BiLogOut className="nav-icon" />
-            Sign Out
-          </Link>
-        </div>
+        <Link className="sign_out_button" to="/" onClick={handleLogoutClick}>
+          <BiLogOut className="signout-icon" />
+          Sign Out
+        </Link>
       </div>
     </nav>
   );
