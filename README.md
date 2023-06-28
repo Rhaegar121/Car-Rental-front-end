@@ -106,8 +106,8 @@ Clone this repository to your desired folder:
 👤 **Kaung Myat Kyaw**
 
 - GitHub: [@githubhandle](https://github.com/Rhaegar121)
-- Twitter [@20Rhaegar](https://twitter.com/20Rhaegar)
-- LinkedIn: [Kaung Myat Kyaw](https://www.linkedin.com/in/kaung-myat-kyaw-391720227/)
+- Twitter [@20Rhaegar](https://twitter.com/Rhaegar121)
+- LinkedIn: [Kaung Myat Kyaw](https://www.linkedin.com/in/kaungmyatkyaw/)
 
 👤 **Jerome Jay Osman**
 
@@ -116,9 +116,9 @@ Clone this repository to your desired folder:
 
 👤 **Innocent N.**
 
-GitHub: [@chaseknis](https://github.com/Chaseknis/)
-Twitter: [@ChaseToTheWorld](https://twitter.com/chasetotheworld)
-LinkedIn: [Innocent N.](https://www.linkedin.com/in/innocent-n-200826252/)
+- GitHub: [@chaseknis](https://github.com/Chaseknis/)
+- Twitter: [@ChaseToTheWorld](https://twitter.com/chasetotheworld)
+- LinkedIn: [Innocent N.](https://www.linkedin.com/in/innocent-n-200826252/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
