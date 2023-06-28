@@ -27,7 +27,7 @@
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   padding-left: 5px;
-  border: 5px solid #ee5029;
+  border: 5px solid var(--primary-color);
 }
 
 .sign-up-title {
@@ -40,8 +40,8 @@
   height: 45px;
   width: 100px;
   border-radius: 25px;
-  color: #ee5029;
-  border: 5px solid #ee5029;
+  color: var(--primary-color);
+  border: 5px solid var(--primary-color);
 }
 
 .sign-up-button:hover {
@@ -51,9 +51,9 @@
 .sign-in-btn {
   text-decoration: none;
   padding: 10px;
-  background-color: #ee5029;
+  background-color: var(--primary-color);
   border-radius: 25px;
-  border: 3px solid #ee5029;
+  border: 3px solid var(--primary-color);
   color: white;
 }
 
