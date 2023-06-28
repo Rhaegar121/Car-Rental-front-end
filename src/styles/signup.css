@@ -20,44 +20,54 @@
 .name-input,
 .password-confirmation-input {
   width: 300px;
-  height: 35px;
+  height: 45px;
   margin: 10px;
-  border-radius: 15px;
+  border-radius: 20px;
   font-size: 14px;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  padding-left: 5px;
-  border: 5px solid #ee5029;
+  padding-left: 12px;
+  border: 4px solid var(--primary-color);
 }
 
 .sign-up-title {
   color: white;
+  margin-bottom: 30px;
 }
 
 .sign-up-button {
-  margin-bottom: 10px;
+  margin: 10px 0 20px 0;
   background-color: white;
   height: 45px;
-  width: 100px;
   border-radius: 25px;
-  color: #ee5029;
-  border: 5px solid #ee5029;
+  color: #6b6b6b;
+  border: 4px solid var(--primary-color);
+}
+
+.sign-up-button:hover {
+  cursor: pointer;
 }
 
 .sign-in-btn {
   text-decoration: none;
-  padding: 10px;
-  background-color: #ee5029;
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 10px 0;
+  background-color: var(--primary-color);
   border-radius: 25px;
-  border: 3px solid #ee5029;
-  color: white;
+  border: 4px solid #fff;
+  color: #6b6b6b;
+}
+
+.sign-in-btn:hover {
+  cursor: pointer;
 }
 
 .session-buttons {
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 100px;
+  width: 120px;
 }
 
 @media only screen and (max-width: 600px) {

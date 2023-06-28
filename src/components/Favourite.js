@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
+import { MdRemoveCircleOutline } from 'react-icons/md';
 import Navbar from './navbar';
-import { fetchfavourites } from '../redux/favouritesSlice';
+import { fetchfavourites, deletefavourite } from '../redux/favouritesSlice';
 import StarRating from './StarRating';
 import '../styles/main.css';
 
@@ -10,6 +11,7 @@ function Favourite() {
   const userData = JSON.parse(localStorage.getItem('user'));
   const dispatch = useDispatch();
   const cars = useSelector((state) => state.favourite.cars);
+  const favourites = useSelector((state) => state.favourite.favourites);
 
   const [number, setNumber] = useState(1);
   const showPerPage = 3;
@@ -40,6 +42,11 @@ function Favourite() {
     if (number < Math.ceil(cars.length / showPerPage)) {
       setNumber(number + 1);
     }
+  };
+
+  const handleDeleteFavourite = (carId) => {
+    const favouriteId = favourites.find((favourite) => favourite.car_id === carId).id;
+    dispatch(deletefavourite({ userId: userData.id, favouriteId, carId }));
   };
 
   return (
@@ -78,6 +85,14 @@ function Favourite() {
                 <p className="per-month">per month</p>
               </div>
             </div>
+            <button
+              className="delete-car-button"
+              onClick={() => handleDeleteFavourite(car.id)}
+              type="button"
+            >
+              <MdRemoveCircleOutline className="delete-icon" />
+              Remove
+            </button>
           </div>
         ))}
         <button

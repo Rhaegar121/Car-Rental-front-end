@@ -1,3 +1,11 @@
+:root {
+  --primary-color: #cfe321;
+  --secondary-color: #272a31;
+  --star-color: #eea929;
+  --red-color: #ee2929;
+  --green-color: #00e908;
+}
+
 a {
   text-decoration: none;
   color: #000;
@@ -13,7 +21,13 @@ a {
 .heading {
   text-align: center;
   padding-top: 6rem;
-  color: rgb(214, 99, 86);
+  color: var(--primary-color);
+}
+
+.sub-heading {
+  text-align: center;
+  padding-top: 10rem;
+  color: var(--primary-color);
 }
 
 .car-container {
@@ -47,9 +61,11 @@ a {
 .btn {
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   height: 80px;
   width: 80px;
-  background-color: rgb(214, 99, 86);
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
   border: none;
   font-size: 2rem;
   cursor: pointer;
@@ -69,7 +85,7 @@ a {
 
 .star {
   font-size: 20px;
-  color: rgb(244, 148, 3);
+  color: var(--star-color);
 }
 
 .delete-car-button {
@@ -78,9 +94,9 @@ a {
   font-size: 0.9rem;
   padding: 10px 14px;
   border: none;
-  border-radius: 17px;
+  border-radius: 10px;
   color: #fff;
-  background-color: #ea1313;
+  background-color: var(--red-color);
   box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.2);
   transform: translateY(-60%);
 }
@@ -90,6 +106,12 @@ a {
   box-shadow: none;
   cursor: pointer;
   transform: translateY(-60%) translateY(-2px);
+}
+
+.delete-icon {
+  font-size: 1rem;
+  margin-right: 2.5px;
+  transform: translateY(3px);
 }
 
 .back-to-main-link {

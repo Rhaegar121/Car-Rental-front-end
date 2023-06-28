@@ -6,7 +6,7 @@ const initialState = {
   status: 'idle',
   favourites: [],
   cars: [],
-  isLoading: true,
+  isLoading: false,
 };
 
 export const fetchfavourites = createAsyncThunk(
@@ -30,6 +30,16 @@ export const addfavourite = createAsyncThunk(
     });
     const data = await response.json();
     return data;
+  },
+);
+
+export const deletefavourite = createAsyncThunk(
+  'cars/deletefavourite',
+  async ({ userId, favouriteId, carId }) => {
+    await fetch(`${baseURL}/${userId}/favourites/${favouriteId}`, {
+      method: 'DELETE',
+    });
+    return carId;
   },
 );
 
@@ -67,6 +77,23 @@ const favouritesSlice = createSlice({
         cars: action.payload.cars,
       }))
       .addCase(addfavourite.rejected, (state) => ({
+        ...state,
+        status: 'error',
+        isLoading: false,
+      }))
+      .addCase(deletefavourite.pending, (state) => ({
+        ...state,
+        isLoading: true,
+      }))
+      .addCase(deletefavourite.fulfilled, (state, action) => ({
+        ...state,
+        status: 'deleted successfully',
+        isLoading: false,
+        cars: state.cars.filter(
+          (car) => car.id !== parseInt(action.payload, 10),
+        ),
+      }))
+      .addCase(deletefavourite.rejected, (state) => ({
         ...state,
         status: 'error',
         isLoading: false,

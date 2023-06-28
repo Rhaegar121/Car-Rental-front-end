@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
+import { AiOutlineDelete } from 'react-icons/ai';
 import { deleteCar, fetchCars } from '../redux/carsSlice';
 import StarRating from './StarRating';
 import Navbar from './navbar';
 import '../styles/main.css';
 
 const DeleteCar = () => {
-  const [userData, setUserData] = useState(null);
-  const userId = useSelector((state) => state.user.id);
+  const userData = JSON.parse(localStorage.getItem('user'));
   const cars = useSelector((state) => state.car.cars);
+  const userCars = cars.filter((car) => car.user_id === userData.id);
   const dispatch = useDispatch();
 
   const [number, setNumber] = useState(1);
@@ -21,10 +22,8 @@ const DeleteCar = () => {
   const [nextDisabled, setNextDisabled] = useState(false);
 
   useEffect(() => {
-    const userDataFromStorage = JSON.parse(localStorage.getItem('user'));
-    setUserData(userDataFromStorage);
-    dispatch(fetchCars({ userId: userDataFromStorage.id }));
-  }, [dispatch, userId]);
+    dispatch(fetchCars({ userId: userData.id }));
+  }, [dispatch, userData.id]);
 
   const handleDeleteCar = (carId) => {
     dispatch(deleteCar({ userId: userData.id, carId }));
@@ -48,6 +47,15 @@ const DeleteCar = () => {
     }
   };
 
+  if (userCars.length === 0) {
+    return (
+      <>
+        <Navbar />
+        <h2 className="sub-heading">You can only delete cars you added.</h2>
+      </>
+    );
+  }
+
   return (
     <>
       <Navbar />
@@ -61,7 +69,7 @@ const DeleteCar = () => {
         >
           <BsArrowLeft />
         </button>
-        {cars.slice(firstNumber, lastNumber).map((car) => (
+        {userCars.slice(firstNumber, lastNumber).map((car) => (
           <div className="car-container" key={car.id}>
             <div className="image">
               <img src={car.image} alt="mercedez benz" className="car-image" />
@@ -81,6 +89,7 @@ const DeleteCar = () => {
               onClick={() => handleDeleteCar(car.id)}
               type="button"
             >
+              <AiOutlineDelete className="delete-icon" />
               Delete
             </button>
           </div>

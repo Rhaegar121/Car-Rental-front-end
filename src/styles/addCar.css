@@ -58,19 +58,23 @@
 
 .back_button {
   width: 100%;
-  padding: 30px 24px;
+  height: 60px;
   font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 7px;
   color: #fff;
-  background-color: rgb(214, 99, 86);
+  background-color: var(--primary-color);
   border: none;
+}
+
+.back_button:hover {
+  cursor: pointer;
 }
 
 .car_form_container h2 {
   text-align: center;
-  color: rgb(4, 138, 200);
+  color: var(--primary-color);
   padding-bottom: 2rem;
 }
 
@@ -78,9 +82,16 @@
   padding: 10px 12px;
   align-self: flex-end;
   color: #fff;
-  background-color: rgb(4, 138, 200);
+  background-color: var(--primary-color);
   border: none;
-  border-radius: 5px;
+  box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.car_form_container button:hover {
+  box-shadow: none;
+  cursor: pointer;
+  transform: translateY(-2px);
 }
 
 .ratings {
