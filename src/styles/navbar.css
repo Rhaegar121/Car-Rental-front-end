@@ -2,13 +2,6 @@ nav {
   top: 0;
 }
 
-.menu_link {
-  text-decoration: none;
-  color: #000;
-  font-size: 16px;
-  font-weight: 600;
-}
-
 .hamburger_menu {
   width: 100%;
   display: flex;
@@ -71,40 +64,46 @@ ul li {
   width: 140px;
   display: flex;
   align-self: center;
-  margin-bottom: 30px;
+  margin: 10px 0 30px 0;
 }
 
 .logo-img {
   width: 100%;
 }
 
-.menu_links_container {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
 .menu_links_wrapper {
-  padding-bottom: 2rem;
+  position: relative;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 20px;
   color: var(--secondary-color);
 }
 
-.sign_out_button {
+.menu_link {
   text-decoration: none;
-  background-color: #fff;
-  color: #272a31;
-  padding: 10px 16px;
-  border-radius: 5px;
+  color: #fff;
+  font-size: 0.9rem;
 }
 
-.add_new_car_link {
-  background-color: transparent;
-  border: none;
-  text-decoration: underline;
-  padding: 0;
+.nav-icon {
+  font-size: 1.3rem;
+  margin: 0px 8px;
+  transform: translateY(5px);
+}
+
+.button_wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 14px 0 18px 0;
+  width: 100%;
+  text-align: center;
+  background-color: #b6c720;
+}
+
+.sign_out_button {
+  font-size: 0.9rem;
   color: #fff;
 }
 
