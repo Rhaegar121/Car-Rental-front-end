@@ -6,6 +6,9 @@ body {
 
 .header-book-btn-space {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
 
 .body-header {
@@ -15,7 +18,7 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgb(255, 176, 0);
+  background-color: var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,37 +34,17 @@ body {
 }
 
 .header-book-btn {
-  background-color: #ee5029;
-  border-radius: 25px;
-  padding: 15px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 5px 2px rgba(255, 255, 255, 0.296);
+  border: 5px solid var(--primary-color);
+  background-color: var(--primary-color);
+}
+
+.header-book-btn:hover {
+  box-shadow: none;
   cursor: pointer;
-  margin: 20px;
-  height: 45px;
-  width: 120px;
-  color: #ee5029;
-  border: 5px solid #ee5029;
-}
-
-.header-book-btn-signup {
-  background-color: #ee5029;
-  border-radius: 25px;
-  padding: 15px;
-  cursor: pointer;
-  margin: 20px;
-  height: 45px;
-  width: 120px;
-  color: #ee5029;
-  border: 5px solid #ee5029;
-}
-
-.header-book-btn:hover,
-.header-book-btn-signup:hover {
-  padding: 20px;
-}
-
-.link {
-  text-decoration: none;
-  color: black;
+  transform: translateY(-2px);
 }
 
 @media only screen and (max-width: 600px) {
@@ -71,6 +54,6 @@ body {
 
   .body {
     background-image: none;
-    background-color: #ee5029;
+    background-color: var(--primary-color);
   }
 }
