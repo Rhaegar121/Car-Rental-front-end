@@ -2,15 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import { deleteCar, fetchCars } from '../redux/carsSlice';
+// import { deletefavourite, fetchfavourites } from '../redux/favouritesSlice';
 import StarRating from './StarRating';
 import Navbar from './navbar';
 import '../styles/main.css';
 
 const DeleteCar = () => {
-  const [userData, setUserData] = useState(null);
-  const userId = useSelector((state) => state.user.id);
+  const userData = JSON.parse(localStorage.getItem('user'));
   const cars = useSelector((state) => state.car.cars);
-  const userCars = cars.filter((car) => car.user_id === userId);
+  // const favourites = useSelector((state) => state.favourite.favourites);
+  const userCars = cars.filter((car) => car.user_id === userData.id);
   console.log(userCars);
   const dispatch = useDispatch();
 
@@ -23,12 +24,13 @@ const DeleteCar = () => {
   const [nextDisabled, setNextDisabled] = useState(false);
 
   useEffect(() => {
-    const userDataFromStorage = JSON.parse(localStorage.getItem('user'));
-    setUserData(userDataFromStorage);
-    dispatch(fetchCars({ userId: userDataFromStorage.id }));
-  }, [dispatch, userId]);
+    // dispatch(fetchfavourites(userData.id));
+    dispatch(fetchCars({ userId: userData.id }));
+  }, [dispatch, userData.id]);
 
   const handleDeleteCar = (carId) => {
+    // const favouriteId = favourites.find((favourite) => favourite.car_id === carId).id;
+    // dispatch(deletefavourite({ userId: userData.id, favouriteId, carId }));
     dispatch(deleteCar({ userId: userData.id, carId }));
   };
 
@@ -50,11 +52,19 @@ const DeleteCar = () => {
     }
   };
 
+  if (userCars.length === 0) {
+    return (
+      <>
+        <Navbar />
+        <h2 className="sub-heading">You can only delete cars you added.</h2>
+      </>
+    );
+  }
+
   return (
     <>
       <Navbar />
       <h1 className="heading">Delete a Car</h1>
-      {userCars.length === 0 ? <h2 className="sub-heading">You can only delete cars you added.</h2> : ''}
       <div className="main-container">
         <button
           className="btn prev-btn"

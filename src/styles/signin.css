@@ -25,7 +25,7 @@
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   padding-left: 5px;
-  border: 5px solid #ee5029;
+  border: 5px solid var(--primary-color);
 }
 
 .sign-in-button {
@@ -34,8 +34,8 @@
   height: 45px;
   width: 120px;
   border-radius: 25px;
-  color: #ee5029;
-  border: 5px solid #ee5029;
+  color: var(--primary-color);
+  border: 5px solid var(--primary-color);
 }
 
 .sign-in-button:hover {
@@ -68,6 +68,6 @@
   .sign-in-form {
     padding-top: 5rem;
     background-image: none;
-    background-color: #ee5029;
+    background-color: var(--primary-color);
   }
 }

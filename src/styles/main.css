@@ -1,3 +1,7 @@
+:root {
+  --primary-color: #ee5029;
+}
+
 a {
   text-decoration: none;
   color: #000;
