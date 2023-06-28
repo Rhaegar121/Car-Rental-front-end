@@ -54,7 +54,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Front-end deployed website: [Live Demo](car-rental-capstone.netlify.app)
+- Front-end deployed website: [Live Demo](https://car-rental-capstone.netlify.app)
 
 <!-- Kanban Board -->
 
