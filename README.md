@@ -29,7 +29,7 @@
 
 </div>
 
-> The **Car Rental App** is a full-stack app we built using React as Front-end and Ruby on Rails as the Back-end API endpoint with custom authentication. The users can see a list of cars to rent and add to their favorites. The users can also add a car to the list and delete a car from the list.
+> The **Car Rental App** is a full-stack app we built using React as Front-end and Ruby on Rails as the Back-end API with custom authentication. The users can see a list of cars to rent and add to their favorites. The users can also add a car to the list and delete a car from the list.
 
 ## 🛠 Built With <a name="built-with"></a>
 
