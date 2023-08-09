@@ -67,7 +67,7 @@
 
 
 ### Front End Kanban Board Initital State ![FRONTEND KANBAN](https://github.com/Rhaegar121/Capstone-Front-End/assets/90766123/12fc878d-0f31-4e3c-a296-f136fe51e1e5)
-### Back End Kanban Board Initital State (![BACKEND KANBAN](https://github.com/Rhaegar121/Capstone-Front-End/assets/90766123/f91d088f-9f0e-42d3-83b8-71605b3eb8b0)
+### Back End Kanban Board Initital State ![BACKEND KANBAN](https://github.com/Rhaegar121/Capstone-Front-End/assets/90766123/f91d088f-9f0e-42d3-83b8-71605b3eb8b0)
 
 - At the end of this project, we are still 4 members: @Rhaegar121 @Chaseknis @Rachelwebdev @187jjay187
 
