@@ -116,8 +116,8 @@ Clone this repository to your desired folder:
 👤 **Kaung Myat Kyaw**
 
 - Portfolio: [rhbarry.me](https://rhbarry.me)
-- GitHub: [@githubhandle](https://github.com/Rhaegar121)
-- Twitter [@20Rhaegar](https://twitter.com/Rhaegar121)
+- GitHub: [Rhaegar121](https://github.com/Rhaegar121)
+- Twitter [Rhaegar121](https://twitter.com/Rhaegar121)
 - LinkedIn: [Kaung Myat Kyaw](https://www.linkedin.com/in/kaungmyatkyaw/)
 
 👤 **Jerome Jay Osman**
