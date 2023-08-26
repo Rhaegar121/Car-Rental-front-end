@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const baseURL = 'https://carrental-backend-jmdo.onrender.com/users';
+// const baseURL = 'https://carrental-backend-jmdo.onrender.com/users';
+const baseURL = 'http://127.0.0.1:3000';
 
 const initialState = {
   cars: [],
@@ -10,8 +11,8 @@ const initialState = {
 
 export const fetchCars = createAsyncThunk(
   'cars/fetchCars',
-  async ({ userId }) => {
-    const response = await fetch(`${baseURL}/${userId}/cars`);
+  async () => {
+    const response = await fetch(`${baseURL}/cars`);
     const data = await response.json();
     return data;
   },

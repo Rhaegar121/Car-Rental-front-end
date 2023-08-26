@@ -7,7 +7,6 @@ import { fetchCars } from '../redux/carsSlice';
 import StarRating from './StarRating';
 
 const CarCard = () => {
-  const userId = useSelector((state) => state.user.id);
   const cars = useSelector((state) => state.car.cars);
   const dispatch = useDispatch();
   const [number, setNumber] = useState(1);
@@ -38,8 +37,8 @@ const CarCard = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchCars({ userId }));
-  }, [dispatch, userId]);
+    dispatch(fetchCars());
+  }, [dispatch]);
 
   return (
     <>

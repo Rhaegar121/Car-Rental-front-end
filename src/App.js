@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Body from './components/Body';
+// import Body from './components/Body';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Main from './components/Main';
@@ -14,10 +14,10 @@ const App = () => (
   <Router>
     <div className="page_container">
       <Routes>
-        <Route path="/" element={<Body />} />
+        {/* <Route path="/" element={<Body />} /> */}
+        <Route path="/" element={<Main />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/main" element={<Main />} />
         <Route path="/cars/:id" element={<Detail />} />
         <Route path="/favourites" element={<Favourites />} />
         <Route path="/add_car" element={<AddCar />} />
