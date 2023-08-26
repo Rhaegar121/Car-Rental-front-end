@@ -2,16 +2,22 @@ nav {
   top: 0;
 }
 
-.hamburger_menu {
+.navbar {
   width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+}
+
+.hamburger_menu {
+  width: fit-content;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  position: fixed;
   z-index: 100;
   top: 0;
   left: 0;
-  background-color: var(--primary-color);
   padding: 1rem;
 }
 

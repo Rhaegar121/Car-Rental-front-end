@@ -39,17 +39,25 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div
-        id="hamburger_menu"
-        className={`hamburger_menu ${isMenuActive ? 'active' : ''}`}
-        onClick={handleHamburgerClick}
-        onKeyDown={handleHamburgerKeyDown}
-        role="button"
-        tabIndex={0}
-      >
-        <span className="line" />
-        <span className="line" />
-        <span className="line" />
+      <div className="navbar">
+        <div
+          id="hamburger_menu"
+          className={`hamburger_menu ${isMenuActive ? 'active' : ''}`}
+          onClick={handleHamburgerClick}
+          onKeyDown={handleHamburgerKeyDown}
+          role="button"
+          tabIndex={0}
+        >
+          <span className="line" />
+          <span className="line" />
+          <span className="line" />
+        </div>
+
+        <div>
+          <Link className="" to="/signup">
+            Sign Up
+          </Link>
+        </div>
       </div>
 
       <div className={`nav_menu ${isMenuActive ? 'active' : ''}`}>
