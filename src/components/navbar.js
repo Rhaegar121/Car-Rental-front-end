@@ -92,7 +92,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link className="menu_link" to="/delete_car" onClick={handleMenuLinkClick}>
+            <Link className="menu_link" to={userData ? '/delete_car' : '/signup'} onClick={handleMenuLinkClick}>
               <AiOutlineDelete className="nav-icon" />
               Delete a Car
             </Link>
