@@ -16,6 +16,11 @@ const AddCar = () => {
     ratings: 0,
     image: '',
     description: '',
+    door: 2,
+    seat: 2,
+    bag: 0,
+    minFuel: 0,
+    maxFuel: 0,
   });
 
   const handleChange = (event) => {
@@ -35,6 +40,11 @@ const AddCar = () => {
       ratings,
       image,
       description,
+      door,
+      seat,
+      bag,
+      minFuel,
+      maxFuel,
     } = carDetails;
 
     const newCar = {
@@ -43,6 +53,11 @@ const AddCar = () => {
       ratings,
       image,
       description,
+      door,
+      seat,
+      bag,
+      minFuel,
+      maxFuel,
       user_id: userDataFromStorage.id,
     };
 
@@ -55,6 +70,11 @@ const AddCar = () => {
       ratings: 0,
       image: '',
       description: '',
+      door: 2,
+      seat: 2,
+      bag: 0,
+      minFuel: 0,
+      maxFuel: 0,
     });
   };
 
@@ -125,6 +145,61 @@ const AddCar = () => {
                 id="carDetails"
                 name="description"
                 value={carDetails.description}
+                onChange={handleChange}
+              />
+            </label>
+            <label htmlFor="rating">
+              Doors:
+              <input
+                id="door"
+                className="door"
+                type="number"
+                name="door"
+                min={2}
+                max={4}
+                value={carDetails.door}
+                onChange={handleChange}
+              />
+            </label>
+            <label htmlFor="rating">
+              Seats:
+              <input
+                id="seat"
+                className="seat"
+                type="number"
+                name="seat"
+                min={2}
+                value={carDetails.seat}
+                onChange={handleChange}
+              />
+            </label>
+            <label htmlFor="rating">
+              Large Bags:
+              <input
+                id="bag"
+                className="bag"
+                type="number"
+                name="bag"
+                value={carDetails.bag}
+                onChange={handleChange}
+              />
+            </label>
+            <label htmlFor="rating">
+              Fuel (mpg):
+              <input
+                // id="rating"
+                // className="ratings"
+                type="number"
+                name="minFuel"
+                value={carDetails.minFuel}
+                onChange={handleChange}
+              />
+              <input
+                // id="rating"
+                // className="ratings"
+                type="number"
+                name="maxFuel"
+                value={carDetails.maxFuel}
                 onChange={handleChange}
               />
             </label>
