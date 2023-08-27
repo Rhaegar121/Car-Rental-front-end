@@ -12,6 +12,7 @@ const AddCar = () => {
 
   const [carDetails, setCarDetails] = useState({
     name: '',
+    type: '',
     price: '',
     ratings: 0,
     image: '',
@@ -36,6 +37,7 @@ const AddCar = () => {
 
     const {
       name,
+      type,
       price,
       ratings,
       image,
@@ -49,6 +51,7 @@ const AddCar = () => {
 
     const newCar = {
       name,
+      type,
       price,
       ratings,
       image,
@@ -62,10 +65,11 @@ const AddCar = () => {
     };
 
     dispatch(addCar({ userId: userDataFromStorage.id, car: newCar }));
-    navigate('/main');
+    navigate('/');
 
     setCarDetails({
       name: '',
+      type: '',
       price: '',
       ratings: 0,
       image: '',
@@ -96,6 +100,16 @@ const AddCar = () => {
                 type="text"
                 name="name"
                 value={carDetails.name}
+                onChange={handleChange}
+              />
+            </label>
+            <br />
+            <label htmlFor="name">
+              Type:
+              <input
+                type="text"
+                name="type"
+                value={carDetails.type}
                 onChange={handleChange}
               />
             </label>

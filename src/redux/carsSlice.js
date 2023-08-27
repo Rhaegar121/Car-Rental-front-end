@@ -21,7 +21,7 @@ export const fetchCars = createAsyncThunk(
 export const addCar = createAsyncThunk(
   'car/addCar',
   async ({ userId, car }) => {
-    const response = await fetch(`${baseURL}/${userId}/cars`, {
+    const response = await fetch(`${baseURL}/users/${userId}/cars`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
