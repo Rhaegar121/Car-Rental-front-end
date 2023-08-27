@@ -98,7 +98,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link className="menu_link" to="/add_car" onClick={handleAddCarClick}>
+            <Link className="menu_link" to={userData ? '/add_car' : '/signup'} onClick={handleAddCarClick}>
               <IoAddCircleOutline className="nav-icon" />
               Add a new Car
             </Link>
