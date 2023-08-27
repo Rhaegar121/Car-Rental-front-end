@@ -10,6 +10,7 @@ import '../styles/main.css';
 const DeleteCar = () => {
   const userData = JSON.parse(localStorage.getItem('user'));
   const cars = useSelector((state) => state.car.cars);
+  const status = useSelector((state) => state.car.status);
   const userCars = cars.filter((car) => car.user_id === userData.id);
   const dispatch = useDispatch();
 
@@ -47,10 +48,11 @@ const DeleteCar = () => {
     }
   };
 
-  if (userCars.length === 0) {
+  if (!userCars.length) {
     return (
       <>
         <Navbar />
+        {status === 'success' ? <h1 className="success">Car deleted successfully!</h1> : null}
         <h2 className="sub-heading">You can only delete cars you added.</h2>
       </>
     );

@@ -36,7 +36,7 @@ export const addCar = createAsyncThunk(
 export const deleteCar = createAsyncThunk(
   'car/deleteCar',
   async ({ userId, carId }) => {
-    await fetch(`${baseURL}/${userId}/cars/${carId}`, {
+    await fetch(`${baseURL}/users/${userId}/cars/${carId}`, {
       method: 'DELETE',
     });
     return carId;
@@ -65,10 +65,11 @@ const carsSlice = createSlice({
       .addCase(deleteCar.pending, (state) => ({ ...state, isLoading: true }))
       .addCase(deleteCar.fulfilled, (state, action) => ({
         ...state,
+        status: 'success',
         isLoading: false,
         cars: state.cars.filter((car) => car.id !== action.payload),
       }))
-      .addCase(deleteCar.rejected, (state) => ({ ...state, isLoading: false }));
+      .addCase(deleteCar.rejected, (state) => ({ ...state, status: 'error', isLoading: false }));
   },
 });
 
