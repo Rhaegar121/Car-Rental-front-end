@@ -80,7 +80,7 @@ const Navbar = () => {
         </Link>
         <ul className="menu_links_wrapper">
           <li>
-            <Link className="menu_link" to="/main" onClick={handleMenuLinkClick}>
+            <Link className="menu_link" to="/" onClick={handleMenuLinkClick}>
               <AiFillCar className="nav-icon" />
               Available Cars
             </Link>
