@@ -25,7 +25,7 @@ function SignUpComponent() {
     if (userData.status === 'loading') {
       setLoading(true);
     } else if (userData.status === 'success') {
-      navigate('/main');
+      navigate('/');
       localStorage.setItem('user', JSON.stringify(userData));
     }
   }, [userData, navigate]);

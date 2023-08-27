@@ -9,6 +9,7 @@ import logo from '../assets/logo.png';
 import '../styles/navbar.css';
 
 const Navbar = () => {
+  const userData = JSON.parse(localStorage.getItem('user'));
   const [isMenuActive, setIsMenuActive] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -54,12 +55,18 @@ const Navbar = () => {
         </div>
 
         <div>
-          <Link className="" to="/signin">
-            Log In
-          </Link>
           <Link className="" to="/signup">
             Sign Up
           </Link>
+          {userData ? (
+            <Link className="" to="/" onClick={handleLogoutClick}>
+              Log Out
+            </Link>
+          ) : (
+            <Link className="" to="/signin">
+              Log In
+            </Link>
+          )}
         </div>
       </div>
 
