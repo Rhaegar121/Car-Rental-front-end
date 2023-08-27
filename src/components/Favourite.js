@@ -12,6 +12,7 @@ function Favourite() {
   const dispatch = useDispatch();
   const cars = useSelector((state) => state.favourite.cars);
   const favourites = useSelector((state) => state.favourite.favourites);
+  const status = useSelector((state) => state.favourite.status);
 
   const [number, setNumber] = useState(1);
   const showPerPage = 3;
@@ -52,6 +53,7 @@ function Favourite() {
   return (
     <>
       <Navbar />
+      {status === 'success' ? <p className="success">Remove from favourites successfully!</p> : null}
       <h1 className="heading">FAVOURITE CARS</h1>
       <div className="main-container">
         <button

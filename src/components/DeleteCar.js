@@ -52,7 +52,7 @@ const DeleteCar = () => {
     return (
       <>
         <Navbar />
-        {status === 'success' ? <h1 className="success">Car deleted successfully!</h1> : null}
+        {status === 'success' ? <p className="success">Car deleted successfully!</p> : null}
         <h2 className="sub-heading">You can only delete cars you added.</h2>
       </>
     );
