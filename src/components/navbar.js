@@ -104,10 +104,17 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <Link className="sign_out_button" to="/" onClick={handleLogoutClick}>
-          <BiLogOut className="signout-icon" />
-          Sign Out
-        </Link>
+        {userData ? (
+          <Link className="sign_out_button" to="/" onClick={handleLogoutClick}>
+            <BiLogOut className="signout-icon" />
+            Sign Out
+          </Link>
+        ) : (
+          <Link className="sign_out_button" to="/signin">
+            <BiLogOut className="signout-icon" />
+            Sign In
+          </Link>
+        )}
       </div>
     </nav>
   );
