@@ -156,3 +156,19 @@ a {
     gap: 1.5rem;
   }
 }
+
+@media (min-width: 1024px) {
+  .main-container {
+    padding: 2rem 2rem 6.7rem 2rem;
+    gap: 2rem;
+  }
+
+  .car-container {
+    height: 400px;
+  }
+
+  .image {
+    width: 80%;
+    margin: 0.9rem 0;
+  }
+}
