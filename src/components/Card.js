@@ -8,6 +8,7 @@ import StarRating from './StarRating';
 
 const CarCard = () => {
   const cars = useSelector((state) => state.car.cars);
+  const loading = useSelector((state) => state.car.isLoading);
   const dispatch = useDispatch();
   const [number, setNumber] = useState(1);
   const showPerPage = 3;
@@ -42,7 +43,7 @@ const CarCard = () => {
 
   return (
     <>
-      <h1 className="heading">Rent A Car Today</h1>
+      {loading ? <h1 className="heading">Fetching from the API</h1> : <h1 className="heading">Rent A Car Today</h1>}
       <div className="main-container">
         <button
           className="btn prev-btn"
