@@ -101,6 +101,7 @@ const AddCar = () => {
                 name="name"
                 value={carDetails.name}
                 onChange={handleChange}
+                required
               />
             </label>
             <br />
@@ -122,6 +123,7 @@ const AddCar = () => {
                 name="price"
                 value={carDetails.price}
                 onChange={handleChange}
+                required
               />
             </label>
             <br />
@@ -148,6 +150,7 @@ const AddCar = () => {
                   name="image"
                   value={carDetails.image}
                   onChange={handleChange}
+                  required
                 />
               </label>
             </div>
@@ -160,6 +163,7 @@ const AddCar = () => {
                 name="description"
                 value={carDetails.description}
                 onChange={handleChange}
+                required
               />
             </label>
             <label htmlFor="rating">
