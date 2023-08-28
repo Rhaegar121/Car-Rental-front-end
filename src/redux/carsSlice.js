@@ -7,6 +7,7 @@ const initialState = {
   cars: [],
   status: 'idle',
   isLoading: true,
+  error: '',
 };
 
 export const fetchCars = createAsyncThunk(
@@ -55,21 +56,42 @@ const carsSlice = createSlice({
         isLoading: false,
         cars: action.payload,
       }))
-      .addCase(fetchCars.rejected, (state) => ({ ...state, isLoading: false }))
+      .addCase(fetchCars.rejected, (state, action) => (
+        {
+          ...state,
+          status: 'error',
+          isLoading: false,
+          error: action.error.message,
+        }))
       .addCase(addCar.pending, (state) => ({ ...state, isLoading: true }))
       .addCase(addCar.fulfilled, (state, action) => (
         {
-          ...state, status: 'success', isLoading: false, cars: [...state.cars, action.payload],
+          ...state,
+          status: 'added successfully',
+          isLoading: false,
+          cars: [...state.cars, action.payload],
         }))
-      .addCase(addCar.rejected, (state) => ({ ...state, status: 'error', isLoading: false }))
+      .addCase(addCar.rejected, (state, action) => (
+        {
+          ...state,
+          status: 'error',
+          isLoading: false,
+          error: action.error.message,
+        }))
       .addCase(deleteCar.pending, (state) => ({ ...state, isLoading: true }))
       .addCase(deleteCar.fulfilled, (state, action) => ({
         ...state,
-        status: 'success',
+        status: 'deleted successfully',
         isLoading: false,
         cars: state.cars.filter((car) => car.id !== action.payload),
       }))
-      .addCase(deleteCar.rejected, (state) => ({ ...state, status: 'error', isLoading: false }));
+      .addCase(deleteCar.rejected, (state, action) => (
+        {
+          ...state,
+          status: 'error',
+          isLoading: false,
+          error: action.error.message,
+        }));
   },
 });
 

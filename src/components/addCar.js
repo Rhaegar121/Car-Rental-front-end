@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useSelector } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addCar } from '../redux/carsSlice';
@@ -9,6 +9,7 @@ const AddCar = () => {
   const userDataFromStorage = JSON.parse(localStorage.getItem('user'));
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const status = useSelector((state) => state.car.status);
 
   const [carDetails, setCarDetails] = useState({
     name: '',
@@ -65,7 +66,9 @@ const AddCar = () => {
     };
 
     dispatch(addCar({ userId: userDataFromStorage.id, car: newCar }));
-    navigate('/');
+    if (status === 'added successfully') {
+      navigate('/');
+    }
 
     setCarDetails({
       name: '',
