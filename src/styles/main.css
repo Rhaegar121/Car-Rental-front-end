@@ -1,5 +1,7 @@
 :root {
-  --primary-color: #cfe321;
+  /* --primary-color: #cfe321; */
+  --primary-color: #e88d18;
+  --primary-hover: #ab6b16;
   --secondary-color: #272a31;
   --background-color: #f0f0f0;
   --star-color: #eea929;
@@ -80,6 +82,12 @@ a {
 
 .btn a {
   color: #fff;
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 2.5px 2.5px 0 0 var(--primary-hover);
+  transform: translate(-2.5px, -2.5px);
 }
 
 .arrow-btn {
@@ -193,5 +201,9 @@ a {
 
   .car-details {
     padding: 0 5rem;
+  }
+
+  .btn {
+    padding: 12px 30px;
   }
 }
