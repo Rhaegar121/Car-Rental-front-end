@@ -33,16 +33,16 @@ a {
 }
 
 .car-container {
-  height: 400px;
+  height: 330px;
   background-color: #fff;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .image {
-  width: 90%;
-  height: 65%;
-  margin: auto;
+  width: 100%;
+  height: 64%;
 }
 
 .car-image {
@@ -52,7 +52,7 @@ a {
 }
 
 .car-details {
-  /* height: 20%; */
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
@@ -67,6 +67,20 @@ a {
 }
 
 .btn {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 20px auto;
+  border: none;
+  background-color: var(--primary-color);
+}
+
+.btn a {
+  color: #fff;
+}
+
+.arrow-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

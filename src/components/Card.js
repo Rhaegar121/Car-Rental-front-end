@@ -46,7 +46,7 @@ const CarCard = () => {
       {loading ? <h1 className="heading">Fetching from the API</h1> : <h1 className="heading">Rent A Car Today</h1>}
       <div className="main-container">
         <button
-          className="btn prev-btn"
+          className="arrow-btn prev-btn"
           type="button"
           onClick={prev}
           disabled={prevDisabled}
@@ -54,41 +54,48 @@ const CarCard = () => {
           <BsArrowLeft />
         </button>
         {car.map((car) => (
-          <Link
-            to={`/cars/${car.id}`}
+          <div
+            className="car-container"
             key={car.id}
           >
-            <div
-              className="car-container"
-              key={car.id}
-            >
-              <div className="image">
-                <img
-                  src={car.image}
-                  alt="mercedez benz"
-                  className="car-image"
-                />
-              </div>
+            <div className="image">
+              <img
+                src={car.image}
+                alt="mercedez benz"
+                className="car-image"
+              />
+            </div>
 
-              <div className="car-details">
-                <div className="left">
-                  <p className="car-name">{car.name}</p>
-                  <StarRating value={car.ratings} />
-                </div>
-                <div className="right">
-                  <p>
-                    {Math.round(car.price)}
-                    {' '}
-                    $
-                  </p>
-                  <p>per day</p>
-                </div>
+            <div className="car-details">
+              <div className="left">
+                <p className="car-name">{car.name}</p>
+                <StarRating value={car.ratings} />
+              </div>
+              <div className="right">
+                <p>
+                  {Math.round(car.price)}
+                  {' '}
+                  $
+                </p>
+                <p>per day</p>
               </div>
             </div>
-          </Link>
+
+            <button
+              type="button"
+              className="btn"
+            >
+              <Link
+                to={`/cars/${car.id}`}
+                key={car.id}
+              >
+                View details
+              </Link>
+            </button>
+          </div>
         ))}
         <button
-          className="btn next-btn"
+          className="arrow-btn next-btn"
           type="button"
           onClick={next}
           disabled={nextDisabled}
