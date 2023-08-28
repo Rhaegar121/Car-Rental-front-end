@@ -14,9 +14,9 @@ a {
 
 .main-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   position: relative;
-  padding: 2rem 8rem;
+  padding: 2rem 1rem 6.7rem 1rem;
   gap: 3rem;
 }
 
@@ -82,11 +82,11 @@ a {
 
 .arrow-btn {
   position: absolute;
-  top: 50%;
+  top: 95.5%;
   transform: translateY(-50%);
   height: 80px;
   width: 80px;
-  color: var(--secondary-color);
+  color: #fff;
   background-color: var(--primary-color);
   border: none;
   font-size: 2rem;
@@ -103,6 +103,11 @@ a {
   right: 0;
   border-bottom-left-radius: 50%;
   border-top-left-radius: 50%;
+}
+
+.disabled {
+  mix-blend-mode: multiply;
+  background-color: #a8a8a8;
 }
 
 .star {
@@ -143,13 +148,13 @@ a {
   font-size: 1.4rem;
 }
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .btn {
     top: 100%;
   }
 
   .main-container {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     padding: 2rem 1rem;
   }
-}
+} */

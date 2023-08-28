@@ -66,7 +66,6 @@ const AddCar = () => {
     };
 
     dispatch(addCar({ userId: userDataFromStorage.id, car: newCar }));
-
     if (data.status === 'added successfully') {
       navigate('/');
     }

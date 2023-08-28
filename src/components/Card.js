@@ -16,24 +16,15 @@ const CarCard = () => {
   const firstNumber = lastNumber - showPerPage;
   const car = cars.slice(firstNumber, lastNumber);
 
-  const [prevDisabled, setPrevDisabled] = useState(false);
-  const [nextDisabled, setNextDisabled] = useState(false);
-
   const prev = () => {
     if (number > 1) {
       setNumber(number - 1);
-      setNextDisabled(false);
-    } else {
-      setPrevDisabled(true);
     }
   };
 
   const next = () => {
-    if (number <= car.length) {
+    if (number <= (car.length / showPerPage)) {
       setNumber(number + 1);
-      setPrevDisabled(false);
-    } else {
-      setNextDisabled(true);
     }
   };
 
@@ -46,10 +37,9 @@ const CarCard = () => {
       {loading ? <h1 className="heading">Fetching from the API</h1> : <h1 className="heading">Rent A Car Today</h1>}
       <div className="main-container">
         <button
-          className="arrow-btn prev-btn"
+          className={number === 1 ? 'arrow-btn prev-btn disabled' : 'arrow-btn prev-btn'}
           type="button"
           onClick={prev}
-          disabled={prevDisabled}
         >
           <BsArrowLeft />
         </button>
@@ -95,10 +85,9 @@ const CarCard = () => {
           </div>
         ))}
         <button
-          className="arrow-btn next-btn"
+          className={number > (car.length / showPerPage) ? 'arrow-btn next-btn disabled' : 'arrow-btn next-btn'}
           type="button"
           onClick={next}
-          disabled={nextDisabled}
         >
           <BsArrowRight />
         </button>
