@@ -28,6 +28,7 @@ const SignInComponent = () => {
 
   return (
     <div className="sign-in-form">
+      {userData.status === 'error' ? <p className="error">{userData.error}</p> : null}
       <h1 className="sign-in-title">Welcome, please sign in to continue</h1>
       <div className="sign-in-inputs">
         <input
