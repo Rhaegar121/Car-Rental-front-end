@@ -41,7 +41,7 @@ const CarCard = () => {
           type="button"
           onClick={prev}
         >
-          <BsArrowLeft />
+          <BsArrowLeft className="arrow" />
         </button>
         {car.map((car) => (
           <div
@@ -89,7 +89,7 @@ const CarCard = () => {
           type="button"
           onClick={next}
         >
-          <BsArrowRight />
+          <BsArrowRight className="arrow" />
         </button>
       </div>
     </>

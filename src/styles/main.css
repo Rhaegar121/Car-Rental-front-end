@@ -101,6 +101,9 @@ a {
   border: none;
   font-size: 2rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .prev-btn {
@@ -109,10 +112,18 @@ a {
   border-bottom-right-radius: 50%;
 }
 
+.prev-btn:hover .arrow {
+  transform: translateX(-4px);
+}
+
 .next-btn {
   right: 0;
   border-bottom-left-radius: 50%;
   border-top-left-radius: 50%;
+}
+
+.next-btn:hover .arrow {
+  transform: translateX(4px);
 }
 
 .disabled {
