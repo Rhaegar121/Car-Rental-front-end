@@ -64,20 +64,23 @@ const carsSlice = createSlice({
           error: action.error.message,
         }))
       .addCase(addCar.pending, (state) => ({ ...state, isLoading: true }))
-      .addCase(addCar.fulfilled, (state, action) => (
-        {
-          ...state,
-          status: 'added successfully',
-          isLoading: false,
-          cars: [...state.cars, action.payload],
-        }))
-      .addCase(addCar.rejected, (state, action) => (
-        {
+      .addCase(addCar.fulfilled, (state, action) => {
+        if (!action.payload.errors) { // Check if there are no errors
+          return {
+            ...state,
+            status: 'added successfully',
+            isLoading: false,
+            cars: [...state.cars, action.payload],
+            error: '', // Clear any previous errors
+          };
+        }
+        return {
           ...state,
           status: 'error',
           isLoading: false,
-          error: action.error.message,
-        }))
+          error: action.payload.errors,
+        };
+      })
       .addCase(deleteCar.pending, (state) => ({ ...state, isLoading: true }))
       .addCase(deleteCar.fulfilled, (state, action) => ({
         ...state,
@@ -90,7 +93,7 @@ const carsSlice = createSlice({
           ...state,
           status: 'error',
           isLoading: false,
-          error: action.error.message,
+          error: action.payload.errors,
         }));
   },
 });

@@ -1,6 +1,6 @@
-import React, { useState, useSelector } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addCar } from '../redux/carsSlice';
 import '../styles/addCar.css';
 import Navbar from './navbar';
@@ -9,7 +9,7 @@ const AddCar = () => {
   const userDataFromStorage = JSON.parse(localStorage.getItem('user'));
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const status = useSelector((state) => state.car.status);
+  const data = useSelector((state) => state.car);
 
   const [carDetails, setCarDetails] = useState({
     name: '',
@@ -66,7 +66,7 @@ const AddCar = () => {
     };
 
     dispatch(addCar({ userId: userDataFromStorage.id, car: newCar }));
-    if (status === 'added successfully') {
+    if (data.status === 'added successfully') {
       navigate('/');
     }
 
@@ -94,6 +94,7 @@ const AddCar = () => {
       <Navbar />
       <div className="add_car_wrapper">
         <div className="car_form_container">
+          {data.status === 'error' ? <p className="error">{data.error}</p> : null}
           <h2>Add a New Car</h2>
           <form className="add_car_form_wrapper" onSubmit={handleSubmit}>
             <label htmlFor="name">
@@ -104,7 +105,7 @@ const AddCar = () => {
                 name="name"
                 value={carDetails.name}
                 onChange={handleChange}
-                required
+                // required
               />
             </label>
             <br />
