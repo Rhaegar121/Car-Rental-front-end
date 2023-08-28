@@ -11,7 +11,7 @@ const CarCard = () => {
   const loading = useSelector((state) => state.car.isLoading);
   const dispatch = useDispatch();
   const [number, setNumber] = useState(1);
-  const showPerPage = 3;
+  const showPerPage = 4;
   const lastNumber = number * showPerPage;
   const firstNumber = lastNumber - showPerPage;
   const car = cars.slice(firstNumber, lastNumber);
@@ -23,7 +23,7 @@ const CarCard = () => {
   };
 
   const next = () => {
-    if (number <= (car.length / showPerPage)) {
+    if (number < (cars.length / showPerPage)) {
       setNumber(number + 1);
     }
   };
@@ -85,7 +85,7 @@ const CarCard = () => {
           </div>
         ))}
         <button
-          className={number > (car.length / showPerPage) ? 'arrow-btn next-btn disabled' : 'arrow-btn next-btn'}
+          className={number > (cars.length / showPerPage) ? 'arrow-btn next-btn disabled' : 'arrow-btn next-btn'}
           type="button"
           onClick={next}
         >
