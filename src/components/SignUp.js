@@ -32,6 +32,7 @@ function SignUpComponent() {
 
   return (
     <div className="sign-up-form">
+      {userData.status === 'error' ? <p className="error">{userData.error}</p> : null}
       <h1 className="sign-up-title"> Welcome, please sign up or sign in to continue</h1>
       <div className="sign-up-inputs">
         <input
