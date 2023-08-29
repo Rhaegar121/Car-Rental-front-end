@@ -116,7 +116,7 @@ const Detail = () => {
         </div>
       </div>
       <div className="about-container">
-        <h3 className="about">{`What is a ${car.carType} car`}</h3>
+        <h3 className="about">{`What is a ${car.carType} car?`}</h3>
         <p className="description">{car.description}</p>
       </div>
       <button type="button" className="add-favourites-btn" onClick={handleAddFavouriteClick}>
