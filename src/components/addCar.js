@@ -21,8 +21,8 @@ const AddCar = () => {
     door: 2,
     seat: 2,
     bag: 0,
-    minFuel: 0,
-    maxFuel: 0,
+    minGas: 0,
+    maxGas: 0,
   });
 
   const handleChange = (event) => {
@@ -46,8 +46,8 @@ const AddCar = () => {
       door,
       seat,
       bag,
-      minFuel,
-      maxFuel,
+      minGas,
+      maxGas,
     } = carDetails;
 
     const newCar = {
@@ -60,8 +60,8 @@ const AddCar = () => {
       door,
       seat,
       bag,
-      minFuel,
-      maxFuel,
+      minGas,
+      maxGas,
       user_id: userDataFromStorage.id,
     };
 
@@ -80,8 +80,8 @@ const AddCar = () => {
       door: 2,
       seat: 2,
       bag: 0,
-      minFuel: 0,
-      maxFuel: 0,
+      minGas: 0,
+      maxGas: 0,
     });
   };
 
@@ -212,16 +212,16 @@ const AddCar = () => {
                 // id="rating"
                 // className="ratings"
                 type="number"
-                name="minFuel"
-                value={carDetails.minFuel}
+                name="minGas"
+                value={carDetails.minGas}
                 onChange={handleChange}
               />
               <input
                 // id="rating"
                 // className="ratings"
                 type="number"
-                name="maxFuel"
-                value={carDetails.maxFuel}
+                name="maxGas"
+                value={carDetails.maxGas}
                 onChange={handleChange}
               />
             </label>
