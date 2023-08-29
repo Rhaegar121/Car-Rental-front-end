@@ -6,8 +6,7 @@
   width: 100%;
   height: 60px;
   position: relative;
-  color: #fff;
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
 }
 
 .title {
@@ -15,7 +14,7 @@
   margin: 0;
   padding: 19.2px 0;
   font-size: 1.15rem;
-  font-weight: 500;
+  font-weight: 500;;
 }
 
 .back-btn {
@@ -42,28 +41,29 @@
   padding: 5px 0;
 }
 
-.img-container {
+.banner {
   width: 100%;
-  height: 300px;
+  height: 170px;
+  background-color: var(--primary-color);
   position: relative;
-  background-color: #00000039;
 }
 
-.img-container:hover {
-  cursor: pointer;
+.img-container {
+  width: 220px;
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  mix-blend-mode: multiply;
-  filter: grayscale(100%) contrast(1);
 }
 
-.img-container:hover .img {
-  mix-blend-mode: normal;
-  filter: none;
+.img-container:hover {
+  cursor: pointer;
 }
 
 .img-text {

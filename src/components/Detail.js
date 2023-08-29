@@ -52,8 +52,12 @@ const Detail = () => {
       </header>
       {favourite.status === 'added successfully' ? <p className="success">Added to favourites successfully!</p> : null}
       {already ? <p className="error">This car is already in your favourites!</p> : null}
-      <div className="img-container">
-        <img src={car.image} alt={car.name} className="img" />
+      <div className="banner">
+        <div className="img-container">
+          <img src={car.image} alt={car.name} className="img" />
+        </div>
+      </div>
+      <div>
         <div className="img-text">
           <div className="rating">
             <AiOutlineUser className="user-icon" />
