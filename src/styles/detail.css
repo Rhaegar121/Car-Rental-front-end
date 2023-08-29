@@ -158,19 +158,15 @@
   color: #6b6b6b;
 }
 
-.add-favourites-btn {
+.reserve-btn {
   width: 100%;
   padding: 15px 0;
   border: none;
   font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
   color: #fff;
   background-color: var(--primary-color);
-}
-
-.heart-icon {
-  font-size: 1.15rem;
-  margin-right: 10px;
-  transform: translateY(3px);
 }
 
 @media screen and (min-width: 992px) {

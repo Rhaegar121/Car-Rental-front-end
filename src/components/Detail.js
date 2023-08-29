@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  AiOutlineStar, AiFillStar, AiOutlineUser, AiOutlineHeart,
+  AiOutlineStar, AiFillStar, AiOutlineUser,
 } from 'react-icons/ai';
 import { GiCarDoor, GiShoppingBag } from 'react-icons/gi';
 import { FaGasPump } from 'react-icons/fa';
@@ -119,9 +119,8 @@ const Detail = () => {
         <h3 className="about">{`What is a ${car.carType} car?`}</h3>
         <p className="description">{car.description}</p>
       </div>
-      <button type="button" className="add-favourites-btn" onClick={handleAddFavouriteClick}>
-        <AiOutlineHeart className="heart-icon" />
-        Add to favourites
+      <button type="button" className="reserve-btn" onClick={handleAddFavouriteClick}>
+        reserve
       </button>
     </section>
   );
