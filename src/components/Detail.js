@@ -52,76 +52,78 @@ const Detail = () => {
         <IoIosArrowBack className="back-btn" onClick={() => navigate(-1)} />
         <h2 className="title">{car.name}</h2>
       </header>
-      {favourite.status === 'added successfully' ? <p className="success">Added to favourites successfully!</p> : null}
-      {already ? <p className="error">This car is already in your favourites!</p> : null}
+      {favourite.status === 'added successfully' ? <p className="success">Added to reservation successfully!</p> : null}
+      {already ? <p className="error">This car is already in your reservation!</p> : null}
       <div className="banner">
         <div className="img-container">
           <img src={car.image} alt={car.name} className="img" />
         </div>
       </div>
-      <div className="img-text">
-        <div className="rating">
-          <AiOutlineUser className="user-icon" />
-          <div>
-            <p>{userData.name}</p>
+      <div className="detail-container">
+        <div className="img-text">
+          <div className="rating">
+            <AiOutlineUser className="user-icon" />
             <div>
-              {starIcons}
-              {emptyStarIcons}
+              <p>{userData.name}</p>
+              <div>
+                {starIcons}
+                {emptyStarIcons}
+              </div>
             </div>
           </div>
+          <div className="price">
+            <p>
+              $
+              &nbsp;
+              {car.price}
+            </p>
+            <p>per day</p>
+          </div>
         </div>
-        <div className="price">
-          <p>
-            $
-            &nbsp;
-            {car.price}
-          </p>
-          <p>per day</p>
+        <div className="features">
+          <div className="feature">
+            <span><GiCarDoor /></span>
+            <span>
+              {car.door}
+              {' '}
+              doors
+            </span>
+          </div>
+          <div className="feature">
+            <span><IoIosPerson /></span>
+            <span>
+              {car.seat}
+              {' '}
+              seats
+            </span>
+          </div>
+          <div className="feature">
+            <span><GiShoppingBag /></span>
+            <span>
+              {car.bag}
+              {' '}
+              large bag
+            </span>
+          </div>
+          <div className="feature">
+            <span><FaGasPump /></span>
+            <span>
+              {car.minGas}
+              -
+              {car.maxGas}
+              {' '}
+              mpg
+            </span>
+          </div>
         </div>
+        <div className="about-container">
+          <h3 className="about">{`What is a ${car.carType} car?`}</h3>
+          <p className="description">{car.description}</p>
+        </div>
+        <button type="button" className="reserve-btn" onClick={handleAddFavouriteClick}>
+          reserve
+        </button>
       </div>
-      <div className="features">
-        <div className="feature">
-          <span><GiCarDoor /></span>
-          <span>
-            {car.door}
-            {' '}
-            doors
-          </span>
-        </div>
-        <div className="feature">
-          <span><IoIosPerson /></span>
-          <span>
-            {car.seat}
-            {' '}
-            seats
-          </span>
-        </div>
-        <div className="feature">
-          <span><GiShoppingBag /></span>
-          <span>
-            {car.bag}
-            {' '}
-            large bag
-          </span>
-        </div>
-        <div className="feature">
-          <span><FaGasPump /></span>
-          <span>
-            {car.minGas}
-            -
-            {car.maxGas}
-            {' '}
-            mpg
-          </span>
-        </div>
-      </div>
-      <div className="about-container">
-        <h3 className="about">{`What is a ${car.carType} car?`}</h3>
-        <p className="description">{car.description}</p>
-      </div>
-      <button type="button" className="reserve-btn" onClick={handleAddFavouriteClick}>
-        reserve
-      </button>
     </section>
   );
 };
