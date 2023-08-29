@@ -71,17 +71,13 @@ const CarCard = () => {
               </div>
             </div>
 
-            <button
-              type="button"
+            <Link
+              to={`/cars/${car.id}`}
+              key={car.id}
               className="btn"
             >
-              <Link
-                to={`/cars/${car.id}`}
-                key={car.id}
-              >
-                View details
-              </Link>
-            </button>
+              View details
+            </Link>
           </div>
         ))}
         <button

@@ -71,17 +71,14 @@ a {
 }
 
 .btn {
-  padding: 10px 25px;
   font-size: 0.9rem;
   font-weight: 600;
+  padding: 10px 25px;
   text-transform: uppercase;
   margin: 20px auto;
   border: none;
-  background-color: var(--primary-color);
-}
-
-.btn a {
   color: #fff;
+  background-color: var(--primary-color);
 }
 
 .btn:hover {
