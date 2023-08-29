@@ -4,7 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   AiOutlineStar, AiFillStar, AiOutlineUser, AiOutlineHeart,
 } from 'react-icons/ai';
-import { IoIosArrowBack } from 'react-icons/io';
+import { GiCarDoor, GiShoppingBag } from 'react-icons/gi';
+import { FaGasPump } from 'react-icons/fa';
+import { IoIosArrowBack, IoIosPerson } from 'react-icons/io';
 import { addfavourite, fetchfavourites } from '../redux/favouritesSlice';
 import { fetchCars } from '../redux/carsSlice';
 import '../styles/detail.css';
@@ -75,6 +77,42 @@ const Detail = () => {
             {car.price}
           </p>
           <p>per day</p>
+        </div>
+      </div>
+      <div className="features">
+        <div className="feature">
+          <span><GiCarDoor /></span>
+          <span>
+            {car.door}
+            {' '}
+            doors
+          </span>
+        </div>
+        <div className="feature">
+          <span><IoIosPerson /></span>
+          <span>
+            {car.seat}
+            {' '}
+            seats
+          </span>
+        </div>
+        <div className="feature">
+          <span><GiShoppingBag /></span>
+          <span>
+            {car.bag}
+            {' '}
+            large bag
+          </span>
+        </div>
+        <div className="feature">
+          <span><FaGasPump /></span>
+          <span>
+            {car.min_oil}
+            -
+            {car.max_oil}
+            {' '}
+            mpg
+          </span>
         </div>
       </div>
       <div className="about-container">

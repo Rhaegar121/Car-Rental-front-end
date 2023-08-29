@@ -63,7 +63,7 @@
 }
 
 .img-text {
-  width: 85%;
+  width: 88%;
   margin: 30px auto;
   display: flex;
   align-items: center;
@@ -116,8 +116,33 @@
   font-size: 1.2rem;
 }
 
+.features {
+  width: 88%;
+  margin: 20px auto;
+  padding: 8px 0 8px 40px;
+  border-radius: 50px;
+  display: grid;
+  justify-items: start;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 4px;
+  color: var(--secondary-color);
+  background-color: #fff;
+}
+
+.feature {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.feature span:first-child {
+  font-size: 1.1rem;
+}
+
 .about-container {
-  width: 85%;
+  width: 88%;
   margin: 30px auto;
 }
 
