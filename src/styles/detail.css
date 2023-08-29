@@ -66,7 +66,7 @@
   height: auto;
   position: absolute;
   top: 36%;
-  left: 50%;
+  right: 50%;
   transform: translateX(-50%);
 }
 
@@ -203,6 +203,7 @@
     transform: translateY(-50%);
     color: #fff;
     font-size: 1rem;
+    text-transform: capitalize;
   }
   
   .banner-text p:first-child {
@@ -214,7 +215,7 @@
   .img-container {
     width: 450px;
     top: 10%;
-    left: 45%;
+    right: 50px;
     transform: translateX(0);
   }
 
@@ -259,6 +260,15 @@
 
   .detail-container {
     width: 70%;
+  }
+
+  .banner-text {
+    left: 6%;
+    font-size: 1.1rem;
+  }
+
+  .banner-text p:first-child {
+    font-size: 2rem;
   }
 
   .rating {
