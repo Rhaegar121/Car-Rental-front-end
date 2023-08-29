@@ -13,11 +13,11 @@ const AddCar = () => {
 
   const [carDetails, setCarDetails] = useState({
     name: '',
-    type: '',
     price: '',
     ratings: 0,
     image: '',
     description: '',
+    carType: '',
     door: 2,
     seat: 2,
     bag: 0,
@@ -38,11 +38,11 @@ const AddCar = () => {
 
     const {
       name,
-      type,
       price,
       ratings,
       image,
       description,
+      carType,
       door,
       seat,
       bag,
@@ -52,11 +52,11 @@ const AddCar = () => {
 
     const newCar = {
       name,
-      type,
       price,
       ratings,
       image,
       description,
+      carType,
       door,
       seat,
       bag,
@@ -72,11 +72,11 @@ const AddCar = () => {
 
     setCarDetails({
       name: '',
-      type: '',
       price: '',
       ratings: 0,
       image: '',
       description: '',
+      carType: '',
       door: 2,
       seat: 2,
       bag: 0,
@@ -113,8 +113,8 @@ const AddCar = () => {
               Type:
               <input
                 type="text"
-                name="type"
-                value={carDetails.type}
+                name="carType"
+                value={carDetails.carType}
                 onChange={handleChange}
               />
             </label>

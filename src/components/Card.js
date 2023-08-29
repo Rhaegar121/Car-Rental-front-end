@@ -81,7 +81,7 @@ const CarCard = () => {
           </div>
         ))}
         <button
-          className={number > (cars.length / showPerPage) ? 'arrow-btn next-btn disabled' : 'arrow-btn next-btn'}
+          className={number >= (cars.length / showPerPage) ? 'arrow-btn next-btn disabled' : 'arrow-btn next-btn'}
           type="button"
           onClick={next}
         >

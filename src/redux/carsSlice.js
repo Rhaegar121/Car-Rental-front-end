@@ -81,6 +81,13 @@ const carsSlice = createSlice({
           error: action.payload.errors,
         };
       })
+      .addCase(addCar.rejected, (state, action) => (
+        {
+          ...state,
+          status: 'error',
+          isLoading: false,
+          error: action.payload.errors,
+        }))
       .addCase(deleteCar.pending, (state) => ({ ...state, isLoading: true }))
       .addCase(deleteCar.fulfilled, (state, action) => ({
         ...state,
