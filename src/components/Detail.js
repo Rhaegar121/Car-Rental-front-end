@@ -57,26 +57,24 @@ const Detail = () => {
           <img src={car.image} alt={car.name} className="img" />
         </div>
       </div>
-      <div>
-        <div className="img-text">
-          <div className="rating">
-            <AiOutlineUser className="user-icon" />
+      <div className="img-text">
+        <div className="rating">
+          <AiOutlineUser className="user-icon" />
+          <div>
+            <p>{userData.name}</p>
             <div>
-              <p>{userData.name}</p>
-              <div>
-                {starIcons}
-                {emptyStarIcons}
-              </div>
+              {starIcons}
+              {emptyStarIcons}
             </div>
           </div>
-          <div className="price">
-            <p>
-              $
-              &nbsp;
-              {car.price}
-            </p>
-            <p>per month</p>
-          </div>
+        </div>
+        <div className="price">
+          <p>
+            $
+            &nbsp;
+            {car.price}
+          </p>
+          <p>per day</p>
         </div>
       </div>
       <div className="about-container">

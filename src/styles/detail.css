@@ -62,21 +62,14 @@
   object-fit: cover;
 }
 
-.img-container:hover {
-  cursor: pointer;
-}
-
 .img-text {
   width: 85%;
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 30px auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #fff;
   font-weight: 500;
+  color: var(--secondary-color);
 }
 
 .rating {
@@ -111,16 +104,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 3px;
   font-size: 0.8rem;
 }
 
 .price p {
   margin: 0;
+  line-height: 1.1;
 }
 
 .price p:first-child {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .about-container {
