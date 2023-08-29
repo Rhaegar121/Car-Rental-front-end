@@ -55,6 +55,10 @@ const Detail = () => {
       {favourite.status === 'added successfully' ? <p className="success">Added to reservation successfully!</p> : null}
       {already ? <p className="error">This car is already in your reservation!</p> : null}
       <div className="banner">
+        <div className="banner-text">
+          <p>{`reserve a ${car.carType} car rental`}</p>
+          <p>{`${car.name} or similar cars`}</p>
+        </div>
         <div className="img-container">
           <img src={car.image} alt={car.name} className="img" />
         </div>

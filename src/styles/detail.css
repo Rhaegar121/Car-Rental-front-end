@@ -57,6 +57,10 @@
   position: relative;
 }
 
+.banner-text {
+  display: none;
+}
+
 .img-container {
   width: 220px;
   height: auto;
@@ -191,6 +195,22 @@
     margin-bottom: 80px;
   }
 
+  .banner-text {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  .banner-text p:first-child {
+    font-size: 1.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
   .img-container {
     width: 450px;
     top: 10%;
@@ -237,9 +257,8 @@
     font-size: 2.2rem;
   }
 
-  .img-container {
+  .detail-container {
     width: 70%;
-    height: 500px;
   }
 
   .rating {
@@ -254,19 +273,11 @@
     font-size: 1.5rem;
   }
 
-  .about-container {
-    width: 55%;
-  }
-
   .about {
     font-size: 1.15rem;
   }
 
   .description {
     font-size: 1rem;
-  }
-
-  .heart-icon {
-    margin-right: 5px;
   }
 }
