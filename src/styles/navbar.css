@@ -131,14 +131,14 @@ ul li {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 48px;
+  height: 57px;
   border-radius: 5px;
   color: #fff;
   font-size: 0.9rem;
 }
 
 .menu_link:hover {
-  background-color: #d9ed26;
+  background-color: var(--primary-hover);
 }
 
 .nav-icon {
@@ -155,11 +155,11 @@ ul li {
   font-size: 0.9rem;
   text-align: center;
   color: #fff;
-  background-color: #c4d710;
+  background-color: #c31919;
 }
 
 .sign_out_button:hover {
-  background-color: #d9ed26;
+  background-color: var(--primary-hover);
 }
 
 .signout-icon {
@@ -203,6 +203,6 @@ ul li {
   }
 
   .nav_menu {
-    width: 15%;
+    width: 16%;
   }
 }
