@@ -4,7 +4,6 @@
 }
 
 .add_car_wrapper {
-  height: 89vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,7 +13,7 @@
 .car_form_container {
   width: 90%;
   padding: 0 17px;
-  margin-top: 0;
+  margin-top: 20px;
 }
 
 .add_car_button {
