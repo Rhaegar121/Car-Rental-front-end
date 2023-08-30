@@ -33,6 +33,11 @@
   flex-direction: column;
 }
 
+.second_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
 .add_car_form_wrapper label {
   display: flex;
   flex-direction: column;
@@ -52,12 +57,12 @@
   border-radius: 5px;
 }
 
-.ratings_and_photo_wrapper {
+/* .ratings_and_photo_wrapper {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
+} */
 
 .back_button {
   width: 100%;
@@ -95,10 +100,6 @@
   box-shadow: none;
   cursor: pointer;
   transform: translateY(-2px);
-}
-
-.ratings {
-  text-align: center;
 }
 
 @media screen and (min-width: 768px) {

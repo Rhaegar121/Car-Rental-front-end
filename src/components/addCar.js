@@ -117,49 +117,49 @@ const AddCar = () => {
                   name="carType"
                   value={carDetails.carType}
                   onChange={handleChange}
+                  required
                 />
               </label>
             </div>
             <br />
-            <label htmlFor="rentAmount">
-              Price (USD):
-              <input
-                id="rentAmount"
-                type="number"
-                name="price"
-                value={carDetails.price}
-                onChange={handleChange}
-                required
-              />
-            </label>
-            <br />
-            <div className="ratings_and_photo_wrapper">
+            <div className="second_wrapper">
               <label htmlFor="rating">
                 Ratings:
                 <input
                   id="rating"
-                  className="ratings"
                   type="number"
                   name="ratings"
                   min={0}
                   max={5}
                   value={carDetails.ratings}
                   onChange={handleChange}
+                  required
                 />
               </label>
-              <br />
-              <label htmlFor="carPhoto">
-                Car image url link:
+              <label htmlFor="price">
+                Price per day in USD:
                 <input
-                  id="carPhoto"
-                  className="carPhoto"
-                  name="image"
-                  value={carDetails.image}
+                  id="price"
+                  type="number"
+                  name="price"
+                  min={0}
+                  value={carDetails.price}
                   onChange={handleChange}
                   required
                 />
               </label>
             </div>
+            <label htmlFor="carPhoto">
+              Car image url link:
+              <input
+                id="carPhoto"
+                className="carPhoto"
+                name="image"
+                value={carDetails.image}
+                onChange={handleChange}
+                required
+              />
+            </label>
 
             <br />
             <label htmlFor="carDetails">
