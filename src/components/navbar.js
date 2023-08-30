@@ -5,7 +5,7 @@ import { IoAddCircleOutline } from 'react-icons/io5';
 import { BiLogOut } from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
 import { logOutUser } from '../redux/userSlice';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo-white.png';
 import '../styles/navbar.css';
 
 const Navbar = () => {
