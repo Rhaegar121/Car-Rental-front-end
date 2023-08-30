@@ -23,11 +23,13 @@
 
 .add_car_form_wrapper {
   display: flex;
-  padding: 1rem;
+  padding: 1.5rem;
   flex-direction: column;
   gap: 1rem;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px;
+  border: 1px solid var(--primary-color);
+  /* background-color: var(--primary-color); */
+  background-color: #fff;
 }
 
 .first_wrapper {
@@ -46,21 +48,26 @@
 }
 
 .second_wrapper input {
-  width: 60px;
+  width: 55px;
+  text-align: center;
 }
 
 .add_car_form_wrapper label {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  /* border: 1px solid red; */
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--secondary-color);
 }
 
 .add_car_form_wrapper input {
   padding: 8px 12px;
-  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  outline: none;
+  border: 1px solid var(--primary-color);
   margin-top: 0.5rem;
-  border-radius: 5px;
 }
 
 .third_wrapper {
@@ -72,9 +79,8 @@
 
 .add_car_form_wrapper textarea {
   padding: 8px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--primary-color);
   margin-top: 0.5rem;
-  border-radius: 5px;
 }
 
 .car_form_container h2 {
