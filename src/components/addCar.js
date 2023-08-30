@@ -85,9 +85,9 @@ const AddCar = () => {
     });
   };
 
-  const handleBack = () => {
-    navigate(-1);
-  };
+  // const handleBack = () => {
+  //   navigate(-1);
+  // };
 
   return (
     <div className="add_car_container">
@@ -121,7 +121,6 @@ const AddCar = () => {
                 />
               </label>
             </div>
-            <br />
             <div className="second_wrapper">
               <label htmlFor="rating">
                 Ratings:
@@ -137,7 +136,7 @@ const AddCar = () => {
                 />
               </label>
               <label htmlFor="price">
-                Price per day in USD:
+                Price in USD:
                 <input
                   id="price"
                   type="number"
@@ -149,7 +148,7 @@ const AddCar = () => {
                 />
               </label>
             </div>
-            <div className="third_wrapper">
+            <div className="second_wrapper">
               <label htmlFor="door">
                 Doors:
                 <input
@@ -174,9 +173,39 @@ const AddCar = () => {
                 />
               </label>
             </div>
+            <div className="second_wrapper">
+              <label htmlFor="bag">
+                Bags:
+                <input
+                  id="bag"
+                  type="number"
+                  name="bag"
+                  value={carDetails.bag}
+                  onChange={handleChange}
+                />
+              </label>
+              <label htmlFor="gas">
+                Gas tank (mpg):
+                <div className="third_wrapper">
+                  <input
+                    type="number"
+                    name="minGas"
+                    value={carDetails.minGas}
+                    onChange={handleChange}
+                  />
+                  <span>-</span>
+                  <input
+                    type="number"
+                    name="maxGas"
+                    value={carDetails.maxGas}
+                    onChange={handleChange}
+                  />
+                </div>
+              </label>
+            </div>
             <label htmlFor="carPhoto">
               Car image url link:
-              <input
+              <textarea
                 id="carPhoto"
                 className="carPhoto"
                 name="image"
@@ -185,7 +214,6 @@ const AddCar = () => {
                 required
               />
             </label>
-            <br />
             <label htmlFor="carDetails">
               Car Description:
               <textarea
@@ -196,45 +224,11 @@ const AddCar = () => {
                 required
               />
             </label>
-            <label htmlFor="rating">
-              Large Bags:
-              <input
-                id="bag"
-                className="bag"
-                type="number"
-                name="bag"
-                value={carDetails.bag}
-                onChange={handleChange}
-              />
-            </label>
-            <label htmlFor="rating">
-              Fuel (mpg):
-              <input
-                // id="rating"
-                // className="ratings"
-                type="number"
-                name="minGas"
-                value={carDetails.minGas}
-                onChange={handleChange}
-              />
-              <input
-                // id="rating"
-                // className="ratings"
-                type="number"
-                name="maxGas"
-                value={carDetails.maxGas}
-                onChange={handleChange}
-              />
-            </label>
-            <br />
             <button type="submit" className="add_car_button">
               Add Car
             </button>
           </form>
         </div>
-        <button type="button" onClick={handleBack} className="back_button">
-          Back
-        </button>
       </div>
     </div>
   );
