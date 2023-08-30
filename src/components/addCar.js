@@ -224,9 +224,14 @@ const AddCar = () => {
                 required
               />
             </label>
-            <button type="submit" className="add_car_button">
-              Add Car
-            </button>
+            <div className="button_wrapper">
+              <button type="button" className="cancel_btn" onClick={() => navigate(-1)}>
+                Cancel
+              </button>
+              <button type="submit" className="btn">
+                Add Car
+              </button>
+            </div>
           </form>
         </div>
       </div>
