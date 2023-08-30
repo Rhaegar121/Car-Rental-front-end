@@ -88,7 +88,7 @@ function Favourite() {
               </div>
             </div>
             <button
-              className="delete-car-button"
+              className="btn"
               onClick={() => handleDeleteFavourite(car.id)}
               type="button"
             >
