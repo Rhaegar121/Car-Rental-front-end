@@ -57,7 +57,7 @@ function Favourite() {
       <h1 className="heading">FAVOURITE CARS</h1>
       <div className="main-container">
         <button
-          className="btn prev-btn"
+          className="arrow-btn prev-btn"
           type="button"
           onClick={prev}
           disabled={prevDisabled}
@@ -98,7 +98,7 @@ function Favourite() {
           </div>
         ))}
         <button
-          className="btn next-btn"
+          className="arrow-btn next-btn"
           type="button"
           onClick={next}
           disabled={nextDisabled}
