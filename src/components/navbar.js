@@ -88,7 +88,7 @@ const Navbar = () => {
           <li>
             <Link className="menu_link" to={userData ? '/favourites' : '/signup'} onClick={handleMenuLinkClick}>
               <AiTwotoneHeart className="nav-icon" />
-              My Favourites
+              My Reservations
             </Link>
           </li>
           <li>
