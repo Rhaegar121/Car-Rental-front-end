@@ -54,16 +54,17 @@ const Navbar = () => {
           <span className="line" />
         </div>
 
-        <div>
-          <Link className="" to="/signup">
+        <div className="nav-links">
+          <Link className="nav-link" to="/signup">
             Sign Up
           </Link>
+          <div className="ver-line" />
           {userData ? (
-            <Link className="" to="/" onClick={handleLogoutClick}>
+            <Link className="nav-link" to="/" onClick={handleLogoutClick}>
               Log Out
             </Link>
           ) : (
-            <Link className="" to="/signin">
+            <Link className="nav-link" to="/signin">
               Log In
             </Link>
           )}

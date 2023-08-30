@@ -47,6 +47,43 @@ nav {
   z-index: 100;
 }
 
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+  gap: 1rem;
+}
+
+.ver-line {
+  width: 1.5px;
+  height: 23px;
+  background-color: #fff;
+}
+
+.nav-link {
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  display: inline-block;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 ul li {
   list-style: none;
 }
@@ -138,6 +175,19 @@ ul li {
 }
 
 @media screen and (min-width: 1200px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .ver-line {
+    width: 1.8px;
+    height: 27px;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+  }
+
   .nav_menu {
     width: 17%;
   }
