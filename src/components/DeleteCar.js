@@ -64,7 +64,7 @@ const DeleteCar = () => {
       <h1 className="heading">Delete a Car</h1>
       <div className="main-container">
         <button
-          className="btn prev-btn"
+          className="arrow-btn prev-btn"
           type="button"
           onClick={prev}
           disabled={prevDisabled}
@@ -87,7 +87,7 @@ const DeleteCar = () => {
               </div>
             </div>
             <button
-              className="delete-car-button"
+              className="btn"
               onClick={() => handleDeleteCar(car.id)}
               type="button"
             >
@@ -97,7 +97,7 @@ const DeleteCar = () => {
           </div>
         ))}
         <button
-          className="btn next-btn"
+          className="arrow-btn next-btn"
           type="button"
           onClick={next}
           disabled={nextDisabled}
