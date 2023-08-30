@@ -149,6 +149,31 @@ const AddCar = () => {
                 />
               </label>
             </div>
+            <div className="third_wrapper">
+              <label htmlFor="door">
+                Doors:
+                <input
+                  id="door"
+                  type="number"
+                  name="door"
+                  min={2}
+                  max={4}
+                  value={carDetails.door}
+                  onChange={handleChange}
+                />
+              </label>
+              <label htmlFor="seat">
+                Seats:
+                <input
+                  id="seat"
+                  type="number"
+                  name="seat"
+                  min={2}
+                  value={carDetails.seat}
+                  onChange={handleChange}
+                />
+              </label>
+            </div>
             <label htmlFor="carPhoto">
               Car image url link:
               <input
@@ -160,7 +185,6 @@ const AddCar = () => {
                 required
               />
             </label>
-
             <br />
             <label htmlFor="carDetails">
               Car Description:
@@ -170,31 +194,6 @@ const AddCar = () => {
                 value={carDetails.description}
                 onChange={handleChange}
                 required
-              />
-            </label>
-            <label htmlFor="rating">
-              Doors:
-              <input
-                id="door"
-                className="door"
-                type="number"
-                name="door"
-                min={2}
-                max={4}
-                value={carDetails.door}
-                onChange={handleChange}
-              />
-            </label>
-            <label htmlFor="rating">
-              Seats:
-              <input
-                id="seat"
-                className="seat"
-                type="number"
-                name="seat"
-                min={2}
-                value={carDetails.seat}
-                onChange={handleChange}
               />
             </label>
             <label htmlFor="rating">

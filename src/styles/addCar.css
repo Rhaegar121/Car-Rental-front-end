@@ -38,6 +38,11 @@
   justify-content: space-between;
 }
 
+.third_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
 .add_car_form_wrapper label {
   display: flex;
   flex-direction: column;
