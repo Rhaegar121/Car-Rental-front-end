@@ -28,6 +28,11 @@
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px;
 }
 
+.first_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .add_car_form_wrapper label {
   display: flex;
   flex-direction: column;

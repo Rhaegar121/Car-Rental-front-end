@@ -97,27 +97,29 @@ const AddCar = () => {
           {data.status === 'error' ? <p className="error">{data.error}</p> : null}
           <h2>Add a new car to rent</h2>
           <form className="add_car_form_wrapper" onSubmit={handleSubmit}>
-            <label htmlFor="name">
-              Name:
-              <input
-                id="brand"
-                type="text"
-                name="name"
-                value={carDetails.name}
-                onChange={handleChange}
-                required
-              />
-            </label>
-            <br />
-            <label htmlFor="name">
-              Type:
-              <input
-                type="text"
-                name="carType"
-                value={carDetails.carType}
-                onChange={handleChange}
-              />
-            </label>
+            <div className="first_wrapper">
+              <label htmlFor="name">
+                Name:
+                <input
+                  id="brand"
+                  type="text"
+                  name="name"
+                  value={carDetails.name}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+              <label htmlFor="type">
+                Type:
+                <input
+                  id="type"
+                  type="text"
+                  name="carType"
+                  value={carDetails.carType}
+                  onChange={handleChange}
+                />
+              </label>
+            </div>
             <br />
             <label htmlFor="rentAmount">
               Price (USD):
