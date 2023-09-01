@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-// const baseURL = 'https://carrental-9ijm.onrender.com';
-const baseURL = 'http://127.0.0.1:3000/users';
+const baseURL = 'https://carrental-9ijm.onrender.com';
+// const baseURL = 'http://127.0.0.1:3000/users';
 
 const initialState = {
   status: 'idle',
