@@ -67,13 +67,17 @@ const DeleteCar = () => {
               <img src={car.image} alt={car.name} className="car-image" />
             </div>
             <div className="car-details">
-              <div className="right">
+              <div className="left">
                 <p className="car-name">{car.name}</p>
                 <StarRating value={car.ratings} />
               </div>
-              <div className="left">
-                <p className="price">{car.price}</p>
-                <p className="per-month">per month</p>
+              <div className="right">
+                <p>
+                  {Math.round(car.price)}
+                  {' '}
+                  $
+                </p>
+                <p>per day</p>
               </div>
             </div>
             <button
