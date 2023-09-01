@@ -109,9 +109,7 @@ ul li {
 
 .logo {
   width: 140px;
-  display: flex;
-  align-self: center;
-  margin: 10px 0 30px 0;
+  margin: 10px auto 30px auto;
 }
 
 .logo-img {
