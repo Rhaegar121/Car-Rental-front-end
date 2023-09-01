@@ -88,7 +88,7 @@ const favouritesSlice = createSlice({
       }))
       .addCase(deletefavourite.fulfilled, (state, action) => ({
         ...state,
-        status: 'success',
+        status: 'removed successfully',
         isLoading: false,
         cars: state.cars.filter(
           (car) => car.id !== parseInt(action.payload, 10),
