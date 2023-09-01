@@ -15,16 +15,13 @@ const DeleteCar = () => {
   const dispatch = useDispatch();
 
   const [number, setNumber] = useState(1);
-  const showPerPage = 3;
+  const showPerPage = 4;
   const lastNumber = number * showPerPage;
   const firstNumber = lastNumber - showPerPage;
 
-  const [prevDisabled, setPrevDisabled] = useState(false);
-  const [nextDisabled, setNextDisabled] = useState(false);
-
   useEffect(() => {
-    dispatch(fetchCars({ userId: userData.id }));
-  }, [dispatch, userData.id]);
+    dispatch(fetchCars());
+  }, [dispatch]);
 
   const handleDeleteCar = (carId) => {
     dispatch(deleteCar({ userId: userData.id, carId }));
@@ -33,18 +30,12 @@ const DeleteCar = () => {
   const prev = () => {
     if (number > 1) {
       setNumber(number - 1);
-      setNextDisabled(false);
-    } else {
-      setPrevDisabled(true);
     }
   };
 
   const next = () => {
     if (number < Math.ceil(cars.length / showPerPage)) {
       setNumber(number + 1);
-      setPrevDisabled(false);
-    } else {
-      setNextDisabled(true);
     }
   };
 
@@ -64,12 +55,11 @@ const DeleteCar = () => {
       <h1 className="heading">Delete a Car</h1>
       <div className="main-container">
         <button
-          className="arrow-btn prev-btn"
+          className={number === 1 ? 'arrow-btn prev-btn disabled' : 'arrow-btn prev-btn'}
           type="button"
           onClick={prev}
-          disabled={prevDisabled}
         >
-          <BsArrowLeft />
+          <BsArrowLeft className="arrow" />
         </button>
         {userCars.slice(firstNumber, lastNumber).map((car) => (
           <div className="car-container" key={car.id}>
@@ -97,12 +87,11 @@ const DeleteCar = () => {
           </div>
         ))}
         <button
-          className="arrow-btn next-btn"
+          className={number >= (cars.length / showPerPage) ? 'arrow-btn next-btn disabled' : 'arrow-btn next-btn'}
           type="button"
           onClick={next}
-          disabled={nextDisabled}
         >
-          <BsArrowRight />
+          <BsArrowRight className="arrow" />
         </button>
       </div>
     </>
