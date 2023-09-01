@@ -13,7 +13,7 @@ const AddCar = () => {
 
   const [carDetails, setCarDetails] = useState({
     name: '',
-    price: '',
+    price: 0,
     ratings: 0,
     image: '',
     description: '',
@@ -71,7 +71,7 @@ const AddCar = () => {
 
     setCarDetails({
       name: '',
-      price: '',
+      price: 0,
       ratings: 0,
       image: '',
       description: '',
@@ -105,6 +105,7 @@ const AddCar = () => {
                   name="name"
                   value={carDetails.name}
                   onChange={handleChange}
+                  placeholder='e.g. "Toyota Corolla"'
                   required
                 />
               </label>
@@ -116,6 +117,7 @@ const AddCar = () => {
                   name="carType"
                   value={carDetails.carType}
                   onChange={handleChange}
+                  placeholder='e.g. "Intermediate", "Standard", "Luxury"'
                   required
                 />
               </label>

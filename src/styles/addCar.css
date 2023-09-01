@@ -67,6 +67,7 @@
   border: none;
   border-bottom: 1px solid var(--primary-color);
   margin-top: 0.5rem;
+  color: var(--text-color);
 }
 
 .third_wrapper {
@@ -82,6 +83,7 @@
   border: none;
   border-bottom: 1px solid var(--primary-color);
   margin-top: 0.5rem;
+  color: var(--text-color);
 }
 
 .car_form_container h2 {
