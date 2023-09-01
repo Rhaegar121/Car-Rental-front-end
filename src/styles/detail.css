@@ -14,7 +14,7 @@
   margin: 0;
   padding: 19.2px 0;
   font-size: 1.15rem;
-  font-weight: 500;;
+  font-weight: 500;
 }
 
 .back-btn {
@@ -205,7 +205,7 @@
     font-size: 1rem;
     text-transform: capitalize;
   }
-  
+
   .banner-text p:first-child {
     font-size: 1.7rem;
     font-weight: 500;
@@ -243,7 +243,7 @@
     padding: 10px 35px;
     margin-bottom: 30px;
   }
-  
+
   .reserve-btn:hover {
     cursor: pointer;
     box-shadow: 2.5px 2.5px 0 0 var(--primary-hover);
@@ -272,16 +272,16 @@
     font-size: 1.1rem;
   }
 
-  .banner-text p:first-child {
-    font-size: 2rem;
-  }
-
   .rating {
     font-size: 1.2rem;
   }
 
   .price p {
     font-size: 1rem;
+  }
+
+  .banner-text p:first-child {
+    font-size: 2rem;
   }
 
   .price p:first-child {
