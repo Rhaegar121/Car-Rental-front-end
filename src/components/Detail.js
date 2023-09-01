@@ -24,13 +24,11 @@ const Detail = () => {
 
   useEffect(() => {
     dispatch(fetchCars());
-    if (userData) {
-      dispatch(fetchfavourites(userData.id));
-    }
-  });
+    dispatch(fetchfavourites(userData.id));
+  }, [dispatch, userData.id]);
 
   if (!car) {
-    return <h1>Loading...</h1>;
+    return <h1 className="heading">Loading Car Detail...Please Wait</h1>;
   }
 
   const starIcons = Array(car.ratings)
