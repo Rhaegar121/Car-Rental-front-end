@@ -12,25 +12,17 @@ function Favourite() {
   const dispatch = useDispatch();
   const cars = useSelector((state) => state.favourite.cars);
   const favourites = useSelector((state) => state.favourite.favourites);
+  const status = useSelector((state) => state.favourite.status);
 
   const [number, setNumber] = useState(1);
-  const showPerPage = 3;
+  const showPerPage = 4;
   const lastNumber = number * showPerPage;
   const firstNumber = lastNumber - showPerPage;
   const car = Array.isArray(cars) ? cars.slice(firstNumber, lastNumber) : [];
 
-  const [prevDisabled, setPrevDisabled] = useState(false);
-  const [nextDisabled, setNextDisabled] = useState(false);
-
   useEffect(() => {
     dispatch(fetchfavourites(userData.id));
   }, [dispatch, userData.id]);
-
-  useEffect(() => {
-    // Update the prev and next buttons' disabled state based on car length
-    setPrevDisabled(number <= 1);
-    setNextDisabled(number >= car.length);
-  }, [number, car.length]);
 
   const prev = () => {
     if (number > 1) {
@@ -52,15 +44,15 @@ function Favourite() {
   return (
     <>
       <Navbar />
-      <h1 className="heading">FAVOURITE CARS</h1>
+      {status === 'success' ? <p className="success">Remove from reservations successfully!</p> : null}
+      <h1 className="heading">RESERVED CARS</h1>
       <div className="main-container">
         <button
-          className="btn prev-btn"
+          className={number === 1 ? 'arrow-btn prev-btn disabled' : 'arrow-btn prev-btn'}
           type="button"
           onClick={prev}
-          disabled={prevDisabled}
         >
-          <BsArrowLeft />
+          <BsArrowLeft className="arrow" />
         </button>
         {car.map((car) => (
           <div
@@ -70,23 +62,27 @@ function Favourite() {
             <div className="image">
               <img
                 src={car.image}
-                alt="mercedez benz"
+                alt={car.name}
                 className="car-image"
               />
             </div>
 
             <div className="car-details">
-              <div className="right">
+              <div className="left">
                 <p className="car-name">{car.name}</p>
                 <StarRating value={car.ratings} />
               </div>
-              <div className="left">
-                <p className="price">{car.price}</p>
-                <p className="per-month">per month</p>
+              <div className="right">
+                <p>
+                  {Math.round(car.price)}
+                  {' '}
+                  $
+                </p>
+                <p>per day</p>
               </div>
             </div>
             <button
-              className="delete-car-button"
+              className="btn"
               onClick={() => handleDeleteFavourite(car.id)}
               type="button"
             >
@@ -96,12 +92,11 @@ function Favourite() {
           </div>
         ))}
         <button
-          className="btn next-btn"
+          className={number >= (cars.length / showPerPage) ? 'arrow-btn next-btn disabled' : 'arrow-btn next-btn'}
           type="button"
           onClick={next}
-          disabled={nextDisabled}
         >
-          <BsArrowRight />
+          <BsArrowRight className="arrow" />
         </button>
       </div>
     </>

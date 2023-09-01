@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseURL = 'https://carrental-backend-jmdo.onrender.com';
+// const baseURL = 'https://carrental-9ijm.onrender.com';
+const baseURL = 'http://127.0.0.1:3000';
 
 // Async thunk for user login
 export const loginUser = createAsyncThunk(

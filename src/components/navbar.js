@@ -5,10 +5,11 @@ import { IoAddCircleOutline } from 'react-icons/io5';
 import { BiLogOut } from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
 import { logOutUser } from '../redux/userSlice';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo-white.png';
 import '../styles/navbar.css';
 
 const Navbar = () => {
+  const userData = JSON.parse(localStorage.getItem('user'));
   const [isMenuActive, setIsMenuActive] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -39,17 +40,35 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div
-        id="hamburger_menu"
-        className={`hamburger_menu ${isMenuActive ? 'active' : ''}`}
-        onClick={handleHamburgerClick}
-        onKeyDown={handleHamburgerKeyDown}
-        role="button"
-        tabIndex={0}
-      >
-        <span className="line" />
-        <span className="line" />
-        <span className="line" />
+      <div className="navbar">
+        <div
+          id="hamburger_menu"
+          className={`hamburger_menu ${isMenuActive ? 'active' : ''}`}
+          onClick={handleHamburgerClick}
+          onKeyDown={handleHamburgerKeyDown}
+          role="button"
+          tabIndex={0}
+        >
+          <span className="line" />
+          <span className="line" />
+          <span className="line" />
+        </div>
+
+        <div className="nav-links">
+          <Link className="nav-link" to="/signup">
+            Sign Up
+          </Link>
+          <div className="ver-line" />
+          {userData ? (
+            <Link className="nav-link" to="/" onClick={handleLogoutClick}>
+              Log Out
+            </Link>
+          ) : (
+            <Link className="nav-link" to="/signin">
+              Log In
+            </Link>
+          )}
+        </div>
       </div>
 
       <div className={`nav_menu ${isMenuActive ? 'active' : ''}`}>
@@ -62,34 +81,41 @@ const Navbar = () => {
         </Link>
         <ul className="menu_links_wrapper">
           <li>
-            <Link className="menu_link" to="/main" onClick={handleMenuLinkClick}>
+            <Link className="menu_link" to="/" onClick={handleMenuLinkClick}>
               <AiFillCar className="nav-icon" />
               Available Cars
             </Link>
           </li>
           <li>
-            <Link className="menu_link" to="/favourites" onClick={handleMenuLinkClick}>
+            <Link className="menu_link" to={userData ? '/favourites' : '/signup'} onClick={handleMenuLinkClick}>
               <AiTwotoneHeart className="nav-icon" />
-              My Favourites
+              My Reservations
             </Link>
           </li>
           <li>
-            <Link className="menu_link" to="/delete_car" onClick={handleMenuLinkClick}>
+            <Link className="menu_link" to={userData ? '/delete_car' : '/signup'} onClick={handleMenuLinkClick}>
               <AiOutlineDelete className="nav-icon" />
               Delete a Car
             </Link>
           </li>
           <li>
-            <Link className="menu_link" to="/add_car" onClick={handleAddCarClick}>
+            <Link className="menu_link" to={userData ? '/add_car' : '/signup'} onClick={handleAddCarClick}>
               <IoAddCircleOutline className="nav-icon" />
               Add a new Car
             </Link>
           </li>
         </ul>
-        <Link className="sign_out_button" to="/" onClick={handleLogoutClick}>
-          <BiLogOut className="signout-icon" />
-          Sign Out
-        </Link>
+        {userData ? (
+          <Link className="sign_out_button" to="/" onClick={handleLogoutClick}>
+            <BiLogOut className="signout-icon" />
+            Sign Out
+          </Link>
+        ) : (
+          <Link className="sign_out_button" to="/signin">
+            <BiLogOut className="signout-icon" />
+            Sign In
+          </Link>
+        )}
       </div>
     </nav>
   );

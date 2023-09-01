@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import BeatLoader from 'react-spinners/BeatLoader';
+import { FiUser, FiLock } from 'react-icons/fi';
 import { loginUser } from '../redux/userSlice';
-import '../styles/signin.css';
+import logo from '../assets/logo-white.png';
+import '../styles/form.css';
 
 const SignInComponent = () => {
   const [email, setEmail] = useState('');
@@ -21,37 +23,50 @@ const SignInComponent = () => {
     if (userData.status === 'loading') {
       setLoading(true);
     } else if (userData.status === 'success') {
-      navigate('/main');
+      navigate('/');
       localStorage.setItem('user', JSON.stringify(userData));
     }
   }, [userData, navigate]);
 
   return (
-    <div className="sign-in-form">
-      <h1 className="sign-in-title">Welcome, please sign in to continue</h1>
-      <div className="sign-in-inputs">
-        <input
-          className="email-input"
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          className="password-input"
-          type="password"
-          placeholder="Enter your password"
-          value={passsword}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+    <div className="form">
+      {userData.status === 'error' ? <p className="error">{userData.error}</p> : null}
+      <h1 className="form-title">Welcome, please sign in to continue</h1>
+      <div className="logo-container">
+        <img src={logo} alt="logo" className="logo-img" />
+      </div>
+      <div className="inputs">
+        <div className="input">
+          <FiUser className="icon" />
+          <input
+            className="email-input"
+            type="email"
+            placeholder="EMAIL OR USERNAME"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className="input">
+          <FiLock className="icon" />
+          <input
+            className="password-input"
+            type="password"
+            placeholder="PASSWORD"
+            value={passsword}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
         <button
-          className="sign-in-button"
+          className="btn primary-btn"
           type="button"
           onClick={handleSignIn}
         >
-          {userData.status === 'loading' ? <BeatLoader loading={loading} color="#6b6b6b" size={9} /> : 'Sign In'}
+          {userData.status === 'loading' ? <BeatLoader loading={loading} color="#fff" size={9} /> : 'Sign In'}
         </button>
-        <Link to="/signup" className="sign-up-btn">Sign Up</Link>
+        <div className="links">
+          <Link to="/signup" className="secondary-btn">New to CarRental? Sign up now</Link>
+          <Link to="/" className="secondary-btn">Back to home page</Link>
+        </div>
       </div>
     </div>
   );

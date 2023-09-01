@@ -2,16 +2,22 @@ nav {
   top: 0;
 }
 
-.hamburger_menu {
+.navbar {
   width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+}
+
+.hamburger_menu {
+  width: fit-content;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  position: fixed;
   z-index: 100;
   top: 0;
   left: 0;
-  background-color: var(--primary-color);
   padding: 1rem;
 }
 
@@ -21,14 +27,14 @@ nav {
 
 .line {
   width: 30px;
-  height: 6px;
-  background-color: var(--secondary-color);
+  height: 5px;
+  background-color: #fff;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .hamburger_menu.active .line:nth-child(1) {
-  transform: translateY(11px) rotate(45deg);
+  transform: translateY(10px) rotate(45deg);
   z-index: 100;
 }
 
@@ -37,8 +43,45 @@ nav {
 }
 
 .hamburger_menu.active .line:nth-child(3) {
-  transform: translateY(-11px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
   z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+  gap: 1rem;
+}
+
+.ver-line {
+  width: 1.5px;
+  height: 23px;
+  background-color: #fff;
+}
+
+.nav-link {
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  display: inline-block;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 ul li {
@@ -66,9 +109,7 @@ ul li {
 
 .logo {
   width: 140px;
-  display: flex;
-  align-self: center;
-  margin: 10px 0 30px 0;
+  margin: 10px auto 30px auto;
 }
 
 .logo-img {
@@ -88,14 +129,14 @@ ul li {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 48px;
+  height: 57px;
   border-radius: 5px;
-  color: var(--secondary-color);
+  color: #fff;
   font-size: 0.9rem;
 }
 
 .menu_link:hover {
-  background-color: #d9ed26;
+  background-color: var(--primary-hover);
 }
 
 .nav-icon {
@@ -111,12 +152,12 @@ ul li {
   padding: 14px 0 18px 0;
   font-size: 0.9rem;
   text-align: center;
-  color: var(--secondary-color);
-  background-color: #c4d710;
+  color: #fff;
+  background-color: #c31919;
 }
 
 .sign_out_button:hover {
-  background-color: #d9ed26;
+  background-color: var(--primary-hover);
 }
 
 .signout-icon {
@@ -132,8 +173,25 @@ ul li {
 }
 
 @media screen and (min-width: 1200px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .ver-line {
+    width: 1.8px;
+    height: 27px;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+  }
+
   .nav_menu {
     width: 17%;
+  }
+
+  .menu_link {
+    font-size: 1rem;
   }
 }
 
@@ -143,6 +201,6 @@ ul li {
   }
 
   .nav_menu {
-    width: 15%;
+    width: 16%;
   }
 }

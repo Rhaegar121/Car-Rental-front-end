@@ -1,0 +1,92 @@
+.form {
+  padding-top: 5rem;
+  background-image: url(../assets/second-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.form-title {
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.logo-container {
+  width: 250px;
+  margin: 20px auto;
+}
+
+.inputs {
+  width: 250px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 45px;
+  font-family: 'Lato', sans-serif;
+  padding: 12px;
+  background-color: #fff;
+}
+
+.input input {
+  width: 100%;
+  font-size: 0.8rem;
+  outline: none;
+  border: none;
+  color: var(--text-color);
+  background-color: transparent;
+}
+
+.input input::placeholder {
+  color: var(--text-color);
+}
+
+.icon {
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.primary-btn {
+  margin: 0;
+  width: fit-content;
+}
+
+.secondary-btn {
+  color: #fff;
+  font-size: 0.9rem;
+  display: block;
+  text-align: end;
+}
+
+.secondary-btn:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 1024px) {
+  .form-title {
+    font-size: 1.3rem;
+  }
+
+  .logo-container {
+    width: 300px;
+  }
+
+  .inputs {
+    width: 300px;
+  }
+}

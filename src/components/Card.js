@@ -7,89 +7,85 @@ import { fetchCars } from '../redux/carsSlice';
 import StarRating from './StarRating';
 
 const CarCard = () => {
-  const userId = useSelector((state) => state.user.id);
   const cars = useSelector((state) => state.car.cars);
+  const loading = useSelector((state) => state.car.isLoading);
   const dispatch = useDispatch();
   const [number, setNumber] = useState(1);
-  const showPerPage = 3;
+  const showPerPage = 4;
   const lastNumber = number * showPerPage;
   const firstNumber = lastNumber - showPerPage;
   const car = cars.slice(firstNumber, lastNumber);
 
-  const [prevDisabled, setPrevDisabled] = useState(false);
-  const [nextDisabled, setNextDisabled] = useState(false);
-
   const prev = () => {
     if (number > 1) {
       setNumber(number - 1);
-      setNextDisabled(false);
-    } else {
-      setPrevDisabled(true);
     }
   };
 
   const next = () => {
-    if (number <= car.length) {
+    if (number < Math.ceil(cars.length / showPerPage)) {
       setNumber(number + 1);
-      setPrevDisabled(false);
-    } else {
-      setNextDisabled(true);
     }
   };
 
   useEffect(() => {
-    dispatch(fetchCars({ userId }));
-  }, [dispatch, userId]);
+    dispatch(fetchCars());
+  }, [dispatch]);
 
   return (
     <>
-      <h1 className="heading">Rent A Car Today</h1>
+      {loading ? <h1 className="heading">Fetching from the API...Please wait</h1> : <h1 className="heading">Rent A Car Today</h1>}
       <div className="main-container">
         <button
-          className="btn prev-btn"
+          className={number === 1 ? 'arrow-btn prev-btn disabled' : 'arrow-btn prev-btn'}
           type="button"
           onClick={prev}
-          disabled={prevDisabled}
         >
-          <BsArrowLeft />
+          <BsArrowLeft className="arrow" />
         </button>
         {car.map((car) => (
-          <Link
-            to={`/cars/${car.id}`}
+          <div
+            className="car-container"
             key={car.id}
           >
-            <div
-              className="car-container"
-              key={car.id}
-            >
-              <div className="image">
-                <img
-                  src={car.image}
-                  alt="mercedez benz"
-                  className="car-image"
-                />
-              </div>
+            <div className="image">
+              <img
+                src={car.image}
+                alt={car.name}
+                className="car-image"
+              />
+            </div>
 
-              <div className="car-details">
-                <div className="right">
-                  <p className="car-name">{car.name}</p>
-                  <StarRating value={car.ratings} />
-                </div>
-                <div className="left">
-                  <p className="price">{car.price}</p>
-                  <p className="per-month">per month</p>
-                </div>
+            <div className="car-details">
+              <div className="left">
+                <p className="car-name">{car.name}</p>
+                <StarRating value={car.ratings} />
+              </div>
+              <div className="right">
+                <p>
+                  {Math.round(car.price)}
+                  {' '}
+                  $
+                </p>
+                <p>per day</p>
               </div>
             </div>
-          </Link>
+
+            <Link
+              to={`/cars/${car.id}`}
+              key={car.id}
+              className="btn"
+            >
+              View details
+            </Link>
+          </div>
         ))}
         <button
-          className="btn next-btn"
+          className={number >= (cars.length / showPerPage) ? 'arrow-btn next-btn disabled' : 'arrow-btn next-btn'}
           type="button"
           onClick={next}
-          disabled={nextDisabled}
         >
-          <BsArrowRight />
+          <BsArrowRight className="arrow" />
         </button>
       </div>
     </>
