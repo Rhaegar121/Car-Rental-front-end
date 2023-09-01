@@ -53,8 +53,8 @@ function Favourite() {
   return (
     <>
       <Navbar />
-      {status === 'success' ? <p className="success">Remove from favourites successfully!</p> : null}
-      <h1 className="heading">FAVOURITE CARS</h1>
+      {status === 'success' ? <p className="success">Remove from reservations successfully!</p> : null}
+      <h1 className="heading">RESERVED CARS</h1>
       <div className="main-container">
         <button
           className="arrow-btn prev-btn"

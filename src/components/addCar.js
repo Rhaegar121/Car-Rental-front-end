@@ -66,9 +66,8 @@ const AddCar = () => {
     };
 
     dispatch(addCar({ userId: userDataFromStorage.id, car: newCar }));
-    if (data.status === 'added successfully') {
-      navigate('/');
-    }
+
+    navigate('/');
 
     setCarDetails({
       name: '',
@@ -85,9 +84,9 @@ const AddCar = () => {
     });
   };
 
-  // const handleBack = () => {
-  //   navigate(-1);
-  // };
+  const handleBack = () => {
+    navigate(-1);
+  };
 
   return (
     <div className="add_car_container">
@@ -225,7 +224,7 @@ const AddCar = () => {
               />
             </label>
             <div className="button_wrapper">
-              <button type="button" className="cancel_btn" onClick={() => navigate(-1)}>
+              <button type="button" className="cancel_btn" onClick={handleBack}>
                 Cancel
               </button>
               <button type="submit" className="btn">
