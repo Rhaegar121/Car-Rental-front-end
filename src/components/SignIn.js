@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import BeatLoader from 'react-spinners/BeatLoader';
 import { FiUser, FiLock } from 'react-icons/fi';
-// import { TfiEmail } from 'react-icons/ti';
 import { loginUser } from '../redux/userSlice';
 import logo from '../assets/logo-white.png';
 import '../styles/form.css';
@@ -64,8 +63,10 @@ const SignInComponent = () => {
         >
           {userData.status === 'loading' ? <BeatLoader loading={loading} color="#6b6b6b" size={9} /> : 'Sign In'}
         </button>
-        <Link to="/signup" className="secondary-btn">New to CarRental? Sign up now</Link>
-        <Link to="/" className="secondary-btn">Back to home page</Link>
+        <div className="links">
+          <Link to="/signup" className="secondary-btn">New to CarRental? Sign up now</Link>
+          <Link to="/" className="secondary-btn">Back to home page</Link>
+        </div>
       </div>
     </div>
   );

@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 10px;
+  gap: 15px;
 }
 
 .input {
@@ -37,14 +37,13 @@
   gap: 10px;
   width: 100%;
   height: 45px;
-  border-radius: 4px;
   font-family: 'Lato', sans-serif;
   padding: 12px;
-  border: 2px solid var(--primary-color);
   background-color: #fff;
 }
 
 .input input {
+  width: 100%;
   font-size: 0.8rem;
   outline: none;
   border: none;
@@ -69,6 +68,8 @@
 .secondary-btn {
   color: #fff;
   font-size: 0.9rem;
+  display: block;
+  text-align: end;
 }
 
 .secondary-btn:hover {
