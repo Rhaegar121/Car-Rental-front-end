@@ -19,6 +19,7 @@ const Detail = () => {
   const car = cars.find((car) => car.id === parseInt(id, 10));
   const favourite = useSelector((state) => state.favourite);
   const [already, setAlready] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -39,13 +40,16 @@ const Detail = () => {
     .fill(null)
     .map((_, index) => <AiOutlineStar key={index} className="star" />);
 
-  const handleAddFavouriteClick = async () => {
-    if (!userData) {
+  const handleAddFavouriteClick = (e) => {
+    if (isClicked) {
+      e.preventDefault();
+    } else if (!userData) {
       navigate('/signin');
     } else if (favourite.favourites.find((favouriteCar) => favouriteCar.car_id === parseInt(id, 10))) {
       setAlready(true);
     } else {
       dispatch(addfavourite({ userId: userData.id, carId: car.id }));
+      setIsClicked(true);
     }
   };
 
