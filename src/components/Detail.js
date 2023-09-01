@@ -27,7 +27,7 @@ const Detail = () => {
     if (userData) {
       dispatch(fetchfavourites(userData.id));
     }
-  }, [dispatch]);
+  });
 
   if (!car) {
     return <h1>Loading...</h1>;
