@@ -22,9 +22,11 @@ const Detail = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCars({ userId: userData.id }));
-    dispatch(fetchfavourites(userData.id));
-  }, [dispatch, userData.id]);
+    dispatch(fetchCars());
+    if (userData) {
+      dispatch(fetchfavourites(userData.id));
+    }
+  }, [dispatch, userData]);
 
   if (!car) {
     return <h1>Loading...</h1>;
@@ -39,7 +41,9 @@ const Detail = () => {
     .map((_, index) => <AiOutlineStar key={index} className="star" />);
 
   const handleAddFavouriteClick = async () => {
-    if (favourite.favourites.find((favouriteCar) => favouriteCar.car_id === parseInt(id, 10))) {
+    if (!userData) {
+      navigate('/signin');
+    } else if (favourite.favourites.find((favouriteCar) => favouriteCar.car_id === parseInt(id, 10))) {
       setAlready(true);
     } else {
       dispatch(addfavourite({ userId: userData.id, carId: car.id }));
@@ -68,7 +72,7 @@ const Detail = () => {
           <div className="rating">
             <AiOutlineUser className="user-icon" />
             <div>
-              <p>{userData.name}</p>
+              <p>{userData ? userData.name : 'Unknown User'}</p>
               <div>
                 {starIcons}
                 {emptyStarIcons}

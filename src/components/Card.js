@@ -34,7 +34,7 @@ const CarCard = () => {
 
   return (
     <>
-      {loading ? <h1 className="heading">Fetching from the API</h1> : <h1 className="heading">Rent A Car Today</h1>}
+      {loading ? <h1 className="heading">Fetching from the API...Please wait</h1> : <h1 className="heading">Rent A Car Today</h1>}
       <div className="main-container">
         <button
           className={number === 1 ? 'arrow-btn prev-btn disabled' : 'arrow-btn prev-btn'}
