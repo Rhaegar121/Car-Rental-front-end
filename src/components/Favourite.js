@@ -62,7 +62,7 @@ function Favourite() {
             <div className="image">
               <img
                 src={car.image}
-                alt="mercedez benz"
+                alt={car.name}
                 className="car-image"
               />
             </div>

@@ -64,7 +64,7 @@ const DeleteCar = () => {
         {userCars.slice(firstNumber, lastNumber).map((car) => (
           <div className="car-container" key={car.id}>
             <div className="image">
-              <img src={car.image} alt="mercedez benz" className="car-image" />
+              <img src={car.image} alt={car.name} className="car-image" />
             </div>
             <div className="car-details">
               <div className="right">
