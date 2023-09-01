@@ -23,7 +23,7 @@ const CarCard = () => {
   };
 
   const next = () => {
-    if (number < (cars.length / showPerPage)) {
+    if (number < Math.ceil(cars.length / showPerPage)) {
       setNumber(number + 1);
     }
   };

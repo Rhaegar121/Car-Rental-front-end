@@ -15,23 +15,14 @@ function Favourite() {
   const status = useSelector((state) => state.favourite.status);
 
   const [number, setNumber] = useState(1);
-  const showPerPage = 3;
+  const showPerPage = 4;
   const lastNumber = number * showPerPage;
   const firstNumber = lastNumber - showPerPage;
   const car = Array.isArray(cars) ? cars.slice(firstNumber, lastNumber) : [];
 
-  const [prevDisabled, setPrevDisabled] = useState(false);
-  const [nextDisabled, setNextDisabled] = useState(false);
-
   useEffect(() => {
     dispatch(fetchfavourites(userData.id));
   }, [dispatch, userData.id]);
-
-  useEffect(() => {
-    // Update the prev and next buttons' disabled state based on car length
-    setPrevDisabled(number <= 1);
-    setNextDisabled(number >= car.length);
-  }, [number, car.length]);
 
   const prev = () => {
     if (number > 1) {
@@ -57,12 +48,11 @@ function Favourite() {
       <h1 className="heading">RESERVED CARS</h1>
       <div className="main-container">
         <button
-          className="arrow-btn prev-btn"
+          className={number === 1 ? 'arrow-btn prev-btn disabled' : 'arrow-btn prev-btn'}
           type="button"
           onClick={prev}
-          disabled={prevDisabled}
         >
-          <BsArrowLeft />
+          <BsArrowLeft className="arrow" />
         </button>
         {car.map((car) => (
           <div
@@ -98,12 +88,11 @@ function Favourite() {
           </div>
         ))}
         <button
-          className="arrow-btn next-btn"
+          className={number >= (cars.length / showPerPage) ? 'arrow-btn next-btn disabled' : 'arrow-btn next-btn'}
           type="button"
           onClick={next}
-          disabled={nextDisabled}
         >
-          <BsArrowRight />
+          <BsArrowRight className="arrow" />
         </button>
       </div>
     </>

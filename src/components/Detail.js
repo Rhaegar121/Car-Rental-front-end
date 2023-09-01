@@ -19,7 +19,6 @@ const Detail = () => {
   const car = cars.find((car) => car.id === parseInt(id, 10));
   const favourite = useSelector((state) => state.favourite);
   const [already, setAlready] = useState(false);
-  // const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -28,9 +27,6 @@ const Detail = () => {
     if (userData) {
       dispatch(fetchfavourites(userData.id));
     }
-    // if (favourite.status === 'loading') {
-    //   setLoading(true);
-    // }
   }, [dispatch]);
 
   if (!car) {
