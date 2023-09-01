@@ -43,7 +43,7 @@
 
 .detail-container {
   width: 88%;
-  margin: 0 auto;
+  margin: 35px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,7 +67,7 @@
   position: absolute;
   top: 36%;
   right: 50%;
-  transform: translateX(-50%);
+  transform: translateX(50%);
 }
 
 .img {
@@ -231,6 +231,11 @@
 
   .feature span:first-child {
     font-size: 1.25rem;
+  }
+
+  .reserve-container {
+    display: flex;
+    justify-content: center;
   }
 
   .reserve-btn {
