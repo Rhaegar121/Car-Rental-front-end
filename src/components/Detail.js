@@ -7,6 +7,7 @@ import {
 import { GiCarDoor, GiShoppingBag } from 'react-icons/gi';
 import { FaGasPump } from 'react-icons/fa';
 import { IoIosArrowBack, IoIosPerson } from 'react-icons/io';
+import BeatLoader from 'react-spinners/BeatLoader';
 import { addfavourite, fetchfavourites } from '../redux/favouritesSlice';
 import { fetchCars } from '../redux/carsSlice';
 import '../styles/detail.css';
@@ -18,6 +19,7 @@ const Detail = () => {
   const car = cars.find((car) => car.id === parseInt(id, 10));
   const favourite = useSelector((state) => state.favourite);
   const [already, setAlready] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -26,6 +28,9 @@ const Detail = () => {
     if (userData) {
       dispatch(fetchfavourites(userData.id));
     }
+    // if (favourite.status === 'loading') {
+    //   setLoading(true);
+    // }
   }, [dispatch]);
 
   if (!car) {
@@ -131,7 +136,7 @@ const Detail = () => {
       </div>
       <div className="reserve-container">
         <button type="button" className="reserve-btn" onClick={handleAddFavouriteClick}>
-          reserve
+          {favourite.isLoading === true ? <BeatLoader loading={favourite.isLoading} color="#fff" size={9} /> : 'Reserve'}
         </button>
       </div>
     </section>
