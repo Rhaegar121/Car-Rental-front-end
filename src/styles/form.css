@@ -76,3 +76,17 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+@media screen and (min-width: 1024px) {
+  .form-title {
+    font-size: 1.3rem;
+  }
+
+  .logo-container {
+    width: 300px;
+  }
+
+  .inputs {
+    width: 300px;
+  }
+}

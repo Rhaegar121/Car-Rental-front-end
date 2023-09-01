@@ -82,7 +82,7 @@ const SignUpComponent = () => {
           />
         </div>
         <button className="btn primary-btn" type="button" onClick={handleSignUp}>
-          {userData.status === 'loading' ? <BeatLoader loading={loading} color="#6b6b6b" size={9} /> : 'Sign Up'}
+          {userData.status === 'loading' ? <BeatLoader loading={loading} color="#fff" size={9} /> : 'Sign Up'}
         </button>
         <div className="links">
           <Link to="/signin" className="secondary-btn">Login with your existing account?</Link>

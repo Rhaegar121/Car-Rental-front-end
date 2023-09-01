@@ -61,7 +61,7 @@ const SignInComponent = () => {
           type="button"
           onClick={handleSignIn}
         >
-          {userData.status === 'loading' ? <BeatLoader loading={loading} color="#6b6b6b" size={9} /> : 'Sign In'}
+          {userData.status === 'loading' ? <BeatLoader loading={loading} color="#fff" size={9} /> : 'Sign In'}
         </button>
         <div className="links">
           <Link to="/signup" className="secondary-btn">New to CarRental? Sign up now</Link>
