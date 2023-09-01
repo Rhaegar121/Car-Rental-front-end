@@ -65,6 +65,7 @@ const SignInComponent = () => {
           {userData.status === 'loading' ? <BeatLoader loading={loading} color="#6b6b6b" size={9} /> : 'Sign In'}
         </button>
         <Link to="/signup" className="secondary-btn">New to CarRental? Sign up now</Link>
+        <Link to="/" className="secondary-btn">Back to home page</Link>
       </div>
     </div>
   );
