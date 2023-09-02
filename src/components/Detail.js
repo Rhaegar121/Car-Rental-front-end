@@ -8,7 +8,7 @@ import { GiCarDoor, GiShoppingBag } from 'react-icons/gi';
 import { FaGasPump } from 'react-icons/fa';
 import { IoIosArrowBack, IoIosPerson } from 'react-icons/io';
 import BeatLoader from 'react-spinners/BeatLoader';
-import { addfavourite, fetchfavourites } from '../redux/favouritesSlice';
+import { addfavourite } from '../redux/favouritesSlice';
 import { fetchCars } from '../redux/carsSlice';
 import '../styles/detail.css';
 
@@ -18,15 +18,13 @@ const Detail = () => {
   const cars = useSelector((state) => state.car.cars);
   const car = cars.find((car) => car.id === parseInt(id, 10));
   const favourite = useSelector((state) => state.favourite);
-  const [already, setAlready] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchCars());
-    dispatch(fetchfavourites(userData.id));
-  }, [dispatch, userData.id]);
+  }, [dispatch]);
 
   if (!car) {
     return <h1 className="heading">Loading Car Detail...Please Wait</h1>;
@@ -45,8 +43,6 @@ const Detail = () => {
       e.preventDefault();
     } else if (!userData) {
       navigate('/signin');
-    } else if (favourite.favourites.find((favouriteCar) => favouriteCar.car_id === parseInt(id, 10))) {
-      setAlready(true);
     } else {
       dispatch(addfavourite({ userId: userData.id, carId: car.id }));
       setIsClicked(true);
@@ -60,7 +56,7 @@ const Detail = () => {
         <h2 className="title">{car.name}</h2>
       </header>
       {favourite.status === 'added successfully' ? <p className="success">Added to reservation successfully!</p> : null}
-      {already ? <p className="error">This car is already in your reservation!</p> : null}
+      {favourite.status === 'error' ? <p className="error">{favourite.error}</p> : null}
       <div className="banner">
         <div className="banner-text">
           <p>{`reserve a ${car.carType} car rental`}</p>

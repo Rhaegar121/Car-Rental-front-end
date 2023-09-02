@@ -1,13 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const baseURL = 'https://carrental-9ijm.onrender.com/users';
-// const baseURL = 'http://127.0.0.1:3000/users';
+// const baseURL = 'https://carrental-9ijm.onrender.com/users';
+const baseURL = 'http://127.0.0.1:3000/users';
 
 const initialState = {
   status: 'idle',
   favourites: [],
   cars: [],
   isLoading: false,
+  error: '',
 };
 
 export const fetchfavourites = createAsyncThunk(
@@ -70,13 +71,23 @@ const favouritesSlice = createSlice({
         ...state,
         isLoading: true,
       }))
-      .addCase(addfavourite.fulfilled, (state, action) => ({
-        ...state,
-        status: 'added successfully',
-        isLoading: false,
-        favourites: action.payload.favourites,
-        cars: action.payload.cars,
-      }))
+      .addCase(addfavourite.fulfilled, (state, action) => {
+        if (action.payload.errors) {
+          return {
+            ...state,
+            status: 'error',
+            isLoading: false,
+            error: action.payload.errors,
+          };
+        }
+        return {
+          ...state,
+          status: 'added successfully',
+          isLoading: false,
+          favourites: action.payload.favourites,
+          cars: action.payload.cars,
+        };
+      })
       .addCase(addfavourite.rejected, (state) => ({
         ...state,
         status: 'error',
