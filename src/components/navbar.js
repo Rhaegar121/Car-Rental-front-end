@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AiFillCar, AiTwotoneHeart, AiOutlineDelete } from 'react-icons/ai';
 import { IoAddCircleOutline } from 'react-icons/io5';
 import { BiLogOut } from 'react-icons/bi';
@@ -11,14 +11,15 @@ import '../styles/navbar.css';
 const Navbar = () => {
   const userData = JSON.parse(localStorage.getItem('user'));
   const [isMenuActive, setIsMenuActive] = useState(false);
-  const navigate = useNavigate();
+  const [active, setActive] = useState('home');
   const dispatch = useDispatch();
 
   const handleHamburgerClick = () => {
     setIsMenuActive(!isMenuActive);
   };
 
-  const handleMenuLinkClick = () => {
+  const handleMenuLinkClick = (name) => {
+    setActive(name);
     setIsMenuActive(false);
   };
 
@@ -26,10 +27,6 @@ const Navbar = () => {
     if (event.key === 'Enter' || event.key === ' ') {
       handleHamburgerClick();
     }
-  };
-
-  const handleAddCarClick = () => {
-    navigate('/add_car');
   };
 
   const handleLogoutClick = () => {
@@ -40,6 +37,7 @@ const Navbar = () => {
 
   return (
     <nav>
+      {/* navbar */}
       <div className="navbar">
         <div
           id="hamburger_menu"
@@ -73,6 +71,7 @@ const Navbar = () => {
         )}
       </div>
 
+      {/* nav menu */}
       <div className={`nav_menu ${isMenuActive ? 'active' : ''}`}>
         <Link
           className="logo"
@@ -83,25 +82,41 @@ const Navbar = () => {
         </Link>
         <ul className="menu_links_wrapper">
           <li>
-            <Link className="menu_link" to="/" onClick={handleMenuLinkClick}>
+            <Link
+              className={`menu_link ${active === 'home' ? 'activeLink' : null}`}
+              to="/"
+              onClick={() => handleMenuLinkClick('home')}
+            >
               <AiFillCar className="nav-icon" />
               Available Cars
             </Link>
           </li>
           <li>
-            <Link className="menu_link" to={userData ? '/favourites' : '/signup'} onClick={handleMenuLinkClick}>
+            <Link
+              className={`menu_link ${active === 'reserve' ? 'activeLink' : null}`}
+              to={userData ? '/favourites' : '/signup'}
+              onClick={() => handleMenuLinkClick('reserve')}
+            >
               <AiTwotoneHeart className="nav-icon" />
               My Reservations
             </Link>
           </li>
           <li>
-            <Link className="menu_link" to={userData ? '/delete_car' : '/signup'} onClick={handleMenuLinkClick}>
+            <Link
+              className={`menu_link ${active === 'delete' ? 'activeLink' : null}`}
+              to={userData ? '/delete_car' : '/signup'}
+              onClick={() => handleMenuLinkClick('delete')}
+            >
               <AiOutlineDelete className="nav-icon" />
               Delete a Car
             </Link>
           </li>
           <li>
-            <Link className="menu_link" to={userData ? '/add_car' : '/signup'} onClick={handleAddCarClick}>
+            <Link
+              className={`menu_link ${active === 'add' ? 'activeLink' : null}`}
+              to={userData ? '/add_car' : '/signup'}
+              onClick={() => handleMenuLinkClick('add')}
+            >
               <IoAddCircleOutline className="nav-icon" />
               Add a new Car
             </Link>

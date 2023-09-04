@@ -97,7 +97,7 @@ ul li {
   position: fixed;
   text-align: start;
   top: 0;
-  padding: 70px 10px;
+  padding: 70px 0px;
   left: -100%;
   z-index: 10;
   transition: 0.3s;
@@ -121,6 +121,7 @@ ul li {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-left: 20px;
   color: var(--secondary-color);
 }
 
@@ -130,9 +131,14 @@ ul li {
   align-items: center;
   width: 100%;
   height: 57px;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   color: #fff;
   font-size: 0.9rem;
+}
+
+.activeLink {
+  background-color: var(--primary-hover);
 }
 
 .menu_link:hover {
