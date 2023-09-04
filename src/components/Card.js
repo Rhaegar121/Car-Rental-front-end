@@ -37,7 +37,7 @@ const CarCard = () => {
     <>
       {status === 'success' ? <p className="success">User Login successfully!</p> : null}
       {loading
-        ? <h2 className="heading">Fetching from the API...Please wait</h2>
+        ? <h2 className="heading">Loading the Latest Vehicles... Please Wait.</h2>
         : <h2 className="heading">Unleash Your Journey: Rent Your Dream Car Today!</h2>}
       <div className="main-container">
         <button
