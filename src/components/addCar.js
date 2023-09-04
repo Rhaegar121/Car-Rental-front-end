@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCar } from '../redux/carsSlice';
@@ -67,8 +67,6 @@ const AddCar = () => {
 
     dispatch(addCar({ userId: userDataFromStorage.id, car: newCar }));
 
-    navigate('/');
-
     setCarDetails({
       name: '',
       price: 0,
@@ -87,6 +85,12 @@ const AddCar = () => {
   const handleBack = () => {
     navigate(-1);
   };
+
+  useEffect(() => {
+    if (data.status === 'added successfully') {
+      navigate(`/cars/${data.cars[data.cars.length - 1].id}`);
+    }
+  }, [data, navigate]);
 
   return (
     <div className="add_car_container">
