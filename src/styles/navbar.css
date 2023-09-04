@@ -139,6 +139,7 @@ ul li {
 
 .activeLink {
   background-color: var(--primary-hover);
+  box-shadow: inset 0px 0.5px 0px 0.5px #ae0829;
 }
 
 .menu_link:hover {

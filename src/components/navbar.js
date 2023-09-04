@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { AiFillCar, AiTwotoneHeart, AiOutlineDelete } from 'react-icons/ai';
 import { IoAddCircleOutline } from 'react-icons/io5';
 import { BiLogOut } from 'react-icons/bi';
@@ -11,16 +11,11 @@ import '../styles/navbar.css';
 const Navbar = () => {
   const userData = JSON.parse(localStorage.getItem('user'));
   const [isMenuActive, setIsMenuActive] = useState(false);
-  const [active, setActive] = useState('home');
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const handleHamburgerClick = () => {
     setIsMenuActive(!isMenuActive);
-  };
-
-  const handleMenuLinkClick = (name) => {
-    setActive(name);
-    setIsMenuActive(false);
   };
 
   const handleHamburgerKeyDown = (event) => {
@@ -76,16 +71,14 @@ const Navbar = () => {
         <Link
           className="logo"
           to="/"
-          onClick={handleMenuLinkClick}
         >
           <img src={logo} alt="logo" className="logo-img" />
         </Link>
         <ul className="menu_links_wrapper">
           <li>
             <Link
-              className={`menu_link ${active === 'home' ? 'activeLink' : null}`}
+              className={`menu_link ${location.pathname === '/' ? 'activeLink' : null}`}
               to="/"
-              onClick={() => handleMenuLinkClick('home')}
             >
               <AiFillCar className="nav-icon" />
               Available Cars
@@ -93,9 +86,8 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              className={`menu_link ${active === 'reserve' ? 'activeLink' : null}`}
+              className={`menu_link ${location.pathname === '/favourites' ? 'activeLink' : null}`}
               to={userData ? '/favourites' : '/signup'}
-              onClick={() => handleMenuLinkClick('reserve')}
             >
               <AiTwotoneHeart className="nav-icon" />
               My Reservations
@@ -103,9 +95,8 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              className={`menu_link ${active === 'delete' ? 'activeLink' : null}`}
+              className={`menu_link ${location.pathname === '/delete_car' ? 'activeLink' : null}`}
               to={userData ? '/delete_car' : '/signup'}
-              onClick={() => handleMenuLinkClick('delete')}
             >
               <AiOutlineDelete className="nav-icon" />
               Delete a Car
@@ -113,9 +104,8 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              className={`menu_link ${active === 'add' ? 'activeLink' : null}`}
+              className={`menu_link ${location.pathname === '/add_car' ? 'activeLink' : null}`}
               to={userData ? '/add_car' : '/signup'}
-              onClick={() => handleMenuLinkClick('add')}
             >
               <IoAddCircleOutline className="nav-icon" />
               Add a new Car
