@@ -9,6 +9,7 @@ import StarRating from './StarRating';
 const CarCard = () => {
   const cars = useSelector((state) => state.car.cars);
   const loading = useSelector((state) => state.car.isLoading);
+  const status = useSelector((state) => state.user.status);
   const dispatch = useDispatch();
   const [number, setNumber] = useState(1);
   const showPerPage = 4;
@@ -34,6 +35,7 @@ const CarCard = () => {
 
   return (
     <>
+      {status === 'success' ? <p className="success">User Login successfully!</p> : null}
       {loading ? <h1 className="heading">Fetching from the API...Please wait</h1> : <h1 className="heading">Rent A Car Today</h1>}
       <div className="main-container">
         <button
