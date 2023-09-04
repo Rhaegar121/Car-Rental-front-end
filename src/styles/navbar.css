@@ -159,11 +159,11 @@ ul li {
   font-size: 0.9rem;
   text-align: center;
   color: #fff;
-  background-color: #c31919;
+  background-color: var(--primary-hover);
 }
 
 .sign_out_button:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--red-color);
 }
 
 .signout-icon {
