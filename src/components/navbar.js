@@ -54,21 +54,23 @@ const Navbar = () => {
           <span className="line" />
         </div>
 
-        <div className="nav-links">
-          <Link className="nav-link" to="/signup">
-            Sign Up
-          </Link>
-          <div className="ver-line" />
-          {userData ? (
+        {userData ? (
+          <div className="nav-links">
             <Link className="nav-link" to="/" onClick={handleLogoutClick}>
               Log Out
             </Link>
-          ) : (
+          </div>
+        ) : (
+          <div className="nav-links">
+            <Link className="nav-link" to="/signup">
+              Sign Up
+            </Link>
+            <div className="ver-line" />
             <Link className="nav-link" to="/signin">
               Log In
             </Link>
-          )}
-        </div>
+          </div>
+        )}
       </div>
 
       <div className={`nav_menu ${isMenuActive ? 'active' : ''}`}>
