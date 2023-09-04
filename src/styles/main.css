@@ -171,6 +171,10 @@ a {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
+
+  .arrow-btn {
+    top: 94%;
+  }
 }
 
 @media (min-width: 1024px) {
