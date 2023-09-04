@@ -45,7 +45,7 @@ function Favourite() {
     <>
       <Navbar />
       {status === 'removed successfully' ? <p className="success">Remove from reservations successfully!</p> : null}
-      <h1 className="heading">RESERVED CARS</h1>
+      <h2 className="heading">Reserved and Ready: Your Upcoming Adventure.</h2>
       <div className="main-container">
         <button
           className={number === 1 ? 'arrow-btn prev-btn disabled' : 'arrow-btn prev-btn'}

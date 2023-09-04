@@ -27,7 +27,7 @@ a {
   text-align: center;
   text-transform: capitalize;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   padding-top: 3rem;
   color: var(--primary-color);
 }
@@ -170,6 +170,10 @@ a {
 }
 
 @media (min-width: 768px) {
+  .heading {
+    font-size: 1.7rem;
+  }
+  
   .main-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
