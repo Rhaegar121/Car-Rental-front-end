@@ -52,7 +52,7 @@ const DeleteCar = () => {
   return (
     <>
       <Navbar />
-      <h1 className="heading">Delete a Car</h1>
+      <h2 className="heading">Customize Your Collection: Delete your added Vehicles.</h2>
       <div className="main-container">
         <button
           className={number === 1 ? 'arrow-btn prev-btn disabled' : 'arrow-btn prev-btn'}
