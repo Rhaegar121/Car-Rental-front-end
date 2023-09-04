@@ -36,7 +36,9 @@ const CarCard = () => {
   return (
     <>
       {status === 'success' ? <p className="success">User Login successfully!</p> : null}
-      {loading ? <h1 className="heading">Fetching from the API...Please wait</h1> : <h1 className="heading">Rent A Car Today</h1>}
+      {loading
+        ? <h2 className="heading">Fetching from the API...Please wait</h2>
+        : <h2 className="heading">Unleash Your Journey: Rent Your Dream Car Today!</h2>}
       <div className="main-container">
         <button
           className={number === 1 ? 'arrow-btn prev-btn disabled' : 'arrow-btn prev-btn'}
