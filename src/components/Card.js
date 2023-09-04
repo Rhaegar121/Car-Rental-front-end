@@ -9,7 +9,7 @@ import StarRating from './StarRating';
 const CarCard = () => {
   const cars = useSelector((state) => state.car.cars);
   const loading = useSelector((state) => state.car.isLoading);
-  const status = useSelector((state) => state.user.status);
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [number, setNumber] = useState(1);
   const showPerPage = 4;
@@ -35,8 +35,24 @@ const CarCard = () => {
 
   return (
     <>
-      {status === 'success'
-        ? <p className="success">Welcome back! You&apos;ve successfully logged in. Get ready to hit the road and explore our amazing car selection.</p>
+      {user.status === 'signed up successfully'
+        ? (
+          <p className="success">
+            Welcome
+            {user.name}
+            ! You&apos;ve successfully signed up. Get ready to hit the road and explore our amazing car selection.
+          </p>
+        )
+        : null}
+      {user.status === 'logged in successfully'
+        ? (
+          <p className="success">
+            Welcome back
+            {' '}
+            {user.name}
+            ! You&apos;ve successfully logged in. Get ready to hit the road and explore our amazing car selection.
+          </p>
+        )
         : null}
       {loading
         ? <h2 className="heading">Loading the Latest Vehicles... Please Wait.</h2>

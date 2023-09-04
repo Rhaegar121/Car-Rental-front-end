@@ -75,7 +75,7 @@ const userSlice = createSlice({
       }))
       .addCase(registerUser.fulfilled, (state, action) => ({
         ...state,
-        status: 'success',
+        status: 'signed up successfully',
         name: action.payload.fullname,
         email: action.payload.email,
         id: action.payload.id,
@@ -91,7 +91,7 @@ const userSlice = createSlice({
       }))
       .addCase(loginUser.fulfilled, (state, action) => ({
         ...state,
-        status: 'success',
+        status: 'logged in successfully',
         name: action.payload.fullname,
         email: action.payload.email,
         id: action.payload.id,

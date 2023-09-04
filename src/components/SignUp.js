@@ -27,7 +27,7 @@ const SignUpComponent = () => {
   useEffect(() => {
     if (userData.status === 'loading') {
       setLoading(true);
-    } else if (userData.status === 'success') {
+    } else if (userData.status === 'signed up successfully') {
       navigate('/');
       localStorage.setItem('user', JSON.stringify(userData));
     }

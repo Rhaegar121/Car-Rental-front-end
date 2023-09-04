@@ -22,7 +22,7 @@ const SignInComponent = () => {
   useEffect(() => {
     if (userData.status === 'loading') {
       setLoading(true);
-    } else if (userData.status === 'success') {
+    } else if (userData.status === 'logged in successfully') {
       navigate('/');
       localStorage.setItem('user', JSON.stringify(userData));
     }
