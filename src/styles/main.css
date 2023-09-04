@@ -32,12 +32,6 @@ a {
   color: var(--primary-color);
 }
 
-.sub-heading {
-  text-align: center;
-  padding-top: 10rem;
-  color: var(--primary-color);
-}
-
 .car-container {
   width: 100%;
   height: 330px;
@@ -173,7 +167,7 @@ a {
   .heading {
     font-size: 1.7rem;
   }
-  
+
   .main-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;

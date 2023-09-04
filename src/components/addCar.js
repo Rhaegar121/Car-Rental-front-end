@@ -99,7 +99,7 @@ const AddCar = () => {
       <div className="add_car_wrapper">
         <div className="car_form_container">
           {data.status === 'error' ? <p className="error">{data.error}</p> : null}
-          <h2>Add a new car to rent</h2>
+          <h2 className="heading">Join Our Garage: Add Your Car Today</h2>
           <form className="add_car_form_wrapper" onSubmit={handleSubmit}>
             <div className="first_wrapper">
               <label htmlFor="name">
