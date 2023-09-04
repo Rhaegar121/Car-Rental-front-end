@@ -35,7 +35,9 @@ const CarCard = () => {
 
   return (
     <>
-      {status === 'success' ? <p className="success">User Login successfully!</p> : null}
+      {status === 'success'
+        ? <p className="success">Welcome back! You&apos;ve successfully logged in. Get ready to hit the road and explore our amazing car selection.</p>
+        : null}
       {loading
         ? <h2 className="heading">Loading the Latest Vehicles... Please Wait.</h2>
         : <h2 className="heading">Unleash Your Journey: Rent Your Dream Car Today!</h2>}
