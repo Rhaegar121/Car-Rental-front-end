@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import BeatLoader from 'react-spinners/BeatLoader';
 import { addCar } from '../redux/carsSlice';
 import '../styles/addCar.css';
 import Navbar from './navbar';
@@ -234,7 +235,7 @@ const AddCar = () => {
                 Cancel
               </button>
               <button type="submit" className="btn">
-                Add Car
+                {data.isLoading ? <BeatLoader loading={data.isLoading} size={9} color="#ffffff" /> : 'Submit'}
               </button>
             </div>
           </form>

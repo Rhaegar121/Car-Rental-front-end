@@ -52,7 +52,7 @@ const Detail = () => {
   return (
     <section id="detail">
       <header className="header">
-        <IoIosArrowBack className="back-btn" onClick={() => navigate(-1)} />
+        <IoIosArrowBack className="back-btn" onClick={() => navigate('/')} />
         <h2 className="title">{car.name}</h2>
       </header>
       {favourite.status === 'added successfully' ? <p className="success">Added to reservation successfully!</p> : null}
