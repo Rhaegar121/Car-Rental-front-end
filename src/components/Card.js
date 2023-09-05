@@ -53,6 +53,20 @@ const CarCard = () => {
 
   return (
     <>
+      <div className="main-banner">
+        <img src={banner} alt="banner" className="banner-img" />
+        <div className="main-banner-text">
+          {loading
+            ? <h2 className="heading">Loading the Latest Vehicles... Please Wait.</h2>
+            : <h2 className="heading">Car Rental - Search, Add & Reserve!</h2>}
+          <form className="search-form" onSubmit={handleSubmit}>
+            <input type="text" placeholder="Search for a car with name" className="search" value={keyword} onChange={handleChange} required />
+            {!searchCar.length
+              ? <button type="submit" className="search-btn">Search</button>
+              : <button type="button" className="search-btn" onClick={handleBack}>Back</button>}
+          </form>
+        </div>
+      </div>
       {user.status === 'signed up successfully'
         ? (
           <p className="success">
@@ -72,20 +86,6 @@ const CarCard = () => {
           </p>
         )
         : null}
-      <div className="main-banner">
-        <img src={banner} alt="banner" className="banner-img" />
-        <div className="main-banner-text">
-          {loading
-            ? <h2 className="heading">Loading the Latest Vehicles... Please Wait.</h2>
-            : <h2 className="heading">Car Rental - Search, Add & Reserve!</h2>}
-          <form className="search-form" onSubmit={handleSubmit}>
-            <input type="text" placeholder="Search for a car with name" className="search" value={keyword} onChange={handleChange} required />
-            {!searchCar.length
-              ? <button type="submit" className="search-btn">Search</button>
-              : <button type="button" className="search-btn" onClick={handleBack}>Back</button>}
-          </form>
-        </div>
-      </div>
       <div className="main-container">
         <button
           className={number === 1 ? 'arrow-btn prev-btn disabled' : 'arrow-btn prev-btn'}

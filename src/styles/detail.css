@@ -29,18 +29,6 @@
   cursor: pointer;
 }
 
-.success {
-  text-align: center;
-  color: var(--green-color);
-  padding: 5px 0;
-}
-
-.error {
-  text-align: center;
-  color: var(--red-color);
-  padding: 5px 0;
-}
-
 .detail-container {
   width: 88%;
   margin: 35px auto;

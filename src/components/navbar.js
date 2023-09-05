@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  AiFillCar, AiTwotoneHeart, AiOutlineDelete, AiOutlineMail, AiFillStar, AiOutlineLogout,
+  AiFillCar, AiTwotoneHeart, AiOutlineDelete, AiOutlineMail, AiFillStar,
 } from 'react-icons/ai';
 import { IoAddCircleOutline } from 'react-icons/io5';
-import { MdLogout } from 'react-icons/md';
+import { MdLogout, MdLogin } from 'react-icons/md';
 import {
   FaLinkedinIn, FaFacebookF, FaGithub, FaUserCircle,
 } from 'react-icons/fa';
@@ -176,9 +176,9 @@ const Navbar = () => {
             </abbr>
           </div>
         ) : (
-          <Link className="sign_out_btn" to="/signin">
-            <AiOutlineLogout />
+          <Link className="user-info" to="/signin">
             Sign In
+            <MdLogin className="signout-icon" />
           </Link>
         )}
       </div>
