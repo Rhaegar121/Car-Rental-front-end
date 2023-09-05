@@ -128,6 +128,16 @@ const Navbar = () => {
               Contact us
             </Link>
           </li>
+          <li>
+            <Link
+              className="menu_link"
+              to="https://github.com/Rhaegar121/Car-Rental-front-end"
+              target="_blank"
+            >
+              <IoAddCircleOutline className="nav-icon" />
+              Give us a star!
+            </Link>
+          </li>
         </ul>
         {userData ? (
           <Link className="sign_out_button" to="/" onClick={handleLogoutClick}>
