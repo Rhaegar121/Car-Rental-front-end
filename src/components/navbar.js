@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { AiFillCar, AiTwotoneHeart, AiOutlineDelete } from 'react-icons/ai';
+import {
+  AiFillCar, AiTwotoneHeart, AiOutlineDelete, AiOutlineMail, AiFillStar,
+} from 'react-icons/ai';
 import { IoAddCircleOutline } from 'react-icons/io5';
 import { BiLogOut } from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
@@ -124,7 +126,7 @@ const Navbar = () => {
               to="mailto:kaungmyatkyaw7012@gmail.com"
               target="_blank"
             >
-              <IoAddCircleOutline className="nav-icon" />
+              <AiOutlineMail className="nav-icon" />
               Contact us
             </Link>
           </li>
@@ -134,7 +136,7 @@ const Navbar = () => {
               to="https://github.com/Rhaegar121/Car-Rental-front-end"
               target="_blank"
             >
-              <IoAddCircleOutline className="nav-icon" />
+              <AiFillStar className="nav-icon" />
               Give us a star!
             </Link>
           </li>
