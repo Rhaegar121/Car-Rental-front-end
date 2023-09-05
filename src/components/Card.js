@@ -13,6 +13,8 @@ const CarCard = () => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [number, setNumber] = useState(1);
+  const [keyword, setKeyword] = useState('');
+  const [searchCar, setSearchCar] = useState([]);
   const showPerPage = 4;
   const lastNumber = number * showPerPage;
   const firstNumber = lastNumber - showPerPage;
@@ -28,6 +30,21 @@ const CarCard = () => {
     if (number < Math.ceil(cars.length / showPerPage)) {
       setNumber(number + 1);
     }
+  };
+
+  const handleChange = (e) => {
+    setKeyword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const filteredCars = cars.filter((car) => car.name.toLowerCase().includes(keyword.toLowerCase()));
+    setSearchCar(filteredCars);
+    setKeyword('');
+  };
+
+  const handleBack = () => {
+    setSearchCar([]);
   };
 
   useEffect(() => {
@@ -57,9 +74,16 @@ const CarCard = () => {
         : null}
       <div className="main-banner">
         <img src={banner} alt="banner" className="banner-img" />
-        {loading
-          ? <h2 className="heading">Loading the Latest Vehicles... Please Wait.</h2>
-          : <h2 className="heading">Unleash Your Journey: Rent Your Dream Car Today!</h2>}
+        <div className="main-banner-text">
+          {loading
+            ? <h2 className="heading">Loading the Latest Vehicles... Please Wait.</h2>
+            : <h2 className="heading">Unleash Your Journey: Rent Your Dream Car Today!</h2>}
+          <form className="search-form" onSubmit={handleSubmit}>
+            <input type="text" placeholder="Search for a car" className="search" value={keyword} onChange={handleChange} required />
+            <button type="submit" className="search-btn">Search</button>
+            <button type="button" onClick={handleBack}>Back</button>
+          </form>
+        </div>
       </div>
       <div className="main-container">
         <button
@@ -69,7 +93,44 @@ const CarCard = () => {
         >
           <BsArrowLeft className="arrow" />
         </button>
-        {car.map((car) => (
+        {!searchCar.length && car.map((car) => (
+          <div
+            className="car-container"
+            key={car.id}
+          >
+            <div className="image">
+              <img
+                src={car.image}
+                alt={car.name}
+                className="car-image"
+              />
+            </div>
+
+            <div className="car-details">
+              <div className="left">
+                <p className="car-name">{car.name}</p>
+                <StarRating value={car.ratings} />
+              </div>
+              <div className="right">
+                <p>
+                  {Math.round(car.price)}
+                  {' '}
+                  $
+                </p>
+                <p>per day</p>
+              </div>
+            </div>
+
+            <Link
+              to={`/cars/${car.id}`}
+              key={car.id}
+              className="btn"
+            >
+              View details
+            </Link>
+          </div>
+        ))}
+        {searchCar.length && searchCar.map((car) => (
           <div
             className="car-container"
             key={car.id}
