@@ -113,7 +113,7 @@ ul li {
   position: fixed;
   text-align: start;
   top: 0;
-  padding: 70px 0px;
+  padding: 70px 0;
   left: -100%;
   z-index: 10;
   transition: 0.3s;
@@ -125,7 +125,7 @@ ul li {
 
 .logo {
   width: 140px;
-  margin: 0px auto 25px auto;
+  margin: 0 auto 25px auto;
 }
 
 .logo-img {
@@ -155,7 +155,7 @@ ul li {
 
 .activeLink {
   background-color: var(--primary-hover);
-  box-shadow: inset 0px 0.5px 0px 0.5px #ae0829;
+  box-shadow: inset 0 0.5px 0 0.5px #ae0829;
 }
 
 .menu_link:hover {
