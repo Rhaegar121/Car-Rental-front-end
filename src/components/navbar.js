@@ -5,7 +5,7 @@ import {
 } from 'react-icons/ai';
 import { IoAddCircleOutline } from 'react-icons/io5';
 import { BiLogOut } from 'react-icons/bi';
-import { FaLinkedinIn } from 'react-icons/fa';
+import { FaLinkedinIn, FaFacebookF, FaGithub } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { logOutUser } from '../redux/userSlice';
 import logo from '../assets/logo-white.png';
@@ -150,13 +150,13 @@ const Navbar = () => {
           </li>
           <li className="nav-info">
             <Link className="nav-info-link" to="/">
-              <FaLinkedinIn className="nav-icon" />
+              <FaFacebookF className="nav-icon" />
             </Link>
             <Link className="nav-info-link" to="/">
               <FaLinkedinIn className="nav-icon" />
             </Link>
             <Link className="nav-info-link" to="/">
-              <FaLinkedinIn className="nav-icon" />
+              <FaGithub className="nav-icon" />
             </Link>
           </li>
         </ul>
