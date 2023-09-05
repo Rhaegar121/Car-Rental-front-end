@@ -117,6 +117,17 @@ const Navbar = () => {
               Add a new Car
             </Link>
           </li>
+          <li className="nav-line" />
+          <li>
+            <Link
+              className="menu_link"
+              to="mailto:kaungmyatkyaw7012@gmail.com"
+              target="_blank"
+            >
+              <IoAddCircleOutline className="nav-icon" />
+              Contact us
+            </Link>
+          </li>
         </ul>
         {userData ? (
           <Link className="sign_out_button" to="/" onClick={handleLogoutClick}>
