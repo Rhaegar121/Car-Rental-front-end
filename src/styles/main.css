@@ -55,7 +55,6 @@ a {
   align-items: center;
   gap: 50px;
   color: #fff;
-  /* border: 1px solid #fff; */
 }
 
 .main-banner-text .heading {
@@ -243,6 +242,23 @@ a {
   .main-container {
     padding: 2rem 5.5rem;
     gap: 2rem;
+  }
+
+  .main-banner {
+    height: 250px;
+  }
+
+  .banner-img {
+    object-position: top;
+  }
+
+  .main-banner-text {
+    top: 35%;
+    gap: 20px;
+  }
+
+  .search {
+    max-width: 400px;
   }
 
   .car-container {

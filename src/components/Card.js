@@ -131,7 +131,7 @@ const CarCard = () => {
             </Link>
           </div>
         ))}
-        {searchCar.length && searchCar.map((car) => (
+        {searchCar && searchCar.map((car) => (
           <div
             className="car-container"
             key={car.id}
