@@ -150,13 +150,13 @@ const Navbar = () => {
           </li>
           <li className="nav-info">
             <Link className="nav-info-link" to="/">
-              <FaFacebookF className="nav-icon" />
+              <FaFacebookF className="nav-info-icon" />
             </Link>
             <Link className="nav-info-link" to="/">
-              <FaLinkedinIn className="nav-icon" />
+              <FaLinkedinIn className="nav-info-icon" />
             </Link>
             <Link className="nav-info-link" to="/">
-              <FaGithub className="nav-icon" />
+              <FaGithub className="nav-info-icon" />
             </Link>
           </li>
         </ul>

@@ -178,6 +178,23 @@ ul li {
   color: #ddd;
   font-size: 0.85rem;
   line-height: 1.5;
+  margin-left: 10px;
+}
+
+.nav-info {
+  margin: 10px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.nav-info-icon {
+  font-size: 0.9rem;
+  color: #d6d6d6;
+}
+
+.nav-info-icon:hover {
+  color: #fff;
 }
 
 .sign_out_button {
