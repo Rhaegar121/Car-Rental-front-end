@@ -105,7 +105,7 @@ ul li {
 }
 
 .nav_menu {
-  width: 50%;
+  width: 220px;
   height: 100vh;
   background-color: var(--primary-color);
   display: flex;
@@ -175,7 +175,7 @@ ul li {
 }
 
 .nav-footer {
-  color: #ddd;
+  color: #fff;
   font-size: 0.85rem;
   line-height: 1.5;
   margin-left: 10px;
@@ -190,33 +190,64 @@ ul li {
 
 .nav-info-icon {
   font-size: 0.9rem;
-  color: #d6d6d6;
+  color: #ccc;
 }
 
 .nav-info-icon:hover {
   color: #fff;
 }
 
-.sign_out_button {
+.user-info {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 14px 0 18px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
   font-size: 0.9rem;
-  text-align: center;
   color: #fff;
   background-color: var(--primary-hover);
 }
 
-.sign_out_button:hover {
-  background-color: var(--red-color);
+.user-info-icon {
+  font-size: 1.8rem;
+}
+
+.user-email {
+  font-size: 0.85rem;
+  color: #ddd;
 }
 
 .signout-icon {
-  font-size: 1.3rem;
-  transform: translateY(5px);
-  margin-right: 8px;
+  font-size: 1.5rem;
+  color: #fff;
+  transform: translateY(2px);
+}
+
+.user-info:hover {
+  background-color: var(--red-color);
+}
+
+.sign_out_btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 0;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: var(--primary-hover);
+}
+
+.sign_out_btn:hover {
+  background-color: var(--red-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -245,6 +276,20 @@ ul li {
 
   .menu_link {
     font-size: 1rem;
+  }
+
+  .nav-footer {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    line-height: 1.8;
+  }
+
+  .nav-info {
+    margin-top: 15px;
+  }
+
+  .nav-info-icon {
+    font-size: 1.1rem;
   }
 }
 

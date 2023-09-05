@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  AiFillCar, AiTwotoneHeart, AiOutlineDelete, AiOutlineMail, AiFillStar,
+  AiFillCar, AiTwotoneHeart, AiOutlineDelete, AiOutlineMail, AiFillStar, AiOutlineLogout,
 } from 'react-icons/ai';
 import { IoAddCircleOutline } from 'react-icons/io5';
-import { BiLogOut } from 'react-icons/bi';
-import { FaLinkedinIn, FaFacebookF, FaGithub } from 'react-icons/fa';
+import { MdLogout } from 'react-icons/md';
+import {
+  FaLinkedinIn, FaFacebookF, FaGithub, FaUserCircle,
+} from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { logOutUser } from '../redux/userSlice';
 import logo from '../assets/logo-white.png';
@@ -149,25 +151,33 @@ const Navbar = () => {
             <p>All Rights Reserved.</p>
           </li>
           <li className="nav-info">
-            <Link className="nav-info-link" to="/">
+            <Link className="nav-info-link" to="https://www.facebook.com/linthantkhai" target="_blank">
               <FaFacebookF className="nav-info-icon" />
             </Link>
-            <Link className="nav-info-link" to="/">
+            <Link className="nav-info-link" to="https://www.linkedin.com/in/kaungmyatkyaw/" target="_blank">
               <FaLinkedinIn className="nav-info-icon" />
             </Link>
-            <Link className="nav-info-link" to="/">
+            <Link className="nav-info-link" to="https://github.com/Rhaegar121" target="_blank">
               <FaGithub className="nav-info-icon" />
             </Link>
           </li>
         </ul>
         {userData ? (
-          <Link className="sign_out_button" to="/" onClick={handleLogoutClick}>
-            <BiLogOut className="signout-icon" />
-            Sign Out
-          </Link>
+          <div className="user-info">
+            <FaUserCircle className="user-info-icon" />
+            <div>
+              <p>{userData.name}</p>
+              <p className="user-email">{userData.email}</p>
+            </div>
+            <abbr title="Log Out">
+              <Link to="/" onClick={handleLogoutClick}>
+                <MdLogout className="signout-icon" />
+              </Link>
+            </abbr>
+          </div>
         ) : (
-          <Link className="sign_out_button" to="/signin">
-            <BiLogOut className="signout-icon" />
+          <Link className="sign_out_btn" to="/signin">
+            <AiOutlineLogout />
             Sign In
           </Link>
         )}
