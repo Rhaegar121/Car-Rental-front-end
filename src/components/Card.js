@@ -77,12 +77,12 @@ const CarCard = () => {
         <div className="main-banner-text">
           {loading
             ? <h2 className="heading">Loading the Latest Vehicles... Please Wait.</h2>
-            : <h2 className="heading">Unleash Your Journey: Rent Your Dream Car Today!</h2>}
+            : <h2 className="heading">Car Rental - Search, Add & Reserve!</h2>}
           <form className="search-form" onSubmit={handleSubmit}>
-            <input type="text" placeholder="Search for a car" className="search" value={keyword} onChange={handleChange} required />
+            <input type="text" placeholder="Search for a car with name" className="search" value={keyword} onChange={handleChange} required />
             {!searchCar.length
               ? <button type="submit" className="search-btn">Search</button>
-              : <button type="button" onClick={handleBack}>Back</button>}
+              : <button type="button" className="search-btn" onClick={handleBack}>Back</button>}
           </form>
         </div>
       </div>
