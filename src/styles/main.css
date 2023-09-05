@@ -280,6 +280,18 @@ a {
     gap: 3rem;
   }
 
+  .main-banner {
+    height: 270px;
+  }
+
+  .banner-img {
+    object-position: center;
+  }
+
+  .main-banner-text {
+    top: 30%;
+  }
+
   .car-container {
     height: 370px;
   }
