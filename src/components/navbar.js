@@ -5,6 +5,7 @@ import {
 } from 'react-icons/ai';
 import { IoAddCircleOutline } from 'react-icons/io5';
 import { BiLogOut } from 'react-icons/bi';
+import { FaLinkedinIn } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { logOutUser } from '../redux/userSlice';
 import logo from '../assets/logo-white.png';
@@ -138,6 +139,24 @@ const Navbar = () => {
             >
               <AiFillStar className="nav-icon" />
               Give us a star!
+            </Link>
+          </li>
+          <li className="nav-line" />
+          <li className="nav-footer">
+            <p>Privacy Policy</p>
+            <p>Terms & Conditions</p>
+            <p>© 2023 CarRental™.</p>
+            <p>All Rights Reserved.</p>
+          </li>
+          <li className="nav-info">
+            <Link className="nav-info-link" to="/">
+              <FaLinkedinIn className="nav-icon" />
+            </Link>
+            <Link className="nav-info-link" to="/">
+              <FaLinkedinIn className="nav-icon" />
+            </Link>
+            <Link className="nav-info-link" to="/">
+              <FaLinkedinIn className="nav-icon" />
             </Link>
           </li>
         </ul>
