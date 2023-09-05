@@ -63,7 +63,7 @@ const carsSlice = createSlice({
           isLoading: false,
           error: action.error.message,
         }))
-      .addCase(addCar.pending, (state) => ({ ...state, isLoading: true }))
+      .addCase(addCar.pending, (state) => ({ ...state, isLoading: true, status: 'adding' }))
       .addCase(addCar.fulfilled, (state, action) => {
         if (!action.payload.errors) { // Check if there are no errors
           return {

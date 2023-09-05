@@ -235,7 +235,7 @@ const AddCar = () => {
                 Cancel
               </button>
               <button type="submit" className="btn">
-                {data.isLoading ? <BeatLoader loading={data.isLoading} size={9} color="#ffffff" /> : 'Submit'}
+                {data.status === 'adding' ? <BeatLoader loading={data.status} size={9} color="#ffffff" /> : 'Submit'}
               </button>
             </div>
           </form>
