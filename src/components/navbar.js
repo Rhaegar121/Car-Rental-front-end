@@ -6,6 +6,7 @@ import { BiLogOut } from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
 import { logOutUser } from '../redux/userSlice';
 import logo from '../assets/logo-white.png';
+import logo1 from '../assets/logo.png';
 import '../styles/navbar.css';
 
 const Navbar = () => {
@@ -34,17 +35,22 @@ const Navbar = () => {
     <nav>
       {/* navbar */}
       <div className="navbar">
-        <div
-          id="hamburger_menu"
-          className={`hamburger_menu ${isMenuActive ? 'active' : ''}`}
-          onClick={handleHamburgerClick}
-          onKeyDown={handleHamburgerKeyDown}
-          role="button"
-          tabIndex={0}
-        >
-          <span className="line" />
-          <span className="line" />
-          <span className="line" />
+        <div className="nav">
+          <div
+            id="hamburger_menu"
+            className={`hamburger_menu ${isMenuActive ? 'active' : ''}`}
+            onClick={handleHamburgerClick}
+            onKeyDown={handleHamburgerKeyDown}
+            role="button"
+            tabIndex={0}
+          >
+            <span className="line" />
+            <span className="line" />
+            <span className="line" />
+          </div>
+          <div className="nav-logo">
+            <img src={logo1} alt="logo" className="nav-logo-img" />
+          </div>
         </div>
 
         {userData ? (

@@ -47,7 +47,7 @@ a {
 .main-banner-text {
   width: 90%;
   position: absolute;
-  top: 50%;
+  top: 63%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -58,6 +58,7 @@ a {
 }
 
 .main-banner-text .heading {
+  padding-top: 0;
   color: #fff;
 }
 
@@ -286,10 +287,6 @@ a {
 
   .banner-img {
     object-position: center;
-  }
-
-  .main-banner-text {
-    top: 30%;
   }
 
   .car-container {

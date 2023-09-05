@@ -10,6 +10,12 @@ nav {
   background-color: var(--primary-color);
 }
 
+.nav {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
 .hamburger_menu {
   width: fit-content;
   display: flex;
@@ -45,6 +51,16 @@ nav {
 .hamburger_menu.active .line:nth-child(3) {
   transform: translateY(-10px) rotate(-45deg);
   z-index: 100;
+}
+
+.nav-logo {
+  width: 170px;
+}
+
+.nav-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .nav-links {
