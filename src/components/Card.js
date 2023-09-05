@@ -5,6 +5,7 @@ import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCars } from '../redux/carsSlice';
 import StarRating from './StarRating';
+import banner from '../assets/car-banner1.jpg';
 
 const CarCard = () => {
   const cars = useSelector((state) => state.car.cars);
@@ -54,9 +55,12 @@ const CarCard = () => {
           </p>
         )
         : null}
-      {loading
-        ? <h2 className="heading">Loading the Latest Vehicles... Please Wait.</h2>
-        : <h2 className="heading">Unleash Your Journey: Rent Your Dream Car Today!</h2>}
+      <div className="main-banner">
+        <img src={banner} alt="banner" className="banner-img" />
+        {loading
+          ? <h2 className="heading">Loading the Latest Vehicles... Please Wait.</h2>
+          : <h2 className="heading">Unleash Your Journey: Rent Your Dream Car Today!</h2>}
+      </div>
       <div className="main-container">
         <button
           className={number === 1 ? 'arrow-btn prev-btn disabled' : 'arrow-btn prev-btn'}
