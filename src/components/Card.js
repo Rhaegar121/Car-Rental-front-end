@@ -80,8 +80,9 @@ const CarCard = () => {
             : <h2 className="heading">Unleash Your Journey: Rent Your Dream Car Today!</h2>}
           <form className="search-form" onSubmit={handleSubmit}>
             <input type="text" placeholder="Search for a car" className="search" value={keyword} onChange={handleChange} required />
-            <button type="submit" className="search-btn">Search</button>
-            <button type="button" onClick={handleBack}>Back</button>
+            {!searchCar.length
+              ? <button type="submit" className="search-btn">Search</button>
+              : <button type="button" onClick={handleBack}>Back</button>}
           </form>
         </div>
       </div>
