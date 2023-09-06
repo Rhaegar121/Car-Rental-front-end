@@ -103,14 +103,14 @@ a {
   justify-items: center;
   grid-template-columns: repeat(1, 1fr);
   position: relative;
-  padding: 1.5rem;
+  margin-top: 2rem;
   padding-bottom: 6.7rem;
   gap: 1.5rem;
 }
 
 .car-container {
-  width: 100%;
-  height: 330px;
+  width: 90%;
+  height: 290px;
   background-color: #fff;
   box-shadow: 0 0 30px 0px #bbbbbb4b;
   display: flex;
@@ -119,8 +119,9 @@ a {
 }
 
 .image {
-  width: 80%;
-  height: 64%;
+  width: 270px;
+  height: 165px;
+  margin-top: 5px;
 }
 
 .car-image {
@@ -145,7 +146,7 @@ a {
 
 .btn {
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 10px 25px;
   text-transform: uppercase;
   margin: 20px auto;
@@ -162,7 +163,7 @@ a {
 
 .arrow-btn {
   position: absolute;
-  top: 96.5%;
+  top: 96%;
   transform: translateY(-50%);
   height: 80px;
   width: 80px;
@@ -206,26 +207,6 @@ a {
   color: var(--star-color);
 }
 
-.delete-car-button {
-  margin: 0 auto;
-  display: block;
-  font-size: 0.9rem;
-  padding: 10px 14px;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  background-color: var(--red-color);
-  box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.2);
-  transform: translateY(-60%);
-}
-
-.delete-car-button:hover,
-.delete-car-button:focus {
-  box-shadow: none;
-  cursor: pointer;
-  transform: translateY(-60%) translateY(-2px);
-}
-
 .delete-icon {
   font-size: 1rem;
   margin-right: 2.5px;
@@ -244,9 +225,26 @@ a {
     font-size: 1.3rem;
   }
 
-  .main-container {
-    padding: 2rem;
-    padding-bottom: 6.7rem;
+  .search-form {
+    width: 85%;
+  }
+
+  .car-container {
+    width: 85%;
+  }
+}
+
+@media (min-width: 480px) {
+  .main-banner-text .heading {
+    font-size: 1.4rem;
+  }
+
+  .search-form {
+    width: 80%;
+  }
+
+  .car-container {
+    width: 80%;
   }
 }
 
@@ -257,18 +255,27 @@ a {
 
   .main-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
+    padding: 0 2rem 6.7rem 2rem;
+  }
+
+  .car-container {
+    width: 100%;
   }
 
   .arrow-btn {
-    top: 94%;
+    top: 92.5%;
   }
 }
 
 @media (min-width: 1024px) {
+  .main-banner-text .heading {
+    font-size: 1.7rem;
+  }
+
   .main-container {
     padding: 2rem 5.5rem;
-    gap: 2rem;
+    margin-top: 0;
   }
 
   .main-banner {
@@ -288,22 +295,35 @@ a {
     max-width: 400px;
   }
 
-  .car-container {
-    height: 340px;
-  }
-
-  .image {
-    padding: 20px;
-  }
-
   .arrow-btn {
     top: 50%;
   }
 }
 
+@media (min-width: 1200px)  {
+  .main-container {
+    padding: 2rem 8rem;
+    gap: 2.5rem;
+  }
+
+  .car-container {
+    height: 315px;
+  }
+
+  .image {
+    width: 300px;
+    height: 190px;
+    margin-top: 5px;
+  }
+
+  .car-details {
+    padding: 0 3rem;
+  }
+}
+
 @media (min-width: 1400px) {
   .main-container {
-    padding: 2rem 7rem;
+    padding: 2rem 10rem;
     gap: 3rem;
   }
 
@@ -316,12 +336,12 @@ a {
   }
 
   .car-container {
-    height: 370px;
+    height: 345px;
   }
 
   .image {
-    padding: 15px;
-    margin-top: 0.9rem;
+    height: 200px;
+    margin-top: 15px;
   }
 
   .car-details {
@@ -330,5 +350,6 @@ a {
 
   .btn {
     padding: 12px 30px;
+    font-size: 1rem;
   }
 }

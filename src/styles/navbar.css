@@ -253,6 +253,16 @@ ul li {
   }
 }
 
+@media screen and (min-width: 480px) {
+  .nav-logo {
+    width: 170px;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .nav_menu {
     width: 210px;
