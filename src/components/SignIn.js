@@ -41,7 +41,7 @@ const SignInComponent = () => {
           <input
             className="email-input"
             type="email"
-            placeholder="EMAIL OR USERNAME"
+            placeholder="EMAIL ADDRESS"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />

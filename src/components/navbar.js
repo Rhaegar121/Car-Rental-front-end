@@ -37,9 +37,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
+    <>
       {/* navbar */}
-      <div className="navbar">
+      <nav className="navbar">
         <div className="nav">
           <div
             id="hamburger_menu"
@@ -75,10 +75,10 @@ const Navbar = () => {
             </Link>
           </div>
         )}
-      </div>
+      </nav>
 
       {/* nav menu */}
-      <div className={`nav_menu_container ${isMenuActive ? 'active' : ''}`}>
+      <nav className={`nav_menu_container ${isMenuActive ? 'active' : ''}`}>
         <div className="nav_menu">
           <Link
             className="logo"
@@ -183,8 +183,8 @@ const Navbar = () => {
             </Link>
           )}
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 

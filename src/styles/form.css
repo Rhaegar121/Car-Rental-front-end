@@ -1,12 +1,10 @@
 .form {
-  padding-top: 5rem;
   background-image: url(../assets/second-background.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 .form-title {
@@ -14,6 +12,7 @@
   text-align: center;
   text-transform: capitalize;
   color: #fff;
+  padding-top: 7rem;
   margin-bottom: 20px;
 }
 
@@ -61,7 +60,7 @@
 }
 
 .primary-btn {
-  margin: 0;
+  margin: 0 !important;
   width: fit-content;
 }
 

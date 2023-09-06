@@ -66,7 +66,13 @@ const initialState = {
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    // Add a reducer to reset status after a certain time
+    resetStatus: (state) => ({
+      ...state,
+      status: 'idle',
+    }),
+  },
   extraReducers(builder) {
     builder
       .addCase(registerUser.pending, (state) => ({
@@ -124,4 +130,5 @@ const userSlice = createSlice({
   },
 });
 
+export const { resetStatus } = userSlice.actions;
 export default userSlice.reducer;

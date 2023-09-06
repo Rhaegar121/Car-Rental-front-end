@@ -42,7 +42,7 @@ function Favourite() {
   };
 
   return (
-    <>
+    <div className="page_container">
       <Navbar />
       {status === 'removed successfully' ? <p className="success">Remove from reservations successfully!</p> : null}
       <h2 className="heading">Reserved and Ready: Your Upcoming Adventure.</h2>
@@ -99,7 +99,7 @@ function Favourite() {
           <BsArrowRight className="arrow" />
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

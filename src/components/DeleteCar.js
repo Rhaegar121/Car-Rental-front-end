@@ -52,7 +52,7 @@ const DeleteCar = () => {
   }
 
   return (
-    <>
+    <div className="page_container">
       <Navbar />
       <h2 className="heading">Customize Your Collection: Delete your added Vehicles.</h2>
       <div className="main-container">
@@ -100,7 +100,7 @@ const DeleteCar = () => {
           <BsArrowRight className="arrow" />
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

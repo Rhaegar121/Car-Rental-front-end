@@ -10,18 +10,15 @@ import DeleteCar from './components/DeleteCar';
 
 const App = () => (
   <Router>
-    <div className="page_container">
-      <Routes>
-        {/* <Route path="/" element={<Body />} /> */}
-        <Route path="/" element={<Main />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/cars/:id" element={<Detail />} />
-        <Route path="/favourites" element={<Favourites />} />
-        <Route path="/add_car" element={<AddCar />} />
-        <Route path="/delete_car" element={<DeleteCar />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Main />} />
+      <Route path="/cars/:id" element={<Detail />} />
+      <Route path="/favourites" element={<Favourites />} />
+      <Route path="/add_car" element={<AddCar />} />
+      <Route path="/delete_car" element={<DeleteCar />} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={<SignUp />} />
+    </Routes>
   </Router>
 );
 

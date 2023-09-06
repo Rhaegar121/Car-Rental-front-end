@@ -94,151 +94,153 @@ const AddCar = () => {
   }, [data, navigate]);
 
   return (
-    <div className="add_car_container">
-      <Navbar />
-      <div className="add_car_wrapper">
-        <div className="car_form_container">
-          {data.status === 'error' ? <p className="error">{data.error}</p> : null}
-          <h2 className="heading">Join Our Garage: Add Your Car Today</h2>
-          <form className="add_car_form_wrapper" onSubmit={handleSubmit}>
-            <div className="first_wrapper">
-              <label htmlFor="name">
-                Name:
-                <input
-                  id="brand"
-                  type="text"
-                  name="name"
-                  value={carDetails.name}
-                  onChange={handleChange}
-                  placeholder='e.g. "Toyota Corolla"'
-                  required
-                />
-              </label>
-              <label htmlFor="type">
-                Type:
-                <input
-                  id="type"
-                  type="text"
-                  name="carType"
-                  value={carDetails.carType}
-                  onChange={handleChange}
-                  placeholder='e.g. "Intermediate", "Standard", "Luxury"'
-                  required
-                />
-              </label>
-            </div>
-            <div className="second_wrapper">
-              <label htmlFor="rating">
-                Ratings:
-                <input
-                  id="rating"
-                  type="number"
-                  name="ratings"
-                  min={0}
-                  max={5}
-                  value={carDetails.ratings}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-              <label htmlFor="price">
-                Price in USD:
-                <input
-                  id="price"
-                  type="number"
-                  name="price"
-                  min={0}
-                  value={carDetails.price}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-            </div>
-            <div className="second_wrapper">
-              <label htmlFor="door">
-                Doors:
-                <input
-                  id="door"
-                  type="number"
-                  name="door"
-                  min={2}
-                  max={4}
-                  value={carDetails.door}
-                  onChange={handleChange}
-                />
-              </label>
-              <label htmlFor="seat">
-                Seats:
-                <input
-                  id="seat"
-                  type="number"
-                  name="seat"
-                  min={2}
-                  value={carDetails.seat}
-                  onChange={handleChange}
-                />
-              </label>
-            </div>
-            <div className="second_wrapper">
-              <label htmlFor="bag">
-                Bags:
-                <input
-                  id="bag"
-                  type="number"
-                  name="bag"
-                  value={carDetails.bag}
-                  onChange={handleChange}
-                />
-              </label>
-              <label htmlFor="gas">
-                Gas tank (mpg):
-                <div className="third_wrapper">
+    <div className="page_container">
+      <div className="add_car_container">
+        <Navbar />
+        <div className="add_car_wrapper">
+          <div className="car_form_container">
+            {data.status === 'error' ? <p className="error">{data.error}</p> : null}
+            <h2 className="heading">Join Our Garage: Add Your Car Today</h2>
+            <form className="add_car_form_wrapper" onSubmit={handleSubmit}>
+              <div className="first_wrapper">
+                <label htmlFor="name">
+                  Name:
                   <input
+                    id="brand"
+                    type="text"
+                    name="name"
+                    value={carDetails.name}
+                    onChange={handleChange}
+                    placeholder='e.g. "Toyota Corolla"'
+                    required
+                  />
+                </label>
+                <label htmlFor="type">
+                  Type:
+                  <input
+                    id="type"
+                    type="text"
+                    name="carType"
+                    value={carDetails.carType}
+                    onChange={handleChange}
+                    placeholder='e.g. "Intermediate", "Standard", "Luxury"'
+                    required
+                  />
+                </label>
+              </div>
+              <div className="second_wrapper">
+                <label htmlFor="rating">
+                  Ratings:
+                  <input
+                    id="rating"
                     type="number"
-                    name="minGas"
-                    value={carDetails.minGas}
+                    name="ratings"
+                    min={0}
+                    max={5}
+                    value={carDetails.ratings}
+                    onChange={handleChange}
+                    required
+                  />
+                </label>
+                <label htmlFor="price">
+                  Price in USD:
+                  <input
+                    id="price"
+                    type="number"
+                    name="price"
+                    min={0}
+                    value={carDetails.price}
+                    onChange={handleChange}
+                    required
+                  />
+                </label>
+              </div>
+              <div className="second_wrapper">
+                <label htmlFor="door">
+                  Doors:
+                  <input
+                    id="door"
+                    type="number"
+                    name="door"
+                    min={2}
+                    max={4}
+                    value={carDetails.door}
                     onChange={handleChange}
                   />
-                  <span>-</span>
+                </label>
+                <label htmlFor="seat">
+                  Seats:
                   <input
+                    id="seat"
                     type="number"
-                    name="maxGas"
-                    value={carDetails.maxGas}
+                    name="seat"
+                    min={2}
+                    value={carDetails.seat}
                     onChange={handleChange}
                   />
-                </div>
+                </label>
+              </div>
+              <div className="second_wrapper">
+                <label htmlFor="bag">
+                  Bags:
+                  <input
+                    id="bag"
+                    type="number"
+                    name="bag"
+                    value={carDetails.bag}
+                    onChange={handleChange}
+                  />
+                </label>
+                <label htmlFor="gas">
+                  Gas tank (mpg):
+                  <div className="third_wrapper">
+                    <input
+                      type="number"
+                      name="minGas"
+                      value={carDetails.minGas}
+                      onChange={handleChange}
+                    />
+                    <span>-</span>
+                    <input
+                      type="number"
+                      name="maxGas"
+                      value={carDetails.maxGas}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </label>
+              </div>
+              <label htmlFor="carPhoto">
+                Car image url link:
+                <textarea
+                  id="carPhoto"
+                  className="carPhoto"
+                  name="image"
+                  value={carDetails.image}
+                  onChange={handleChange}
+                  required
+                />
               </label>
-            </div>
-            <label htmlFor="carPhoto">
-              Car image url link:
-              <textarea
-                id="carPhoto"
-                className="carPhoto"
-                name="image"
-                value={carDetails.image}
-                onChange={handleChange}
-                required
-              />
-            </label>
-            <label htmlFor="carDetails">
-              Car Description:
-              <textarea
-                id="carDetails"
-                name="description"
-                value={carDetails.description}
-                onChange={handleChange}
-                required
-              />
-            </label>
-            <div className="button_wrapper">
-              <button type="button" className="cancel_btn" onClick={handleBack}>
-                Cancel
-              </button>
-              <button type="submit" className="btn">
-                {data.status === 'adding' ? <BeatLoader loading={data.status} size={9} color="#ffffff" /> : 'Submit'}
-              </button>
-            </div>
-          </form>
+              <label htmlFor="carDetails">
+                Car Description:
+                <textarea
+                  id="carDetails"
+                  name="description"
+                  value={carDetails.description}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+              <div className="button_wrapper">
+                <button type="button" className="cancel_btn" onClick={handleBack}>
+                  Cancel
+                </button>
+                <button type="submit" className="btn">
+                  {data.status === 'adding' ? <BeatLoader loading={data.status} size={9} color="#ffffff" /> : 'Submit'}
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
