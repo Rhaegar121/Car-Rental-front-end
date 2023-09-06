@@ -57,7 +57,7 @@ a {
 }
 
 .main-banner-text {
-  width: 90%;
+  width: 100%;
   position: absolute;
   top: 63%;
   left: 50%;
@@ -72,10 +72,11 @@ a {
 .main-banner-text .heading {
   padding-top: 0;
   color: #fff;
+  font-size: 1.2rem;
 }
 
 .search-form {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
 }
@@ -86,6 +87,7 @@ a {
   padding: 10px;
   border: none;
   outline: none;
+  border-radius: 0;
   background-color: #fff;
 }
 
