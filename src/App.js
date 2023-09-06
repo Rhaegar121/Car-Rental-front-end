@@ -7,7 +7,6 @@ import Favourites from './components/Favourite';
 import AddCar from './components/addCar';
 import Detail from './components/Detail';
 import DeleteCar from './components/DeleteCar';
-import './App.css';
 
 const App = () => (
   <Router>

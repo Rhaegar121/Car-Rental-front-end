@@ -9,6 +9,21 @@
   --green-color: #00e908;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+.page_container {
+  width: 100%;
+  padding-top: 60px;
+}
+
 a {
   text-decoration: none;
   color: #000;
