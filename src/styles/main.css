@@ -239,6 +239,17 @@ a {
   font-size: 1.4rem;
 }
 
+@media (min-width: 425px) {
+  .main-banner-text .heading {
+    font-size: 1.3rem;
+  }
+
+  .main-container {
+    padding: 2rem;
+    padding-bottom: 6.7rem;
+  }
+}
+
 @media (min-width: 768px) {
   .heading {
     font-size: 1.7rem;

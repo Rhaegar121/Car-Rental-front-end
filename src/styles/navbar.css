@@ -234,6 +234,25 @@ ul li {
   background-color: var(--red-color);
 }
 
+@media screen and (min-width: 425px) {
+  .hamburger_menu {
+    padding: 0 1rem;
+  }
+
+  .nav-logo {
+    width: 160px;
+  }
+
+  .nav-links {
+    margin-right: 1rem;
+    gap: 0.7rem;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .nav_menu {
     width: 210px;
