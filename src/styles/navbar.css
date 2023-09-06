@@ -277,6 +277,10 @@ ul li {
 }
 
 @media screen and (min-width: 1200px) {
+  .nav-logo {
+    width: 190px;
+  }
+
   .nav-links {
     gap: 1.5rem;
   }
@@ -295,7 +299,6 @@ ul li {
   }
 
   .nav-footer {
-    font-size: 0.9rem;
     margin-top: 10px;
     line-height: 1.8;
   }
@@ -305,7 +308,7 @@ ul li {
   }
 
   .nav-info-icon {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 
@@ -315,7 +318,7 @@ ul li {
   }
 
   .nav_menu {
-    width: 16%;
+    width: 230px;
   }
 
   .user-info {
