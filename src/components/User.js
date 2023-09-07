@@ -4,6 +4,7 @@ import { MdLogout } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUser, logOutUser } from '../redux/userSlice';
 import Navbar from './Navbar';
+import '../styles/user.css';
 
 /* eslint-disable */
 const User = () => {
