@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { MdLogout } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateUser } from '../redux/userSlice';
+import { updateUser, logOutUser } from '../redux/userSlice';
 import Navbar from './Navbar';
 
 /* eslint-disable */
 const User = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const { id, name, picture, email } = JSON.parse(localStorage.getItem('user'));
     const updatedUser = useSelector((state) => state.user);
     const [user, setUser] = useState({
@@ -37,6 +40,15 @@ const User = () => {
 
     const handleShowName = () => {
         setShowName(!showName);
+    };
+
+    const handleLogoutClick = () => {
+        dispatch(logOutUser());
+        localStorage.clear();
+    };
+
+    const handleBack = () => {
+        navigate(-1);
     };
 
     useEffect(() => {
@@ -92,6 +104,15 @@ const User = () => {
                     <span>Email: </span>
                     {email}
                 </p>
+                <div className="button_wrapper">
+                    <button type="button" className="cancel_btn" onClick={handleBack}>
+                        Back to home
+                    </button>
+                    <Link to="/" onClick={handleLogoutClick} className="btn">
+                        <MdLogout className="signout-icon" />
+                        Log out
+                    </Link>
+              </div>
             </div>
         </div>
     );
