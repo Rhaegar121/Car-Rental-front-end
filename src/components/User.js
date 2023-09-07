@@ -63,27 +63,35 @@ const User = () => {
         <div className="page_container">
             <Navbar />
             <div className="profile-container">
-                <div className="profile-img">
+                <div className="profile">
                     <img src={user.picture} alt="profile" />
                     <button type="button" className="edit-btn" onClick={handleShowPicture}>edit</button>
                     {showPicture ? (
                         <form>
-                            <input type="text" placeholder="picture" name='picture' value={user.picture} onChange={handleChange} />
+                            <label htmlFor="picture">Please enter a valid image URL</label>
+                            <input type="text" name='picture' value={user.picture} onChange={handleChange} />
                             <button type="submit" onClick={handleUpdateUser}>Submit</button>
                         </form>
                     ) : null}
                 </div>
-                <div className="profile-name">
-                    <p className="name">{user.name}</p>
+                <div className="profile">
+                    <p className="name">
+                        <span>Username: </span>
+                        {user.name}
+                    </p>
                     <button type="button" className="edit-btn" onClick={handleShowName}>edit</button>
                     {showName ? (
                         <form>
-                            <input type="text" placeholder="Enter your name" name='name' value={user.name} onChange={handleChange} />
+                            <label htmlFor="name">Please enter your desired username</label>
+                            <input type="text" name='name' value={user.name} onChange={handleChange} />
                             <button type="submit" onClick={handleUpdateUser}>Submit</button>
                         </form>
                     ) : null}
                 </div>
-                <p className="profile-email">{email}</p>
+                <p className="profile-email">
+                    <span>Email: </span>
+                    {email}
+                </p>
             </div>
         </div>
     );
