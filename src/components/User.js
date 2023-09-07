@@ -15,6 +15,8 @@ const User = () => {
     });
 
     const [updatedSuccessfully, setUpdatedSuccessfully] = useState(false);
+    const [showPicture, setShowPicture] = useState(false);
+    const [showName, setShowName] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -29,10 +31,20 @@ const User = () => {
         dispatch(updateUser(user));
     };
 
+    const handleShowPicture = () => {
+        setShowPicture(!showPicture);
+    };
+
+    const handleShowName = () => {
+        setShowName(!showName);
+    };
+
     useEffect(() => {
         if (updatedUser.status === 'updated successfully') {
             localStorage.setItem('user', JSON.stringify(updatedUser));
             setUpdatedSuccessfully(true);
+            setShowName(false);
+            setShowPicture(false);
         }
     }, [updatedUser]);
 
@@ -51,15 +63,28 @@ const User = () => {
         <div className="page_container">
             <Navbar />
             <div className="profile-container">
-                <img src={user.picture} alt="profile" className="profile-img" />
-                <p className="profile-name">{user.name}</p>
+                <div className="profile-img">
+                    <img src={user.picture} alt="profile" />
+                    <button type="button" className="edit-btn" onClick={handleShowPicture}>edit</button>
+                    {showPicture ? (
+                        <form>
+                            <input type="text" placeholder="picture" name='picture' value={user.picture} onChange={handleChange} />
+                            <button type="submit" onClick={handleUpdateUser}>Submit</button>
+                        </form>
+                    ) : null}
+                </div>
+                <div className="profile-name">
+                    <p className="name">{user.name}</p>
+                    <button type="button" className="edit-btn" onClick={handleShowName}>edit</button>
+                    {showName ? (
+                        <form>
+                            <input type="text" placeholder="Enter your name" name='name' value={user.name} onChange={handleChange} />
+                            <button type="submit" onClick={handleUpdateUser}>Submit</button>
+                        </form>
+                    ) : null}
+                </div>
                 <p className="profile-email">{email}</p>
             </div>
-            <form>
-                <input type="text" placeholder="Enter your name" name='name' value={user.name} onChange={handleChange} />
-                <input type="text" placeholder="picture" name='picture' value={user.picture} onChange={handleChange} />
-                <button type="submit" onClick={handleUpdateUser}>Submit</button>
-            </form>
         </div>
     );
 };
