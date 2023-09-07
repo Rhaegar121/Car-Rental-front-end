@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseURL = 'https://carrental-9ijm.onrender.com';
-// const baseURL = 'http://127.0.0.1:3000';
+// const baseURL = 'https://carrental-9ijm.onrender.com';
+const baseURL = 'http://127.0.0.1:3000';
 
 // Async thunk for user login
 export const loginUser = createAsyncThunk(
@@ -42,6 +42,23 @@ export const registerUser = createAsyncThunk(
   },
 );
 
+export const updateUser = createAsyncThunk(
+  'user/update',
+  async ({ id, name, picture }) => {
+    try {
+      const response = await axios.put(`${baseURL}/users/${id}`, {
+        user: {
+          fullname: name,
+          icon: picture,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response.data.message || 'Update failed');
+    }
+  },
+);
+
 export const logOutUser = createAsyncThunk(
   'user/logout',
   async () => {
@@ -58,6 +75,7 @@ const initialState = {
   status: 'idle',
   id: null,
   name: '',
+  picture: '',
   email: '',
   passsword: '',
   error: '',
@@ -106,6 +124,22 @@ const userSlice = createSlice({
         ...state,
         status: 'error',
         error: action.error.message,
+      }))
+      .addCase(updateUser.pending, (state) => ({
+        ...state,
+        status: 'loading',
+      }))
+      .addCase(updateUser.fulfilled, (state, action) => ({
+        ...state,
+        status: 'updated successfully',
+        name: action.payload.fullname,
+        picture: action.payload.icon,
+        id: action.payload.id,
+      }))
+      .addCase(updateUser.rejected, (state, action) => ({
+        ...state,
+        status: 'error',
+        error: action.payload.errors,
       }))
       .addCase(logOutUser.fulfilled, (state, action) => ({
         ...state,

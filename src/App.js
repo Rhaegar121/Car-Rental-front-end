@@ -7,6 +7,7 @@ import Favourites from './components/Favourite';
 import AddCar from './components/addCar';
 import Detail from './components/Detail';
 import DeleteCar from './components/DeleteCar';
+import User from './components/User';
 
 const App = () => (
   <Router>
@@ -18,6 +19,7 @@ const App = () => (
       <Route path="/delete_car" element={<DeleteCar />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/user" element={<User />} />
     </Routes>
   </Router>
 );
