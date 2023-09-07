@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { MdLogout } from 'react-icons/md';
+import { FaRegEdit } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUser, logOutUser } from '../redux/userSlice';
 import Navbar from './Navbar';
@@ -76,9 +77,9 @@ const User = () => {
         <div className="page_container">
             <Navbar />
             <div className="profile-container">
-                <div className="profile">
+                <div className="profile-img">
                     <img src={user.picture} alt="profile" />
-                    <button type="button" className="edit-btn" onClick={handleShowPicture}>edit</button>
+                    <button type="button" className="edit-btn" onClick={handleShowPicture}><FaRegEdit /></button>
                     {showPicture ? (
                         <form>
                             <label htmlFor="picture">Please enter a valid image URL</label>
@@ -88,11 +89,11 @@ const User = () => {
                     ) : null}
                 </div>
                 <div className="profile">
-                    <p className="name">
+                    <p className="para">
                         <span>Username: </span>
-                        {user.name}
+                        <span>{user.name}</span>
+                        <button type="button" onClick={handleShowName}><FaRegEdit /></button>
                     </p>
-                    <button type="button" className="edit-btn" onClick={handleShowName}>edit</button>
                     {showName ? (
                         <form>
                             <label htmlFor="name">Please enter your desired username</label>
@@ -101,9 +102,9 @@ const User = () => {
                         </form>
                     ) : null}
                 </div>
-                <p className="profile-email">
+                <p className="para">
                     <span>Email: </span>
-                    {email}
+                    <span>{email}</span>
                 </p>
                 <div className="button_wrapper">
                     <button type="button" className="cancel_btn" onClick={handleBack}>

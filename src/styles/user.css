@@ -3,23 +3,58 @@
     max-width: 300px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
     margin: 50px auto;
     background-color: #fff;
 }
 
-.profile {
+.profile-img {
+    width: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    margin-bottom: 30px;
+    position: relative;
 }
 
-.profile img {
+.profile-img img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.edit-btn {
+    position: absolute;
+    top: 180px;
+    right: 30px;
+    border: none;
+    background: transparent;
+    font-size: 1.1rem;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.para {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    padding-left: 20px;
+}
+
+.para span:first-child {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.para button {
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+    transform: translateY(3px);
 }
