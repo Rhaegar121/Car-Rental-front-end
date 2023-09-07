@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import BeatLoader from 'react-spinners/BeatLoader';
 import { addCar } from '../redux/carsSlice';
 import '../styles/addCar.css';
-import Navbar from './navbar';
+import Navbar from './Navbar';
 
 const AddCar = () => {
   const userDataFromStorage = JSON.parse(localStorage.getItem('user'));

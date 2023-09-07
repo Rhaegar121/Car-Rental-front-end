@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUser } from '../redux/userSlice';
+import Navbar from './Navbar';
 
 /* eslint-disable */
 const User = () => {
     const dispatch = useDispatch();
-    const userData = JSON.parse(localStorage.getItem('user'));
+    const { id, name, picture, email } = JSON.parse(localStorage.getItem('user'));
     const updatedUser = useSelector((state) => state.user);
     const [user, setUser] = useState({
-        id: userData.id,
-        name: userData.name,
-        picture: userData.picture,
+        id,
+        name,
+        picture,
     });
+
+    const [updatedSuccessfully, setUpdatedSuccessfully] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -26,16 +29,38 @@ const User = () => {
         dispatch(updateUser(user));
     };
 
-    if (updatedUser.status === 'updated successfully') {
-        console.log(updatedUser);
-    }
+    useEffect(() => {
+        if (updatedUser.status === 'updated successfully') {
+            localStorage.setItem('user', JSON.stringify(updatedUser));
+            setUpdatedSuccessfully(true);
+        }
+    }, [updatedUser]);
+
+    useEffect(() => {
+        // If updated successfully, update the user state with the new data
+        if (updatedSuccessfully) {
+            setUser({
+                id,
+                name: updatedUser.name,
+                picture: updatedUser.picture,
+            });
+        }
+    }, [updatedSuccessfully, id, updatedUser]);
 
     return (
-        <form>
-            <input type="text" placeholder="Enter your name" name='name' value={user.name} onChange={handleChange} />
-            <input type="text" placeholder="picture" name='picture' value={user.picture} onChange={handleChange} />
-            <button type="submit" onClick={handleUpdateUser}>Submit</button>
-        </form>
+        <div className="page_container">
+            <Navbar />
+            <div className="profile-container">
+                <img src={user.picture} alt="profile" className="profile-img" />
+                <p className="profile-name">{user.name}</p>
+                <p className="profile-email">{email}</p>
+            </div>
+            <form>
+                <input type="text" placeholder="Enter your name" name='name' value={user.name} onChange={handleChange} />
+                <input type="text" placeholder="picture" name='picture' value={user.picture} onChange={handleChange} />
+                <button type="submit" onClick={handleUpdateUser}>Submit</button>
+            </form>
+        </div>
     );
 };
 

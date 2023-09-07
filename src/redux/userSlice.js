@@ -134,6 +134,7 @@ const userSlice = createSlice({
         status: 'updated successfully',
         name: action.payload.fullname,
         picture: action.payload.icon,
+        email: action.payload.email,
         id: action.payload.id,
       }))
       .addCase(updateUser.rejected, (state, action) => ({

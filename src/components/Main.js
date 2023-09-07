@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchCars } from '../redux/carsSlice';
 import { resetStatus } from '../redux/userSlice';
 import StarRating from './StarRating';
-import Navbar from './navbar';
+import Navbar from './Navbar';
 import banner from '../assets/car-banner1.jpg';
 import '../styles/main.css';
 

@@ -4,7 +4,7 @@ import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { deleteCar, fetchCars } from '../redux/carsSlice';
 import StarRating from './StarRating';
-import Navbar from './navbar';
+import Navbar from './Navbar';
 import '../styles/main.css';
 
 const DeleteCar = () => {
