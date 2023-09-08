@@ -63,19 +63,19 @@
     margin-left: 34px;
 }
 
-form {
+.user-form {
     /* border: 1px solid red; */
     text-align: center;
     margin-top: 3px;
 }
 
-form label {
+.user-form label {
     font-size: 0.85rem;
     line-height: 2;
     color: var(--star-color);
 }
 
-form input {
+.user-form input {
     width: 70%;
     height: 30px;
     padding: 5px;
@@ -85,7 +85,7 @@ form input {
     border-right: none;
 }
 
-form button {
+.user-form button {
     width: 60px;
     height: 30px;
     font-weight: 600;

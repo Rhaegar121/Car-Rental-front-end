@@ -41,13 +41,13 @@ const DeleteCar = () => {
 
   if (!userCars.length) {
     return (
-      <>
+      <div className="page_container">
         <Navbar />
         {status === 'success' ? <p className="success">Car deleted successfully!</p> : null}
         <h2 className="heading">
           Oops! It looks like you haven&apos;t added any cars yet. Add some vehicles to delete them later.
         </h2>
-      </>
+      </div>
     );
   }
 

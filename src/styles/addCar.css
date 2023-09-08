@@ -97,10 +97,18 @@
   justify-content: center;
 }
 
+.button_wrapper .btn {
+  width: 100px;
+  height: 40px;
+  padding: 0;
+  text-align: center;
+}
+
 .cancel_btn {
   font-size: 0.9rem;
   font-weight: 600;
-  padding: 10px 25px;
+  width: 100px;
+  height: 40px;
   text-transform: uppercase;
   margin: 20px auto;
   color: var(--primary-color);

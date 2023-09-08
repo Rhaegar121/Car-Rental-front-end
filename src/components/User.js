@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { MdLogout } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 import { FaRegEdit } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUser, logOutUser } from '../redux/userSlice';
@@ -47,6 +46,7 @@ const User = () => {
     const handleLogoutClick = () => {
         dispatch(logOutUser());
         localStorage.clear();
+        navigate('/');
     };
 
     const handleBack = () => {
@@ -81,7 +81,7 @@ const User = () => {
                     <img src={user.picture} alt="profile" />
                     <button type="button" className="edit-btn" onClick={handleShowPicture}><FaRegEdit /></button>
                     {showPicture ? (
-                        <form>
+                        <form className="user-form">
                             <label htmlFor="picture">Please enter a valid image URL</label>
                             <input type="text" name='picture' value={user.picture} onChange={handleChange} />
                             <button type="submit" onClick={handleUpdateUser}>Upload</button>
@@ -95,7 +95,7 @@ const User = () => {
                         <button type="button" onClick={handleShowName}><FaRegEdit /></button>
                     </p>
                     {showName ? (
-                        <form>
+                        <form className="user-form">
                             <label htmlFor="name">Please enter your desired username</label>
                             <input type="text" name='name' value={user.name} onChange={handleChange} />
                             <button type="submit" onClick={handleUpdateUser}>Upload</button>
@@ -108,12 +108,11 @@ const User = () => {
                 </p>
                 <div className="button_wrapper">
                     <button type="button" className="cancel_btn" onClick={handleBack}>
-                        Back to home
+                        Back
                     </button>
-                    <Link to="/" onClick={handleLogoutClick} className="btn">
-                        <MdLogout className="signout-icon" />
-                        Log out
-                    </Link>
+                    <button type="button" onClick={handleLogoutClick} className="btn">
+                        logout
+                    </button>
               </div>
             </div>
         </div>
