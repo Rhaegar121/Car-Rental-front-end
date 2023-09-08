@@ -35,6 +35,11 @@
     font-size: 1.1rem;
 }
 
+.edit-btn:hover {
+    cursor: pointer;
+    color: var(--text-color);
+}
+
 .profile {
     display: flex;
     flex-direction: column;
@@ -45,6 +50,7 @@
     justify-content: flex-start;
     gap: 5px;
     padding-left: 10px;
+    color: var(--secondary-color);
 }
 
 .para span:first-child {
@@ -57,6 +63,11 @@
     background: transparent;
     font-size: 0.9rem;
     transform: translateY(3px);
+}
+
+.para button:hover {
+    cursor: pointer;
+    color: var(--text-color);
 }
 
 .email {
@@ -97,4 +108,28 @@
     cursor: pointer;
     box-shadow: 2.5px 2.5px 0 0 var(--primary-hover);
     transform: translate(-2.5px, -2.5px);
+}
+
+@media (min-width: 992px) {
+    .profile-container {
+        max-width: 400px;
+    }
+
+    .profile-img {
+        margin: 30px auto;
+    }
+
+    .para {
+        padding-left: 40px;
+        font-size: 1.1rem;
+        gap: 10px;
+    }
+
+    .email {
+        margin-left: 37px;
+    }
+
+    .user-form input {
+        width: 200px;
+    }
 }
