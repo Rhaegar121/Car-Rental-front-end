@@ -14,7 +14,7 @@ export const loginUser = createAsyncThunk(
       });
       return response.data;
     } catch (error) {
-      throw new Error(error.response.data.message || 'Login failed');
+      throw new Error(error.response.data.errors || 'Login failed');
     }
   },
 );
@@ -37,7 +37,7 @@ export const registerUser = createAsyncThunk(
       });
       return response.data;
     } catch (error) {
-      throw new Error(error.response.data.message || 'Registration failed');
+      throw new Error(error.response.data.errors || 'Registration failed');
     }
   },
 );
@@ -54,7 +54,7 @@ export const updateUser = createAsyncThunk(
       });
       return response.data;
     } catch (error) {
-      throw new Error(error.response.data.message || 'Update failed');
+      throw new Error(error.response.data.errors || 'Update failed');
     }
   },
 );
@@ -140,7 +140,7 @@ const userSlice = createSlice({
       .addCase(updateUser.rejected, (state, action) => ({
         ...state,
         status: 'error',
-        error: action.payload.errors,
+        error: action.error.message,
       }))
       .addCase(logOutUser.fulfilled, (state, action) => ({
         ...state,
