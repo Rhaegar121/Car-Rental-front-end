@@ -222,8 +222,18 @@ ul li {
   background-color: var(--primary-hover);
 }
 
-.user-info-icon {
-  font-size: 1.8rem;
+.user-profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.user-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .user-email {

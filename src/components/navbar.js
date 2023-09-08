@@ -6,7 +6,7 @@ import {
 import { IoAddCircleOutline } from 'react-icons/io5';
 import { MdLogout, MdLogin } from 'react-icons/md';
 import {
-  FaLinkedinIn, FaFacebookF, FaGithub, FaUserCircle,
+  FaLinkedinIn, FaFacebookF, FaGithub,
 } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { logOutUser } from '../redux/userSlice';
@@ -165,11 +165,13 @@ const Navbar = () => {
           </ul>
           {userData ? (
             <div className="user-info">
-              <FaUserCircle className="user-info-icon" />
-              <div>
-                <p>{userData.name}</p>
-                <p className="user-email">{userData.email}</p>
-              </div>
+              <Link to="/user" className="user-profile">
+                <img src={userData.picture} alt="profile" className="user-img" />
+                <div>
+                  <p>{userData.name}</p>
+                  <p className="user-email">{userData.email}</p>
+                </div>
+              </Link>
               <abbr title="Log Out">
                 <Link to="/" onClick={handleLogoutClick}>
                   <MdLogout className="signout-icon" />
