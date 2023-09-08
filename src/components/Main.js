@@ -54,7 +54,7 @@ const Main = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    if (user.status === 'signed up successfully' || user.status === 'logged in successfully') {
+    if (user.status === 'signed up successfully' || user.status === 'logged in successfully' || user.status === 'Logged out') {
       setTimeout(() => {
         dispatch(resetStatus());
       }, 5000);
@@ -96,6 +96,9 @@ const Main = () => {
             ! You&apos;ve successfully logged in. Get ready to hit the road and explore our amazing car selection.
           </p>
         )
+        : null}
+      {user.status === 'Logged out'
+        ? <p className="success">You&apos;ve successfully logged out. See you again!</p>
         : null}
       <div className="main-container">
         <button

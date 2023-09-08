@@ -71,7 +71,7 @@
 .user-form label {
     font-size: 0.85rem;
     line-height: 2;
-    color: var(--star-color);
+    color: var(--green-color);
 }
 
 .user-form input {
@@ -80,7 +80,8 @@
     padding: 5px;
     font-size: 0.8rem;
     outline: none;
-    border: 1px solid var(--text-color);
+    /* border: 1px solid var(--text-color); */
+    border: 1px solid var(--primary-color);
     border-right: none;
 }
 
