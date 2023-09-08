@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaRegEdit } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUser, logOutUser } from '../redux/userSlice';
-import Navbar from './Navbar';
+import Navbar from './navbar';
 import '../styles/user.css';
 
 const User = () => {
