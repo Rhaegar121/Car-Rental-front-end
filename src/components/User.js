@@ -76,6 +76,7 @@ const User = () => {
     return (
         <div className="page_container">
             <Navbar />
+            <h2 className="heading">Manage Your Profile</h2>
             <div className="profile-container">
                 <div className="profile-img">
                     <img src={user.picture} alt="profile" />
