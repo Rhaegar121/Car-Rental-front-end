@@ -84,7 +84,7 @@ const User = () => {
                         <form>
                             <label htmlFor="picture">Please enter a valid image URL</label>
                             <input type="text" name='picture' value={user.picture} onChange={handleChange} />
-                            <button type="submit" onClick={handleUpdateUser}>Submit</button>
+                            <button type="submit" onClick={handleUpdateUser}>Upload</button>
                         </form>
                     ) : null}
                 </div>
@@ -98,13 +98,13 @@ const User = () => {
                         <form>
                             <label htmlFor="name">Please enter your desired username</label>
                             <input type="text" name='name' value={user.name} onChange={handleChange} />
-                            <button type="submit" onClick={handleUpdateUser}>Submit</button>
+                            <button type="submit" onClick={handleUpdateUser}>Upload</button>
                         </form>
                     ) : null}
                 </div>
                 <p className="para">
                     <span>Email: </span>
-                    <span>{email}</span>
+                    <span className="email">{email}</span>
                 </p>
                 <div className="button_wrapper">
                     <button type="button" className="cancel_btn" onClick={handleBack}>

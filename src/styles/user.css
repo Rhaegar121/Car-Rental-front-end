@@ -44,7 +44,7 @@
     display: flex;
     justify-content: flex-start;
     gap: 5px;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 .para span:first-child {
@@ -57,4 +57,39 @@
     background: transparent;
     font-size: 0.9rem;
     transform: translateY(3px);
+}
+
+.email {
+    margin-left: 34px;
+}
+
+form {
+    /* border: 1px solid red; */
+    text-align: center;
+    margin-top: 3px;
+}
+
+form label {
+    font-size: 0.85rem;
+    line-height: 2;
+    color: var(--star-color);
+}
+
+form input {
+    width: 70%;
+    height: 30px;
+    padding: 5px;
+    font-size: 0.8rem;
+    outline: none;
+    border: 1px solid var(--text-color);
+    border-right: none;
+}
+
+form button {
+    width: 60px;
+    height: 30px;
+    font-weight: 600;
+    color: #fff;
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
 }
