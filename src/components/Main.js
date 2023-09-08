@@ -68,7 +68,7 @@ const Main = () => {
         <img src={banner} alt="banner" className="banner-img" />
         <div className="main-banner-text">
           {loading
-            ? <h2 className="heading">Loading the Latest Vehicles... Please Wait.</h2>
+            ? <h2 className="heading">Loading the Latest Vehicles...</h2>
             : <h2 className="heading">Car Rental - Search, Add & Reserve!</h2>}
           <form className="search-form" onSubmit={handleSubmit}>
             <input type="text" placeholder="Search for a car with name" className="search" value={keyword} onChange={handleChange} required />

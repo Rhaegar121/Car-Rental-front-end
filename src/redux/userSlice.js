@@ -102,6 +102,7 @@ const userSlice = createSlice({
         status: 'signed up successfully',
         name: action.payload.fullname,
         email: action.payload.email,
+        picture: action.payload.icon,
         id: action.payload.id,
       }))
       .addCase(registerUser.rejected, (state, action) => ({
@@ -118,6 +119,7 @@ const userSlice = createSlice({
         status: 'logged in successfully',
         name: action.payload.fullname,
         email: action.payload.email,
+        picture: action.payload.icon,
         id: action.payload.id,
       }))
       .addCase(loginUser.rejected, (state, action) => ({
