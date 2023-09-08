@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import BeatLoader from 'react-spinners/BeatLoader';
-import { addCar } from '../redux/carsSlice';
+import { addCar, resetStatus } from '../redux/carsSlice';
 import '../styles/addCar.css';
 import Navbar from './navbar';
 
@@ -90,8 +90,11 @@ const AddCar = () => {
   useEffect(() => {
     if (data.status === 'added successfully') {
       navigate(`/cars/${data.cars[data.cars.length - 1].id}`);
+      setTimeout(() => {
+        dispatch(resetStatus());
+      }, 2000);
     }
-  }, [data, navigate]);
+  }, [data, navigate, dispatch]);
 
   return (
     <div className="page_container">

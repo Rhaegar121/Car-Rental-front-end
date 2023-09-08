@@ -47,7 +47,13 @@ export const deleteCar = createAsyncThunk(
 const carsSlice = createSlice({
   name: 'cars',
   initialState,
-  reducers: {},
+  reducers: {
+    // Add a reducer to reset status after a certain time
+    resetStatus: (state) => ({
+      ...state,
+      status: 'idle',
+    }),
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCars.pending, (state) => ({ ...state, isLoading: true }))
@@ -81,12 +87,12 @@ const carsSlice = createSlice({
           error: action.payload.errors,
         };
       })
-      .addCase(addCar.rejected, (state, action) => (
+      .addCase(addCar.rejected, (state) => (
         {
           ...state,
           status: 'error',
           isLoading: false,
-          error: action.payload.errors,
+          // error: action.payload.errors,
         }))
       .addCase(deleteCar.pending, (state) => ({ ...state, isLoading: true }))
       .addCase(deleteCar.fulfilled, (state, action) => ({
@@ -105,4 +111,5 @@ const carsSlice = createSlice({
   },
 });
 
+export const { resetStatus } = carsSlice.actions;
 export default carsSlice.reducer;
