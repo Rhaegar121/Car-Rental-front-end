@@ -184,7 +184,11 @@ const Main = () => {
           </div>
         ))}
         <button
-          className={number >= (cars.length / showPerPage) || (searchCar.length && number >= (searchCars.length / showPerPage)) ? 'arrow-btn next-btn disabled' : 'arrow-btn next-btn'}
+          className={
+            number >= (cars.length / showPerPage) || (searchCar.length && number >= (searchCars.length / showPerPage))
+              ? 'arrow-btn next-btn disabled'
+              : 'arrow-btn next-btn'
+            }
           type="button"
           onClick={next}
         >
