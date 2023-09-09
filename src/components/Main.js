@@ -16,11 +16,12 @@ const Main = () => {
   const dispatch = useDispatch();
   const [number, setNumber] = useState(1);
   const [keyword, setKeyword] = useState('');
-  const [searchCar, setSearchCar] = useState([]);
+  const [searchCars, setSearchCars] = useState([]);
   const showPerPage = 4;
   const lastNumber = number * showPerPage;
   const firstNumber = lastNumber - showPerPage;
   const car = cars.slice(firstNumber, lastNumber);
+  const searchCar = searchCars.slice(firstNumber, lastNumber);
 
   const prev = () => {
     if (number > 1) {
@@ -41,12 +42,12 @@ const Main = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const filteredCars = cars.filter((car) => car.name.toLowerCase().includes(keyword.toLowerCase()));
-    setSearchCar(filteredCars);
+    setSearchCars(filteredCars);
     setKeyword('');
   };
 
   const handleBack = () => {
-    setSearchCar([]);
+    setSearchCars([]);
   };
 
   useEffect(() => {
@@ -183,7 +184,7 @@ const Main = () => {
           </div>
         ))}
         <button
-          className={number >= (cars.length / showPerPage) ? 'arrow-btn next-btn disabled' : 'arrow-btn next-btn'}
+          className={number >= (cars.length / showPerPage) || (searchCar.length && number >= (searchCars.length / showPerPage)) ? 'arrow-btn next-btn disabled' : 'arrow-btn next-btn'}
           type="button"
           onClick={next}
         >
