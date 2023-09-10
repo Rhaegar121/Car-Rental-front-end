@@ -21,7 +21,7 @@
 
 # 📖 [Car Rental App] <a name="about-project"></a>
 
-> The **Car Rental App** is a full-stack app we built using React as Front-end and Ruby on Rails as the Back-end API with custom authentication. The users can see a list of cars to rent and add to their favorites. The users can also add a car to the list and delete a car from the list.
+> The **Car Rental App** is a comprehensive full-stack application where you can seamlessly explore an array of cars, search by name, delve into comprehensive car details, make reservations when logged in, manage reservations, add or delete cars in the database, and personalize your profile with ease. Built with React, Redux as Front-end and Ruby on Rails, PostgreSQL as Back-end API.
 
 - You can see the Back-end repo <a href="https://github.com/Rhaegar121/Car-Rental-back-end">here</a>.
 
