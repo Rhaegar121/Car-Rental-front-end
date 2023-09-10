@@ -8,7 +8,7 @@ import { GiCarDoor, GiShoppingBag } from 'react-icons/gi';
 import { FaGasPump } from 'react-icons/fa';
 import { IoIosArrowBack, IoIosPerson } from 'react-icons/io';
 import BeatLoader from 'react-spinners/BeatLoader';
-import { addfavourite } from '../redux/favouritesSlice';
+import { addfavourite, resetStatus } from '../redux/favouritesSlice';
 import { fetchCars } from '../redux/carsSlice';
 import '../styles/detail.css';
 
@@ -24,7 +24,13 @@ const Detail = () => {
 
   useEffect(() => {
     dispatch(fetchCars());
-  }, [dispatch]);
+
+    if (favourite.status === 'added successfully' || favourite.status === 'error') {
+      setTimeout(() => {
+        dispatch(resetStatus());
+      }, 3000);
+    }
+  }, [dispatch, favourite.status]);
 
   if (!car) {
     return <h1 className="heading">Loading Car Detail...Please Wait</h1>;

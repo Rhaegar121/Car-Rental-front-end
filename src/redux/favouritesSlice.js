@@ -48,7 +48,13 @@ export const deletefavourite = createAsyncThunk(
 const favouritesSlice = createSlice({
   name: 'favourites',
   initialState,
-  reducers: {},
+  reducers: {
+    // Add a reducer to reset status after a certain time
+    resetStatus: (state) => ({
+      ...state,
+      status: 'idle',
+    }),
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchfavourites.pending, (state) => ({
@@ -113,4 +119,5 @@ const favouritesSlice = createSlice({
   },
 });
 
+export const { resetStatus } = favouritesSlice.actions;
 export default favouritesSlice.reducer;
