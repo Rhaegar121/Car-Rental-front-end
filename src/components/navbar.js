@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   AiFillCar, AiTwotoneHeart, AiOutlineDelete, AiOutlineMail, AiFillStar,
@@ -19,7 +19,19 @@ const Navbar = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const dispatch = useDispatch();
   const location = useLocation();
+  const sideRef = useRef();
 
+  useEffect(() => {
+    function outClick(e) {
+      if (isMenuActive && sideRef.current && !sideRef.current.contains(e.target)) {
+        setIsMenuActive(false);
+      }
+    }
+    document.addEventListener('mousedown', outClick);
+    return () => {
+      document.removeEventListener('mousedown', outClick);
+    };
+  }, [isMenuActive]);
   const handleHamburgerClick = () => {
     setIsMenuActive(!isMenuActive);
   };
@@ -78,7 +90,7 @@ const Navbar = () => {
       </nav>
 
       {/* nav menu */}
-      <nav className={`nav_menu_container ${isMenuActive ? 'active' : ''}`}>
+      <nav className={`nav_menu_container ${isMenuActive ? 'active' : ''}`} ref={sideRef}>
         <div className="nav_menu">
           <Link
             className="logo"
