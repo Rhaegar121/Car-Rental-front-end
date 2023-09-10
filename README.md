@@ -16,10 +16,17 @@
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
-- [❓ FAQ](#faq)
 - [📝 License](#license)
 
 # 📖 [Car Rental App] <a name="about-project"></a>
+
+<div align="center">
+  <img src="src/assets/carrental.png" alt="project sample" width="700"  height="auto" />
+  <br/>
+
+  <h3><b>Car Rental App</b></h3>
+
+</div>
 
 > The **Car Rental App** is a comprehensive full-stack application where you can seamlessly explore an array of cars, search by name, delve into comprehensive car details, make reservations when logged in, manage reservations, add or delete cars in the database, and personalize your profile with ease. Built with React, Redux as Front-end and Ruby on Rails, PostgreSQL as Back-end API.
 
@@ -32,19 +39,26 @@
   <summary>Client</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://redux.js.org/">Redux</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 </details>
 
 ### Key Features <a name="key-features"></a>
 
-- SignUp & SignIn
-- View All Cars
-- View Details Of the car
-- Add a car to the page
-- Add a car to Favourites
-- Delete a car
-
-- **[Generate greeting messages]**
+- Car Listings
+- Car Details
+- Reservations
+- Car Deletion
+- Car Addition
+- Profile Management
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
@@ -56,12 +70,6 @@
 
 - [Kanban-Board-Front-End](https://github.com/users/Rhaegar121/projects/5)
 - [Kanban-Board-Back-End](https://github.com/users/Rhaegar121/projects/6)
-
-
-### Front End Kanban Board Initital State ![FRONTEND KANBAN](https://github.com/Rhaegar121/Capstone-Front-End/assets/90766123/12fc878d-0f31-4e3c-a296-f136fe51e1e5)
-### Back End Kanban Board Initital State ![BACKEND KANBAN](https://github.com/Rhaegar121/Capstone-Front-End/assets/90766123/f91d088f-9f0e-42d3-83b8-71605b3eb8b0)
-
-- At the end of this project, we are still 4 members: @Rhaegar121 @Chaseknis @Rachelwebdev @187jjay187
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -104,7 +112,6 @@ Clone this repository to your desired folder:
 - Twitter: [@rachelisaac13](https://twitter.com/Rachelisaac13)
 - LinkedIn: [Rachel Isaac](https://www.linkedin.com/in/rachelisaac13/)
 
-
 👤 **Kaung Myat Kyaw**
 
 - Portfolio: [rhbarry.me](https://rhbarry.me)
@@ -125,6 +132,12 @@ Clone this repository to your desired folder:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🔭 Future Features <a name="future-features"></a>
+
+- **[Image_uploading_with_ActiveStorage]**
+- **[Token_based_authentication]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🤝 Contributing <a name="contributing"></a>
 
