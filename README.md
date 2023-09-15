@@ -53,12 +53,12 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Car Listings
-- Car Details
-- Reservations
-- Car Deletion
-- Car Addition
-- Profile Management
+- Car Listings → Users can explore a variety of available cars and utilize a search feature to find specific cars by name.
+- Car Details → Users can access comprehensive information about a chosen car and, if logged in, make reservations.
+- Reservations → Users can view their reserved cars, with the option to remove them. New users will be directed to sign up or log in.
+- Car Deletion → Users can see the cars they've added and delete them from the database. New users will be directed to sign up or log in.
+- Car Addition → Users can submit a form to add new cars to the database. New users will be directed to sign up or log in.
+- Profile Management → Users can edit their profile picture and username on their profile page.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
